@@ -192,6 +192,7 @@
         android:layout_width="0dp"
         android:layout_height="25dp" />
 
+
     <Switch
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -217,12 +218,13 @@
         android:checked="false"
         android:layout_marginLeft="15dp" />
 
+
     <Button
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Ordenar"
-        android:id="@+id/buttonOrdenar"
+        android:text="@string/applyFilters"
+        android:id="@+id/buttonFiltrar"
         android:layout_below="@+id/radioGroup"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
@@ -234,13 +236,14 @@
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Cancelar"
+        android:text="@string/cancel"
         android:id="@+id/buttonCancelar"
         android:layout_alignTop="@+id/buttonOrdenar"
         android:layout_toRightOf="@+id/buttonOrdenar"
         android:layout_toEndOf="@+id/buttonOrdenar"
         android:layout_marginLeft="55dp"
         android:layout_marginStart="55dp" />
+
 
 
 </LinearLayout>

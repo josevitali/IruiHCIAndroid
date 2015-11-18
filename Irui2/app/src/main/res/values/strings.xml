@@ -7,6 +7,9 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_login">Sign in</string>
 
+    <!--General Strings-->
+    <string name="cancel">Cancel</string>
+
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password (optional)</string>
@@ -25,10 +28,10 @@
     <string name="title_activity_base">Base</string>
     <string name="title_activity_filtros">Filtros</string>
 
-    <string name="applyFilters">Apply Filters</string>
-    <string name="color">Color</string>
-    <string name="brand">Brand</string>
-    <string name="ocasion">Occasion</string>
+
+    <!--Personal Information-->
+    <string name="title_activity_personal_information">Personal Information</string>
+
 
     <string name="title_activity_pag_prod">PagProd</string>
     <string name="section_format">Hello World from section: %1$d</string>
@@ -57,7 +60,11 @@
     <string name="descendingPrice">Descending Price</string>
     <string name="order_name">Name</string>
     <string name="order_brand">Brand</string>
-    <string name="title_activity_ordenar_por">OrdenarPor</string>
+    <string name="title_activity_ordenar_por">Order By</string>
     <string name="title_activity_orders">Orders</string>
-    <string name="title_activity_personal_information">PersonalInformation</string>
+    <string name="applyFilters">Apply Filters</string>
+    <string name="color">Color</string>
+    <string name="brand">Brand</string>
+    <string name="ocasion">Occasion</string>
+
 </resources>

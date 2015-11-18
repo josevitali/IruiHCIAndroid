@@ -31,7 +31,7 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/ordenar_por"
+            android:text="@string/title_activity_ordenar_por"
             android:id="@+id/buttonOrdenarPor"
             android:onClick="ordenarPor"
             android:layout_alignParentTop="true"
