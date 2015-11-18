@@ -21,7 +21,20 @@
     </string>
     <string name="title_activity_resultados_busqueda">Resultados
         Búsqueda</string>
-    <string name="filtros">Filtros</string>
-    <string name="ordenar_por">Ordenar Por</string>
+    <string name="filtros">Filters</string>
+    <string name="ordenar_por">Order By</string>
     <string name="title_activity_base">Base</string>
+
+    <string name="login">Log In</string>
+    <string name="mujeres">Women</string>
+    <string name="hombres">Men</string>
+    <string name="children">Children</string>
+    <string name="sale">Sale</string>
+    <string name="newArr">New Arrivals</string>
+    <string name="user">My User</string>
+    <string name="persInfo">Personal Information</string>
+    <string name="orders">Orders</string>
+    <string name="signout">Sign Out</string>
+
+
 </resources>
