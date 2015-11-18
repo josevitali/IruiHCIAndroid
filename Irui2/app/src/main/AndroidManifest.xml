@@ -31,6 +31,11 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.usuario.irui.MainActivity" />
         </activity>
+        <activity
+            android:name=".ResultadosBusqueda"
+            android:label="@string/title_activity_resultados_busqueda"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
     </application>
 
 </manifest>
