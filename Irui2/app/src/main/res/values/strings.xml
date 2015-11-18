@@ -19,10 +19,9 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
-    <string name="title_activity_resultados_busqueda">Resultados
-        Búsqueda</string>
-    <string name="filtros">Filtros</string>
-    <string name="ordenar_por">Ordenar Por</string>
+    <string name="title_activity_resultados_busqueda">Search Results</string>
+    <string name="filtros">Filters</string>
+    <string name="ordenar_por">Order By</string>
     <string name="title_activity_base">Base</string>
     <string name="title_activity_filtros">Filtros</string>
 
@@ -35,6 +34,7 @@
     <string name="section_format">Hello World from section: %1$d</string>
 
 
+    <!--Toolbar-->
     <string name="login">Log In</string>
     <string name="mujeres">Women</string>
     <string name="hombres">Men</string>
@@ -46,8 +46,15 @@
     <string name="orders">Orders</string>
     <string name="signout">Sign Out</string>
 
+
+    <!--Pag Prod-->
     <string name="availableSizes">Available Sizes:</string>
     <string name="availableColors">Available Colors:</string>
     <string name="price">Price: $</string>
 
+    <!--Ordenar Por-->
+    <string name="ascendingPrice">Ascending Price</string>
+    <string name="descendingPrice">Descending Price</string>
+    <string name="order_name">Name</string>
+    <string name="order_brand">Brand</string>
 </resources>
