@@ -23,4 +23,5 @@
         Búsqueda</string>
     <string name="filtros">Filtros</string>
     <string name="ordenar_por">Ordenar Por</string>
+    <string name="title_activity_base">Base</string>
 </resources>

@@ -37,6 +37,11 @@
             android:label="@string/title_activity_resultados_busqueda"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
+        <activity
+            android:name=".Base"
+            android:label="@string/title_activity_base"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
     </application>
 
 </manifest>
