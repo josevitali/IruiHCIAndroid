@@ -57,8 +57,9 @@
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
         <activity android:name=".Orders" />
-        <activity android:name=".OrdenarPor"/>
+        <activity android:name=".OrdenarPor" />
+        <activity android:name=".PersonalInformation" >
+        </activity>
     </application>
 
 </manifest>
-
