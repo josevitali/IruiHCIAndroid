@@ -56,10 +56,9 @@
             android:label="@string/title_activity_pag_prod"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
-        <activity android:name=".Orders" >
-        <activity android:name=".OrdenarPor" >
-
-        </activity>
+        <activity android:name=".Orders" />
+        <activity android:name=".OrdenarPor"/>
     </application>
 
 </manifest>
+
