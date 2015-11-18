@@ -25,11 +25,25 @@
     <string name="ordenar_por">Ordenar Por</string>
     <string name="title_activity_base">Base</string>
     <string name="title_activity_filtros">Filtros</string>
-    <string name="title_activity_pag_prod">PagProd</string>
-    <string name="section_format">Hello World from section: %1$d</string>
 
     <string name="applyFilters">Apply Filters</string>
     <string name="color">Color</string>
     <string name="brand">Brand</string>
     <string name="ocasion">Occasion</string>
+
+    <string name="title_activity_pag_prod">PagProd</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+
+
+    <string name="login">Log In</string>
+    <string name="mujeres">Women</string>
+    <string name="hombres">Men</string>
+    <string name="children">Children</string>
+    <string name="sale">Sale</string>
+    <string name="newArr">New Arrivals</string>
+    <string name="user">My User</string>
+    <string name="persInfo">Personal Information</string>
+    <string name="orders">Orders</string>
+    <string name="signout">Sign Out</string>
+
 </resources>
