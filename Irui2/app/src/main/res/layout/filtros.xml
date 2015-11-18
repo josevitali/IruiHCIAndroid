@@ -4,9 +4,20 @@
     android:layout_height="match_parent"
     android:weightSum="1">
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="20dp"
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/exit"
+        android:src="@android:drawable/ic_menu_close_clear_cancel"
+        android:layout_gravity="right"
+        android:clickable="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/filtros"
+        android:id="@+id/textView"
         android:layout_gravity="center_horizontal" />
 
     <LinearLayout
@@ -27,13 +38,6 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal" >
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="Filtros"
-                android:id="@+id/textView"
-                android:layout_gravity="center_horizontal" />
         </LinearLayout>
 
         <LinearLayout
@@ -42,13 +46,6 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal" >
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/exit"
-                android:src="@android:drawable/ic_menu_close_clear_cancel"
-                android:layout_gravity="center"
-                android:clickable="true" />
         </LinearLayout>
 
     </LinearLayout>
@@ -58,14 +55,6 @@
         android:layout_height="20dp"
         android:layout_gravity="center_horizontal" />
 
-    <Button
-        android:layout_width="318dp"
-        android:layout_height="wrap_content"
-        android:text="Aplicar filtros"
-        android:id="@+id/aplicarFiltros"
-        android:layout_gravity="center_horizontal"
-        android:background="#75c33a" />
-
     <Space
         android:layout_width="match_parent"
         android:layout_height="20dp"
@@ -73,7 +62,7 @@
 
     <LinearLayout
         android:orientation="horizontal"
-        android:layout_width="match_parent"
+        android:layout_width="405dp"
         android:layout_height="wrap_content">
 
         <LinearLayout
@@ -87,7 +76,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="Color"
+                android:text="@string/color"
                 android:id="@+id/textView2"
                 android:layout_marginLeft="10dp"
                 android:allowUndo="false" />
@@ -125,7 +114,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="Marca"
+                android:text="@string/brand"
                 android:id="@+id/textView3"
                 android:layout_marginLeft="10dp" />
 
@@ -163,7 +152,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="Ocasi[on"
+                android:text="@string/ocasion"
                 android:id="@+id/textView4"
                 android:layout_marginLeft="10dp" />
 
@@ -198,18 +187,29 @@
             <Switch
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Nuevo"
+                android:text="@string/newArr"
                 android:id="@+id/switch1"
                 android:checked="false" />
 
             <Switch
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Ofertas"
+                android:text="@string/sale"
                 android:id="@+id/switch2"
                 android:checked="false" />
         </LinearLayout>
 
     </LinearLayout>
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="25dp" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/applyFilters"
+        android:id="@+id/aplicarFiltros"
+        android:background="#75c33a" />
 
 </LinearLayout>

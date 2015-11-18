@@ -2,11 +2,11 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <group android:checkableBehavior="single">
-        <item android:id="@+id/nav_women" android:icon="@drawable/scifi"
+        <item android:id="@+id/nav_women"
             android:title="@string/mujeres" />
-        <item android:id="@+id/nav_men" android:icon="@drawable/scifi"
+        <item android:id="@+id/nav_men"
             android:title="@string/hombres" />
-        <item android:id="@+id/nav_gallery" android:icon="@drawable/scifi"
+        <item android:id="@+id/nav_gallery"
             android:title="@string/children" />
         <item android:id="@+id/nav_slideshow" android:icon="@drawable/sale"
             android:title="@string/sale" />
