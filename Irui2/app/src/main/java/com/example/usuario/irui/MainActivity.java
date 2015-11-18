@@ -1,5 +1,6 @@
 package com.example.usuario.irui;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -59,6 +60,10 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
+    public void change(){
+        Intent intent = new Intent(this, LoginActivity.class);
+    }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -66,6 +71,9 @@ public class MainActivity extends AppCompatActivity
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
+
+        Intent intent = new Intent(this, LoginActivity.class);
+        this.startActivity(intent);
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
