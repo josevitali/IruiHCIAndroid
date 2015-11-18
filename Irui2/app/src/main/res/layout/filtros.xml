@@ -1,18 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingTop="70dp"
     android:weightSum="1">
 
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/exit"
-        android:src="@android:drawable/ic_menu_close_clear_cancel"
-        android:layout_gravity="right"
-        android:clickable="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -65,7 +60,8 @@
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="405dp"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp">
 
         <LinearLayout
             android:orientation="vertical"
@@ -106,100 +102,7 @@
 
         </LinearLayout>
 
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/marcas">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="@string/brand"
-                android:id="@+id/textView3"
-                android:layout_marginLeft="10dp" />
-
-            <CheckBox
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Wrangler"
-                android:id="@+id/checkBox"
-                android:checked="false" />
-
-            <CheckBox
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Penguin"
-                android:id="@+id/checkBox2"
-                android:checked="false" />
-
-            <CheckBox
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Siamo Fuori"
-                android:id="@+id/checkBox3"
-                android:checked="false" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="96dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:id="@+id/ocasiones">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="@string/ocasion"
-                android:id="@+id/textView4"
-                android:layout_marginLeft="10dp" />
-
-            <CheckBox
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Casual"
-                android:id="@+id/checkBox7"
-                android:checked="false" />
-
-            <CheckBox
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Formal"
-                android:id="@+id/checkBox8"
-                android:checked="false" />
-
-            <CheckBox
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Playa"
-                android:id="@+id/checkBox9"
-                android:checked="false" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="96dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right" >
-
-            <Switch
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/newArr"
-                android:id="@+id/switch1"
-                android:checked="false" />
-
-            <Switch
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/sale"
-                android:id="@+id/switch2"
-                android:checked="false" />
-        </LinearLayout>
 
     </LinearLayout>
 
@@ -207,11 +110,138 @@
         android:layout_width="0dp"
         android:layout_height="25dp" />
 
-    <Button
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/applyFilters"
-        android:id="@+id/aplicarFiltros"
-        android:background="#75c33a" />
+        android:id="@+id/ocasiones"
+        android:layout_marginLeft="15dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="@string/ocasion"
+            android:id="@+id/textView4"
+            android:layout_marginLeft="10dp" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Casual"
+            android:id="@+id/checkBox7"
+            android:checked="false" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Formal"
+            android:id="@+id/checkBox8"
+            android:checked="false" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Playa"
+            android:id="@+id/checkBox9"
+            android:checked="false" />
+    </LinearLayout>
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="25dp" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/marcas"
+        android:layout_marginLeft="15dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="@string/brand"
+            android:id="@+id/textView3"
+            android:layout_marginLeft="10dp" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Wrangler"
+            android:id="@+id/checkBox"
+            android:checked="false" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Penguin"
+            android:id="@+id/checkBox2"
+            android:checked="false" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Siamo Fuori"
+            android:id="@+id/checkBox3"
+            android:checked="false" />
+
+    </LinearLayout>
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="25dp" />
+
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sale"
+        android:id="@+id/switch2"
+        android:checked="false"
+        android:layout_marginLeft="15dp" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="96dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right" >
+
+    </LinearLayout>
+
+
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/newArr"
+        android:id="@+id/switch1"
+        android:checked="false"
+        android:layout_marginLeft="15dp" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ordenar"
+        android:id="@+id/buttonOrdenar"
+        android:layout_below="@+id/radioGroup"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="62dp"
+        android:layout_marginStart="62dp"
+        android:layout_gravity="right" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cancelar"
+        android:id="@+id/buttonCancelar"
+        android:layout_alignTop="@+id/buttonOrdenar"
+        android:layout_toRightOf="@+id/buttonOrdenar"
+        android:layout_toEndOf="@+id/buttonOrdenar"
+        android:layout_marginLeft="55dp"
+        android:layout_marginStart="55dp" />
+
 
 </LinearLayout>
+</ScrollView>
