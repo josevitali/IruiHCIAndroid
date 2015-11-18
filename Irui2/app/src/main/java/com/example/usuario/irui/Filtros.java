@@ -23,7 +23,7 @@ public class Filtros extends Base {
         View contentView = inflater.inflate(R.layout.filtros, null, false);
         drawer.addView(contentView, 0);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
 
