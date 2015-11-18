@@ -46,4 +46,8 @@
     <string name="orders">Orders</string>
     <string name="signout">Sign Out</string>
 
+    <string name="availableSizes">Available Sizes:</string>
+    <string name="availableColors">Available Colors:</string>
+    <string name="price">Price: $</string>
+
 </resources>
