@@ -16,7 +16,8 @@
             android:scaleType="fitXY"
             android:layout_width="400dp"
             android:layout_height="200dp"
-            android:src="@drawable/novedades" />
+            android:src="@drawable/novedades"
+            android:onClick="resultados"/>
 
         <ImageButton android:id="@+id/buttonMujeres"
             android:scaleType="fitXY"
@@ -25,7 +26,8 @@
             android:src="@drawable/image"
             android:layout_below="@+id/buttonHombres"
             android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
+            android:layout_alignParentEnd="true"
+            android:onClick="resultados" />
 
         <ImageButton android:id="@+id/buttonNinos"
             android:scaleType="fitXY"
@@ -34,7 +36,8 @@
             android:src="@drawable/nuevo"
             android:layout_below="@+id/buttonMujeres"
             android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
+            android:layout_alignParentEnd="true"
+            android:onClick="resultados" />
 
 
     </RelativeLayout>

@@ -60,8 +60,10 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
-    public void change(){
-        Intent intent = new Intent(this, LoginActivity.class);
+
+    public void resultados(View view){
+        Intent intent = new Intent(this, ResultadosBusqueda.class);
+        this.startActivity(intent);
     }
 
     @Override
