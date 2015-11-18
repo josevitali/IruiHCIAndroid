@@ -42,6 +42,20 @@
             android:label="@string/title_activity_base"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
+        <activity
+            android:name=".Filtros"
+            android:label="@string/title_activity_filtros"
+            android:parentActivityName=".ResultadosBusqueda"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.usuario.irui.ResultadosBusqueda" />
+        </activity>
+        <activity
+            android:name=".PagProd"
+            android:label="@string/title_activity_pag_prod"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
     </application>
 
 </manifest>

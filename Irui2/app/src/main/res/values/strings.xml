@@ -24,4 +24,12 @@
     <string name="filtros">Filtros</string>
     <string name="ordenar_por">Ordenar Por</string>
     <string name="title_activity_base">Base</string>
+    <string name="title_activity_filtros">Filtros</string>
+    <string name="title_activity_pag_prod">PagProd</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+
+    <string name="applyFilters">Apply Filters</string>
+    <string name="color">Color</string>
+    <string name="brand">Brand</string>
+    <string name="ocasion">Occasion</string>
 </resources>
