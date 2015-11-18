@@ -57,4 +57,7 @@
     <string name="descendingPrice">Descending Price</string>
     <string name="order_name">Name</string>
     <string name="order_brand">Brand</string>
+    <string name="title_activity_ordenar_por">OrdenarPor</string>
+    <string name="title_activity_orders">Orders</string>
+    <string name="title_activity_personal_information">PersonalInformation</string>
 </resources>

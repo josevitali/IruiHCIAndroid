@@ -80,6 +80,10 @@ public class Base extends AppCompatActivity
             Intent intent = new Intent(this, LoginActivity.class);
             this.startActivity(intent);
         }
+        else if(id == R.id.nav_send){
+            Intent intent = new Intent(this, Orders.class);
+            this.startActivity(intent);
+        }
 
         if (id == R.id.nav_camara) {
             // Handle the camera action
@@ -90,9 +94,8 @@ public class Base extends AppCompatActivity
         } else if (id == R.id.nav_manage) {
 
         } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
+            Intent intent = new Intent(this, PersonalInformation.class);
+            this.startActivity(intent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

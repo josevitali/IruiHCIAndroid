@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="90dp"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.example.usuario.irui.OrdenarPor">
+    <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/radioGroup">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/descendingPrice"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:id="@+id/ascending_price"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:checked="false" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ascendingPrice"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:id="@+id/descending_price"
+            android:layout_below="@+id/ascending_price"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="34dp"
+            android:checked="false" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/order_brand"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:id="@+id/radioButton3"
+            android:layout_marginTop="36dp"
+            android:layout_below="@+id/descending_price"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:checked="false" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/order_name"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:id="@+id/radioButton4"
+            android:layout_below="@+id/radioButton3"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="34dp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="25dp" />
+    </RadioGroup>
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ordenar"
+        android:id="@+id/buttonOrdenar"
+        android:layout_below="@+id/radioGroup"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="62dp"
+        android:layout_marginStart="62dp" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cancelar"
+        android:id="@+id/buttonCancelar"
+        android:layout_alignTop="@+id/buttonOrdenar"
+        android:layout_toRightOf="@+id/buttonOrdenar"
+        android:layout_toEndOf="@+id/buttonOrdenar"
+        android:layout_marginLeft="55dp"
+        android:layout_marginStart="55dp" />
+
+
+</RelativeLayout>
+    </ScrollView>

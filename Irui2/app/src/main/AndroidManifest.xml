@@ -56,9 +56,23 @@
             android:label="@string/title_activity_pag_prod"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
-        <activity android:name=".Orders" />
-        <activity android:name=".OrdenarPor" />
-        <activity android:name=".PersonalInformation" >
+        <activity
+            android:name=".Orders"
+            android:label="@string/title_activity_orders"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".OrdenarPor"
+            android:label="@string/title_activity_ordenar_por"
+            android:parentActivityName=".ResultadosBusqueda"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.usuario.irui.ResultadosBusqueda" />
+        </activity>
+        <activity
+            android:name=".PersonalInformation"
+            android:label="@string/title_activity_personal_information"
+            android:theme="@style/AppTheme.NoActionBar" >
         </activity>
     </application>
 
