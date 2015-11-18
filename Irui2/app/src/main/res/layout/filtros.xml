@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_gravity="center_horizontal" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="128dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"></LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="128dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Filtros"
+                android:id="@+id/textView"
+                android:layout_gravity="center_horizontal" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="128dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/exit"
+                android:src="@android:drawable/ic_menu_close_clear_cancel"
+                android:layout_gravity="center"
+                android:clickable="true" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_gravity="center_horizontal" />
+
+    <Button
+        android:layout_width="318dp"
+        android:layout_height="wrap_content"
+        android:text="Aplicar filtros"
+        android:id="@+id/aplicarFiltros"
+        android:layout_gravity="center_horizontal"
+        android:background="#75c33a" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_gravity="center_horizontal" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="96dp"
+            android:layout_height="wrap_content"
+            android:measureWithLargestChild="false"
+            android:id="@+id/colores">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Color"
+                android:id="@+id/textView2"
+                android:layout_marginLeft="10dp"
+                android:allowUndo="false" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Azul"
+                android:id="@+id/checkBox4"
+                android:checked="false" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rojo"
+                android:id="@+id/checkBox5"
+                android:checked="false" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Negro"
+                android:id="@+id/checkBox6"
+                android:checked="false" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/marcas">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Marca"
+                android:id="@+id/textView3"
+                android:layout_marginLeft="10dp" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Wrangler"
+                android:id="@+id/checkBox"
+                android:checked="false" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Penguin"
+                android:id="@+id/checkBox2"
+                android:checked="false" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Siamo Fuori"
+                android:id="@+id/checkBox3"
+                android:checked="false" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="96dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:id="@+id/ocasiones">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Ocasi[on"
+                android:id="@+id/textView4"
+                android:layout_marginLeft="10dp" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Casual"
+                android:id="@+id/checkBox7"
+                android:checked="false" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Formal"
+                android:id="@+id/checkBox8"
+                android:checked="false" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Playa"
+                android:id="@+id/checkBox9"
+                android:checked="false" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="96dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right" >
+
+            <Switch
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nuevo"
+                android:id="@+id/switch1"
+                android:checked="false" />
+
+            <Switch
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ofertas"
+                android:id="@+id/switch2"
+                android:checked="false" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
