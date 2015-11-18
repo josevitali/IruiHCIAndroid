@@ -32,4 +32,10 @@ public class ResultadosBusqueda extends Base {
         Intent intent = new Intent(this, Filtros.class);
         this.startActivity(intent);
     }
+
+    public void ordenarPor(View view){
+        Intent intent = new Intent(this, OrdenarPor.class);
+        this.startActivity(intent);
+    }
+
 }
