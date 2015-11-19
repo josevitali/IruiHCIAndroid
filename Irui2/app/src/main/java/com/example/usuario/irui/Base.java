@@ -80,7 +80,7 @@ public abstract class Base extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_login){
-            Intent intent = new Intent(this, LoginActivity.class);
+            Intent intent = new Intent(this, Login.class);
             this.startActivity(intent);
         }
         else if(id == R.id.nav_send){
