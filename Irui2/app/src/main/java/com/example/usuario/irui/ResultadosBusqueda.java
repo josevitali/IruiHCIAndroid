@@ -20,7 +20,7 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class ResultadosBusqueda extends Base {
+public class ResultadosBusqueda extends Base{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,13 +38,10 @@ public class ResultadosBusqueda extends Base {
 
         String s = "http://eiffel.itba.edu.ar/hci/service3/Common.groovy?method=GetAllStates";
 
+        new Connection(this).execute();
 
+    }
 
-
-        String r = "";
-
-        Connection connection = Connection.getInstance();
-        JSONObject resp;
         //resp = connection.connect(s);
 /*
         try {
@@ -52,11 +49,19 @@ public class ResultadosBusqueda extends Base {
         } catch (JSONException e) {
             e.printStackTrace();
         }
+
+
 */
-        Toast.makeText(getApplicationContext(), "",
+
+        public void afterRequest(String s){
+
+        Toast.makeText(getApplicationContext(), s,
                 Toast.LENGTH_SHORT).show();
 
     }
+
+
+
 
     public void filtros(View view){
 
