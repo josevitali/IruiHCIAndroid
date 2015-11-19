@@ -87,6 +87,13 @@ public abstract class Base extends AppCompatActivity
             Intent intent = new Intent(this, Orders.class);
             this.startActivity(intent);
 
+
+
+        } else if(id == R.id.nav_share){
+            Intent intent = new Intent(this, PersonalInformation.class);
+            this.startActivity(intent);
+
+
         } else if (id == R.id.nav_women) {
             Intent intent = new Intent(this, ResultadosBusqueda.class);
             intent.putExtra("women", true);
