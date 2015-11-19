@@ -74,6 +74,11 @@
             android:label="@string/title_activity_personal_information"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
+        <activity
+            android:name=".Busqueda"
+            android:label="@string/title_activity_busqueda"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
     </application>
 
 </manifest>

@@ -66,6 +66,10 @@ public class Base extends AppCompatActivity
         if (id == R.id.action_settings) {
             return true;
         }
+        else if(id == R.id.buscar_item){
+            Intent intent = new Intent(this, Busqueda.class);
+            this.startActivity(intent);
+        }
 
         return super.onOptionsItemSelected(item);
     }

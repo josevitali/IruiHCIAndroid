@@ -48,6 +48,7 @@
     <string name="persInfo">Personal Information</string>
     <string name="orders">Orders</string>
     <string name="signout">Sign Out</string>
+    <string name="search">Search</string>
 
 
     <!--Pag Prod-->
@@ -66,5 +67,6 @@
     <string name="color">Color</string>
     <string name="brand">Brand</string>
     <string name="ocasion">Occasion</string>
+    <string name="title_activity_busqueda">Busqueda</string>
 
 </resources>
