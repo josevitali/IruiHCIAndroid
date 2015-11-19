@@ -89,8 +89,11 @@ public class Base extends AppCompatActivity
             this.startActivity(intent);
         }
 
-        if (id == R.id.nav_camara) {
-            // Handle the camera action
+        if (id == R.id.homepage) {
+
+            Intent intent = new Intent(this, PersonalInformation.class);
+            this.startActivity(intent);
+
         } else if (id == R.id.nav_gallery) {
 
         } else if (id == R.id.nav_slideshow) {
