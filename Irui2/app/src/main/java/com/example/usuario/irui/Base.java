@@ -27,7 +27,6 @@ public abstract class Base extends AppCompatActivity
         setSupportActionBar(toolbar);
 
 
-
         drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -89,11 +88,9 @@ public abstract class Base extends AppCompatActivity
             this.startActivity(intent);
 
         } else if (id == R.id.nav_women) {
-
             Intent intent = new Intent(this, ResultadosBusqueda.class);
             intent.putExtra("women", true);
             this.startActivity(intent);
-
 
         } else if (id == R.id.nav_men) {
             Intent intent = new Intent(this, ResultadosBusqueda.class);
@@ -105,8 +102,14 @@ public abstract class Base extends AppCompatActivity
             intent.putExtra("children", true);
             this.startActivity(intent);
 
-        } else if (id == R.id.nav_share) {
-            Intent intent = new Intent(this, PersonalInformation.class);
+        } else if (id == R.id.nav_sale) {
+            Intent intent = new Intent(this, ResultadosBusqueda.class);
+            intent.putExtra("sale", true);
+            this.startActivity(intent);
+
+        }else if (id == R.id.nav_new) {
+            Intent intent = new Intent(this, ResultadosBusqueda.class);
+            intent.putExtra("new", true);
             this.startActivity(intent);
         }
 

@@ -46,11 +46,21 @@ public class ResultadosBusqueda extends Base{
         }else if(myIntent.hasExtra("women")){
             Toast.makeText(getApplicationContext(), "muestro ropa de mujeres",
                     Toast.LENGTH_SHORT).show();
+
         }else if(myIntent.hasExtra("men")){
             Toast.makeText(getApplicationContext(), "muestro ropa de hombres",
                     Toast.LENGTH_SHORT).show();
+
         }else if(myIntent.hasExtra("children")){
             Toast.makeText(getApplicationContext(), "muestro ropa de ni;os",
+                    Toast.LENGTH_SHORT).show();
+
+        }else if(myIntent.hasExtra("new")){
+            Toast.makeText(getApplicationContext(), "muestro ropa nueva",
+                    Toast.LENGTH_SHORT).show();
+
+        }else if(myIntent.hasExtra("sale")){
+            Toast.makeText(getApplicationContext(), "muestro ropa en descuento",
                     Toast.LENGTH_SHORT).show();
         }
 
