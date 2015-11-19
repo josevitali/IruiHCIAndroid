@@ -51,11 +51,13 @@ public class ResultadosBusqueda extends Base{
 
         Intent myIntent = getIntent(); // gets the previously created intent
 
-        //se realizo la busqueda por palabra desde la barra de navegacion
+        //dependiendo desde donde se llama la pagina de resultados busqueda son los productos
+        //que se muestran
         if(myIntent.hasExtra("searchText")){
             String s = myIntent.getStringExtra("searchText");
-            Toast.makeText(getApplicationContext(), s,
-                    Toast.LENGTH_SHORT).show();
+            String request = "http://eiffel.itba.edu.ar/hci/service3/Catalog.groovy?method=GetProductsByName&name="+ s;
+            new Connection(this, request).execute();
+
         }else if(myIntent.hasExtra("women")){
             Toast.makeText(getApplicationContext(), "muestro ropa de mujeres",
                     Toast.LENGTH_SHORT).show();
