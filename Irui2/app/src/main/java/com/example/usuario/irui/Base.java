@@ -87,13 +87,6 @@ public class Base extends AppCompatActivity
         else if(id == R.id.nav_send){
             Intent intent = new Intent(this, Orders.class);
             this.startActivity(intent);
-        }
-
-        if (id == R.id.homepage) {
-
-            Intent intent = new Intent(this, PersonalInformation.class);
-            this.startActivity(intent);
-
         } else if (id == R.id.nav_gallery) {
 
         } else if (id == R.id.nav_slideshow) {
