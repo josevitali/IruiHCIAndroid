@@ -71,5 +71,7 @@
     <string name="brand">Brand</string>
     <string name="ocasion">Occasion</string>
     <string name="title_activity_busqueda">Busqueda</string>
+    <string name="cancelOP">Cancel</string>
+    <string name="orderOP">Order</string>
 
 </resources>
