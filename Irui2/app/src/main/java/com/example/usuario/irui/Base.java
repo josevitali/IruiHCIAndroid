@@ -105,7 +105,9 @@ public class Base extends AppCompatActivity
 
 
     public void backToHome(View view){
-        Intent intent = new Intent(this, MainActivity.class);
-        this.startActivity(intent);
+        Intent a = new Intent(this,MainActivity.class);
+        a.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(a);
+        return;
     }
 }
