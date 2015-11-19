@@ -9,7 +9,19 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.Toast;
+
+
+import android.widget.ListView;
+
+
+import com.google.gson.Gson;
+
+
+import java.lang.reflect.Type;
+import com.google.gson.reflect.TypeToken;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -19,6 +31,8 @@ import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ResultadosBusqueda extends Base{
 
@@ -36,7 +50,6 @@ public class ResultadosBusqueda extends Base{
         drawer.addView(contentView, 0);
 
         Intent myIntent = getIntent(); // gets the previously created intent
-
 
         //se realizo la busqueda por palabra desde la barra de navegacion
         if(myIntent.hasExtra("searchText")){
@@ -74,6 +87,11 @@ public class ResultadosBusqueda extends Base{
 //
 //        new Connection(this).execute();
 
+        String s = "http://eiffel.itba.edu.ar/hci/service3/Catalog.groovy?method=GetAllProducts";
+
+        new Connection(this, s).execute();
+
+
     }
 
         //resp = connection.connect(s);
@@ -87,14 +105,35 @@ public class ResultadosBusqueda extends Base{
 
 */
 
-        public void afterRequest(String s){
 
-        Toast.makeText(getApplicationContext(), s,
+        public void afterRequest(String resp){
+
+        Toast.makeText(getApplicationContext(), resp,
                 Toast.LENGTH_SHORT).show();
 
+            Gson gson = new Gson();
+
+
+           // Type type = new TypeToken<Respuesta>() {}.getType();
+
+            //gson.fromJson(resp, type);
     }
 
+/*
+    public class Meta{
+        String uuid;
+        String time;
+    }
 
+    public class ProductList{
+        Meta meta;
+        int page;
+        pageSize;
+        total;
+        List<Product> products;
+    }
+
+*/
 
 
     public void filtros(View view){

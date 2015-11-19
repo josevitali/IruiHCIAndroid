@@ -20,7 +20,7 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/filtros"
+            android:text="@string/filtrosRB"
             android:id="@+id/buttonFiltros"
             android:onClick="filtros"
             android:layout_alignTop="@+id/buttonOrdenarPor"
@@ -31,7 +31,7 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/title_activity_ordenar_por"
+            android:text="@string/ordenarporRB"
             android:id="@+id/buttonOrdenarPor"
             android:onClick="ordenarPor"
             android:layout_alignParentTop="true"

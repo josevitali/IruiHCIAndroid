@@ -50,6 +50,9 @@
     <string name="signout">Sign Out</string>
     <string name="search">Search</string>
 
+    <!--Resultados Busqueda-->
+    <string name="filtrosRB">Filters</string>
+    <string name="ordenarporRB">Order By</string>
 
     <!--Pag Prod-->
     <string name="availableSizes">Available Sizes:</string>
@@ -68,5 +71,7 @@
     <string name="brand">Brand</string>
     <string name="ocasion">Occasion</string>
     <string name="title_activity_busqueda">Busqueda</string>
+    <string name="cancelOP">Cancel</string>
+    <string name="orderOP">Order</string>
 
 </resources>

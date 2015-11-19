@@ -22,10 +22,12 @@ public class Connection extends AsyncTask<Void, Void, String> {
         void processFinish(String output);
     }
 
-    public Base activity = null;
+    private String myUrl = "";
+    private Base activity = null;
 
-    public Connection(Base  activity) {
+    public Connection(Base  activity, String url) {
         this.activity = activity;
+        this.myUrl = url;
     }
 
 
@@ -39,7 +41,7 @@ public class Connection extends AsyncTask<Void, Void, String> {
         HttpURLConnection urlConnection = null;
 
         try {
-            URL url = new URL("http://eiffel.itba.edu.ar/hci/service3/Catalog.groovy?method=GetSubcategoryById&id=4");
+            URL url = new URL(myUrl);
             urlConnection = (HttpURLConnection) url.openConnection();
             InputStream in = new BufferedInputStream(urlConnection.getInputStream());
             return readStream(in);
