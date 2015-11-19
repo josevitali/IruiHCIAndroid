@@ -109,4 +109,10 @@ public class Base extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+
+    public void backToHome(View view){
+        Intent intent = new Intent(this, MainActivity.class);
+        this.startActivity(intent);
+    }
 }
