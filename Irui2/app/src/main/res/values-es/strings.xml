@@ -50,6 +50,9 @@
     <string name="signout">Cerrar Sesión</string>
     <string name="search">Buscar</string>
 
+    <!--Resultados Busqueda-->
+    <string name="filtrosRB">Filtros</string>
+    <string name="ordenarporRB">Ordenar Por</string>
 
     <!--Pag Prod-->
     <string name="availableSizes">Talles disponibles:</string>
