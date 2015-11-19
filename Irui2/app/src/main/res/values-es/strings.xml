@@ -71,5 +71,7 @@
     <string name="brand">Marca</string>
     <string name="ocasion">Ocasión</string>
     <string name="title_activity_busqueda">Busqueda</string>
+    <string name="cancelOP">Cancelar</string>
+    <string name="orderOP">Ordenar</string>
 
 </resources>
