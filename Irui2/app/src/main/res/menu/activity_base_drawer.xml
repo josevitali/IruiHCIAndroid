@@ -6,11 +6,11 @@
             android:title="@string/mujeres" />
         <item android:id="@+id/nav_men"
             android:title="@string/hombres" />
-        <item android:id="@+id/nav_gallery"
+        <item android:id="@+id/nav_children"
             android:title="@string/children" />
-        <item android:id="@+id/nav_slideshow" android:icon="@drawable/sale"
+        <item android:id="@+id/nav_sale" android:icon="@drawable/sale"
             android:title="@string/sale" />
-        <item android:id="@+id/nav_manage" android:icon="@drawable/newicon"
+        <item android:id="@+id/nav_new" android:icon="@drawable/newicon"
             android:title="@string/newArr" />
     </group>
 

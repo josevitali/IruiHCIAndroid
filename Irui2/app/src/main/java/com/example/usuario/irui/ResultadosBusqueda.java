@@ -35,10 +35,34 @@ public class ResultadosBusqueda extends Base{
         View contentView = inflater.inflate(R.layout.resultados_busqueda, null, false);
         drawer.addView(contentView, 0);
 
+        Intent myIntent = getIntent(); // gets the previously created intent
 
-        String s = "http://eiffel.itba.edu.ar/hci/service3/Common.groovy?method=GetAllStates";
 
-        new Connection(this).execute();
+        //se realizo la busqueda por palabra desde la barra de navegacion
+        if(myIntent.hasExtra("searchText")){
+            String s = myIntent.getStringExtra("searchText");
+            Toast.makeText(getApplicationContext(), s,
+                    Toast.LENGTH_SHORT).show();
+        }else if(myIntent.hasExtra("women")){
+            Toast.makeText(getApplicationContext(), "muestro ropa de mujeres",
+                    Toast.LENGTH_SHORT).show();
+        }else if(myIntent.hasExtra("men")){
+            Toast.makeText(getApplicationContext(), "muestro ropa de hombres",
+                    Toast.LENGTH_SHORT).show();
+        }else if(myIntent.hasExtra("children")){
+            Toast.makeText(getApplicationContext(), "muestro ropa de ni;os",
+                    Toast.LENGTH_SHORT).show();
+        }
+
+
+
+
+
+
+
+//        String s = "http://eiffel.itba.edu.ar/hci/service3/Common.groovy?method=GetAllStates";
+//
+//        new Connection(this).execute();
 
     }
 

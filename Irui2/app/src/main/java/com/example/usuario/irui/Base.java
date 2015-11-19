@@ -87,11 +87,23 @@ public abstract class Base extends AppCompatActivity
         else if(id == R.id.nav_send){
             Intent intent = new Intent(this, Orders.class);
             this.startActivity(intent);
-        } else if (id == R.id.nav_gallery) {
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.nav_women) {
 
-        } else if (id == R.id.nav_manage) {
+            Intent intent = new Intent(this, ResultadosBusqueda.class);
+            intent.putExtra("women", true);
+            this.startActivity(intent);
+
+
+        } else if (id == R.id.nav_men) {
+            Intent intent = new Intent(this, ResultadosBusqueda.class);
+            intent.putExtra("men", true);
+            this.startActivity(intent);
+
+        } else if (id == R.id.nav_children) {
+            Intent intent = new Intent(this, ResultadosBusqueda.class);
+            intent.putExtra("children", true);
+            this.startActivity(intent);
 
         } else if (id == R.id.nav_share) {
             Intent intent = new Intent(this, PersonalInformation.class);
