@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Irui</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">SettingsHOLAAA</string>
+    <string name="title_activity_login">Sign in</string>
+
+    <!--General Strings-->
+    <string name="cancel">Cancelar</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (opcional)</string>
+    <string name="action_sign_in">Registrarse o iniciar sesión</string>
+    <string name="action_sign_in_short">Iniciar Sesión</string>
+    <string name="error_invalid_email">La dirección de correo es invalida</string>
+    <string name="error_invalid_password">La contraseña es demasiado corta</string>
+    <string name="error_incorrect_password">La contraseña es incorrecta</string>
+    <string name="error_field_required">Este campo es obligatorio</string>
+    <string name="permission_rationale">"Se necesitan permisos de contactos para proveer el email."
+    </string>
+    <string name="title_activity_resultados_busqueda">Search Results</string>
+    <string name="filtros">Filtros</string>
+    <string name="ordenar_por">Ordenar por</string>
+    <string name="title_activity_base">Base</string>
+    <string name="title_activity_filtros">Filtros</string>
+
+
+    <!--Personal Information-->
+    <string name="title_activity_personal_information">Personal Information</string>
+
+
+    <string name="title_activity_pag_prod">PagProd</string>
+    <string name="section_format">Hola mundo de sección: %1$d</string>
+
+
+    <!--Toolbar-->
+    <string name="login">Iniciar Sesión</string>
+    <string name="mujeres">Mujeres</string>
+    <string name="hombres">Hombres</string>
+    <string name="children">Infantiles</string>
+    <string name="sale">Ofertas</string>
+    <string name="newArr">Nuevos</string>
+    <string name="user">Mi Usuario</string>
+    <string name="persInfo">Información Personal</string>
+    <string name="orders">Ordenes</string>
+    <string name="signout">Cerrar Sesión</string>
+    <string name="search">Buscar</string>
+
+
+    <!--Pag Prod-->
+    <string name="availableSizes">Talles disponibles:</string>
+    <string name="availableColors">Colores disponibles:</string>
+    <string name="price">Price: $</string>
+
+    <!--Ordenar Por-->
+    <string name="ascendingPrice">Precio Ascendente</string>
+    <string name="descendingPrice">Precio Descendente</string>
+    <string name="order_name">Nombre</string>
+    <string name="order_brand">Marca</string>
+    <string name="title_activity_ordenar_por">Order By</string>
+    <string name="title_activity_orders">Orders</string>
+    <string name="applyFilters">Aplicar Filtros</string>
+    <string name="color">Color</string>
+    <string name="brand">Marca</string>
+    <string name="ocasion">Ocasión</string>
+    <string name="title_activity_busqueda">Busqueda</string>
+
+</resources>
