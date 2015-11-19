@@ -1,108 +1,83 @@
 package com.example.usuario.irui;
 
-import org.json.JSONException;
+import android.app.Activity;
+import android.os.AsyncTask;
+
 import org.json.JSONObject;
 
 import java.io.BufferedInputStream;
-import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
 
 /**
- * Created by Usuario on 18/11/2015.
+ * Created by Usuario on 19/11/2015.
  */
-public class Connection {
-    private static Connection ourInstance = new Connection();
+public class Connection extends AsyncTask<Void, Void, String> {
 
-    public static Connection getInstance() {
-        return ourInstance;
+
+    public interface AsyncResponse {
+        void processFinish(String output);
     }
 
-    private Connection() {
+    public Base activity = null;
+
+    public Connection(Base  activity) {
+        this.activity = activity;
     }
 
 
-    public JSONObject connect(String urlString){
+
+    private static final String TAG = "HttpGetTask";
 
 
-        JSONObject requestResult;
+    @Override
+    protected String doInBackground(Void... params) {
 
-        URL url;
+        HttpURLConnection urlConnection = null;
+
         try {
-            url = new URL(urlString);
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-            return null;
-        }
-        HttpURLConnection urlConnection;
-        try {
+            URL url = new URL("http://eiffel.itba.edu.ar/hci/service3/Catalog.groovy?method=GetSubcategoryById&id=4");
             urlConnection = (HttpURLConnection) url.openConnection();
-
-
-            if(urlString.equals("http://eiffel.itba.edu.ar/hci/service3/Common.groovy?method=GetAllStates"))
-                return null;
-
-        } catch (IOException e) {
-            e.printStackTrace();
-            return null;
-        }
-        try {
             InputStream in = new BufferedInputStream(urlConnection.getInputStream());
-            requestResult = new JSONObject(readStream(in));
-
-
-
-            urlConnection.disconnect();
-            return requestResult;
-        } catch (IOException | JSONException e) {
-            e.printStackTrace();
-            return null;
+            return readStream(in);
+        } catch (Exception exception) {
+            exception.printStackTrace();
+            return "error";
+        }
+        finally {
+            if (urlConnection != null)
+                urlConnection.disconnect();
         }
     }
 
-    private String readStream(InputStream is) {
+
+    @Override
+    protected void onPostExecute(String result) {
+        activity.afterRequest(result);
+    }
+
+
+    private String readStream(InputStream inputStream) {
         try {
-            ByteArrayOutputStream bo = new ByteArrayOutputStream();
-            int i = is.read();
+            ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+            int i = inputStream.read();
             while(i != -1) {
-                bo.write(i);
-                i = is.read();
+                outputStream.write(i);
+                i = inputStream.read();
             }
-            return bo.toString();
+            return outputStream.toString();
         } catch (IOException e) {
             return "";
         }
     }
 
 
-    public static String streamToString(InputStream is) {
 
-        BufferedReader reader = new BufferedReader(new InputStreamReader(is));
-        StringBuilder sb = new StringBuilder();
 
-        String line;
-        try {
-            while ((line = reader.readLine()) != null) {
-                sb.append(line).append("\n");
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                is.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-        return sb.toString();
-    }
 
 
 
 }
-

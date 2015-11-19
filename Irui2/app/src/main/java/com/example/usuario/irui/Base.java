@@ -14,7 +14,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class Base extends AppCompatActivity
+public abstract class Base extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     protected DrawerLayout drawer;
@@ -109,5 +109,10 @@ public class Base extends AppCompatActivity
         a.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(a);
         return;
+    }
+
+
+    public void afterRequest(String s){
+
     }
 }
