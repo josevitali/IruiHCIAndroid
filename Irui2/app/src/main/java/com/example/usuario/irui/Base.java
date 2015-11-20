@@ -146,7 +146,7 @@ public abstract class Base extends AppCompatActivity
             this.startActivity(intent);
 
         } else if (id == R.id.nav_children) {
-            Intent intent = new Intent(this, ResultadosBusqueda.class);
+            Intent intent = new Intent(this, Ninos.class);
             intent.putExtra("children", true);
             this.startActivity(intent);
 

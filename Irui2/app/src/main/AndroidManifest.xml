@@ -103,6 +103,11 @@
             android:label="@string/title_activity_hombres"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
+        <activity
+            android:name=".Ninos"
+            android:label="@string/title_activity_ninos"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
     </application>
 
 </manifest>

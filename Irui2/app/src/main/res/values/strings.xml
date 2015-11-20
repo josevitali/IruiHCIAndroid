@@ -100,5 +100,6 @@
     <string name="accesories">Accesories</string>
     <string name="seeAll">See All</string>
     <string name="title_activity_hombres">Hombres</string>
+    <string name="title_activity_ninos">Ninos</string>
 
 </resources>
