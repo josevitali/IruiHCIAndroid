@@ -92,6 +92,12 @@
             android:enabled="true"
             android:exported="true" >
         </receiver>
+
+        <activity
+            android:name=".Mujeres"
+            android:label="@string/title_activity_mujeres"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
     </application>
 
 </manifest>
