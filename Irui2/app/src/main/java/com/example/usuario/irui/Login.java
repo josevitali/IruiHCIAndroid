@@ -14,6 +14,10 @@ import android.widget.Toast;
 import com.example.usuario.irui.requestModels.User;
 import com.google.gson.Gson;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 public class Login extends Base {
 
     private EditText mPasswordView;
@@ -52,14 +56,39 @@ public class Login extends Base {
                 Toast.LENGTH_SHORT).show();
 
 
+        JSONObject  jsonRootObject = null;
+        try {
+            jsonRootObject = new JSONObject(resp);
 
+            String token = jsonRootObject.getString("authenticationToken");
+
+            String account = jsonRootObject.getString("account");
+
+
+            Gson gson = new Gson();
+            User user = gson.fromJson(account, User.class);
+
+
+            Toast.makeText(getApplicationContext(), user.toString(),
+                    Toast.LENGTH_SHORT).show();
+
+
+            Toast.makeText(getApplicationContext(), "token : " + token,
+                    Toast.LENGTH_SHORT).show();
+
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+/*
 
         Gson gson = new Gson();
         User user = gson.fromJson(resp, User.class);
 
         Toast.makeText(getApplicationContext(), user.toString(),
                 Toast.LENGTH_SHORT).show();
-
+*/
 
     }
 

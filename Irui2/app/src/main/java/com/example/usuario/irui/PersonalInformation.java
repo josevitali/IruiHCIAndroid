@@ -34,8 +34,9 @@ public class PersonalInformation extends Base {
         drawer.addView(contentView, 0);
 
 
-        String s = "http://eiffel.itba.edu.ar/hci/service3/Catalog.groovy?method=GetAllProducts";
+        String s = "http://eiffel.itba.edu.ar/hci/service3/Catalog.groovy?method=GetProductById&id=1";
         new Connection(this, s).execute();
+
 
 
 
@@ -46,17 +47,17 @@ public class PersonalInformation extends Base {
 
 
 
-        Type type = new TypeToken<Products>(){}.getType();
+        Type type = new TypeToken<Respuesta>(){}.getType();
         Gson gson = new Gson();
 
 
 
-        Products prod = gson.fromJson(resp, type);
+        Respuesta prod = gson.fromJson(resp, type);
+
+        String r = prod.products[0].name;
 
 
-
-
-        Toast.makeText(getApplicationContext(), prod.products[0].name,
+        Toast.makeText(getApplicationContext(), r,
                 Toast.LENGTH_SHORT).show();
 
 
@@ -95,16 +96,16 @@ public class PersonalInformation extends Base {
         private String[] imageUrl;
         private Category category;
         private SubCategory subcategory;
-        private Attribute[] attributes;
+        //private Attribute[] attributes;
 
-        public Product(int id, String name, int price, String[] imageUrl, Category category, SubCategory subcategory, Attribute[] attributes) {
+        public Product(int id, String name, int price, String[] imageUrl, Category category, SubCategory subcategory) {
             this.id = id;
             this.name = name;
             this.price = price;
             this.imageUrl = imageUrl;
             this.category = category;
             this.subcategory = subcategory;
-            this.attributes = attributes;
+            //this.attributes = attributes;
         }
 
 
@@ -177,6 +178,17 @@ public class PersonalInformation extends Base {
             this.total = total;
             this.products = products;
             this.price = price;
+        }
+    }
+
+
+    public class Respuesta{
+        Meta meta;
+        Product[] products;
+
+        public Respuesta(Meta meta, Product[] products){
+            this.meta = meta;
+            this.products = products;
         }
     }
 
