@@ -9,14 +9,14 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 
-public class Mujeres extends Base {
+public class Hombres extends Base {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         LayoutInflater inflater = (LayoutInflater) this
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View contentView = inflater.inflate(R.layout.activity_mujeres, null, false);
+        View contentView = inflater.inflate(R.layout.activity_hombres, null, false);
         drawer.addView(contentView, 0);
 
     }

@@ -98,6 +98,11 @@
             android:label="@string/title_activity_mujeres"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
+        <activity
+            android:name=".Hombres"
+            android:label="@string/title_activity_hombres"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
     </application>
 
 </manifest>

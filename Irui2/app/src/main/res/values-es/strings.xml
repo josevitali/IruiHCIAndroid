@@ -74,4 +74,11 @@
     <string name="cancelOP">Cancelar</string>
     <string name="orderOP">Ordenar</string>
 
+    <!--Mujeres hombres ni;os-->
+    <string name="clothes">Indumentaria</string>
+    <string name="shoes">Calzado</string>
+    <string name="accesories">Accesorios</string>
+    <string name="seeAll">Ver Todo</string>
+
+
 </resources>

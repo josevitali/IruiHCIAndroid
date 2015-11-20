@@ -141,7 +141,7 @@ public abstract class Base extends AppCompatActivity
             this.startActivity(intent);
 
         } else if (id == R.id.nav_men) {
-            Intent intent = new Intent(this, ResultadosBusqueda.class);
+            Intent intent = new Intent(this, Hombres.class);
             intent.putExtra("men", true);
             this.startActivity(intent);
 
