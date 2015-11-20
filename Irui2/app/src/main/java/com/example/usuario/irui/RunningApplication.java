@@ -31,4 +31,8 @@ public class RunningApplication extends Application {
     public String getAuthenticationToken(){
         return authenticationToken;
     }
+
+    public String getUser(){
+        return user.getUsername();
+    }
 }

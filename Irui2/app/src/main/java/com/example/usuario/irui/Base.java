@@ -191,6 +191,24 @@ public abstract class Base extends AppCompatActivity
         }else if(id == R.id.cerrar_sesion){
             Toast.makeText(getApplicationContext(), "quiero cerrar sesion",
                     Toast.LENGTH_SHORT).show();
+//
+//
+//            RunningApplication app = (RunningApplication)this.getApplication();
+//            String user = app.getUser();
+//            String token = app.getAuthenticationToken();
+//
+//            Toast.makeText(getApplicationContext(), "user " + user,
+//                    Toast.LENGTH_LONG).show();
+//
+//            Toast.makeText(getApplicationContext(), "token " + token,
+//                    Toast.LENGTH_LONG).show();
+
+//            String request = "http://eiffel.itba.edu.ar/hci/service3/Account.groovy?method=SignOut&username=" + user +
+//                    "&authentication_token=" + token;
+
+           // new Connection(this, request).execute();
+
+
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -208,6 +226,7 @@ public abstract class Base extends AppCompatActivity
 
 
     public void afterRequest(String s){
-
+        Toast.makeText(getApplicationContext(), s,
+                Toast.LENGTH_SHORT).show();
     }
 }
