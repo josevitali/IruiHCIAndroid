@@ -2,6 +2,7 @@ package com.example.usuario.irui;
 
 import android.app.Fragment;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -18,11 +19,15 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.example.usuario.irui.requestModels.User;
+import com.google.gson.Gson;
+
 
 public abstract class Base extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     protected DrawerLayout drawer;
+    private boolean signOut;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +37,6 @@ public abstract class Base extends AppCompatActivity
         setContentView(R.layout.activity_base);
         NavigationView nv = (NavigationView)findViewById(R.id.nav_view);
         Menu menu = nv.getMenu();
-        RunningApplication app = (RunningApplication)this.getApplication();
 
         if(nv==null){
             Toast.makeText(getApplicationContext(), "EL NV ES NULL",
@@ -44,55 +48,20 @@ public abstract class Base extends AppCompatActivity
 
 
 
-        if(app.getAuthenticationToken() == null){
-            MenuItem item = menu.findItem(R.id.nav_login);
-            if(item.isVisible() == true){
-                Toast.makeText(getApplicationContext(),"deberia serlo y es visible",
-                        Toast.LENGTH_SHORT).show();
+        final SharedPreferences preferences = getSharedPreferences("MY_PREFS", MODE_PRIVATE);
 
-            }
-
-
-
+        if(!preferences.contains("TOKEN")){
             menu.findItem(R.id.nav_share).setVisible(false);
             menu.findItem(R.id.nav_send).setVisible(false);
             menu.findItem(R.id.cerrar_sesion).setVisible(false);
             menu.findItem(R.id.nav_login).setVisible(true);
 
-            if(item.isVisible() == true){
-                Toast.makeText(getApplicationContext(),"deberia serlo pero es visible",
-                        Toast.LENGTH_SHORT).show();
-
-            }
-
-            item = menu.findItem(R.id.nav_share);
-            if(item.isVisible() == true){
-                Toast.makeText(getApplicationContext(),"deberia serlo pero es visible",
-                        Toast.LENGTH_SHORT).show();
-
-            }
-
-
-//            Item login = (MenuItem)findViewById(R.id.nav_view_logged);
-//            login.setVisibility(View.GONE);
-//            View notLogged = findViewById(R.id.nav_view);
-//            notLogged.setVisibility(View.VISIBLE);
-
         }else{
-            if(menu.findItem(R.id.nav_share) == null)
-            Toast.makeText(getApplicationContext(), "hay alguien loggueado",
-                    Toast.LENGTH_SHORT).show();
-
+            menu.findItem(R.id.nav_login).setVisible(false);
             menu.findItem(R.id.nav_share).setVisible(true);
             menu.findItem(R.id.nav_send).setVisible(true);
             menu.findItem(R.id.cerrar_sesion).setVisible(true);
-            menu.findItem(R.id.nav_login).setVisible(false);
 
-
-//            View notLogged = (View) findViewById(R.id.nav_view);
-//            notLogged.setVisibility(View.GONE);
-//            View login = (View) findViewById(R.id.nav_view_logged);
-//            login.setVisibility(View.GONE);
 
         }
 
@@ -189,24 +158,25 @@ public abstract class Base extends AppCompatActivity
             intent.putExtra("new", true);
             this.startActivity(intent);
         }else if(id == R.id.cerrar_sesion){
-            Toast.makeText(getApplicationContext(), "quiero cerrar sesion",
-                    Toast.LENGTH_SHORT).show();
-//
-//
-//            RunningApplication app = (RunningApplication)this.getApplication();
-//            String user = app.getUser();
-//            String token = app.getAuthenticationToken();
-//
-//            Toast.makeText(getApplicationContext(), "user " + user,
-//                    Toast.LENGTH_LONG).show();
-//
-//            Toast.makeText(getApplicationContext(), "token " + token,
-//                    Toast.LENGTH_LONG).show();
 
-//            String request = "http://eiffel.itba.edu.ar/hci/service3/Account.groovy?method=SignOut&username=" + user +
-//                    "&authentication_token=" + token;
+            final SharedPreferences preferences = getSharedPreferences("MY_PREFS", MODE_PRIVATE);
 
-           // new Connection(this, request).execute();
+            String token = preferences.getString("TOKEN", "no token defined");
+            String account = preferences.getString("USER", "no account defined");
+
+            Gson gson = new Gson();
+            User user = gson.fromJson(account, User.class);
+
+
+           String request = "http://eiffel.itba.edu.ar/hci/service3/Account.groovy?method=SignOut&username=" + user.getUsername()
+                  +  "&authentication_token=" + token;
+
+
+            new Connection(this, request).execute();
+            signOut=true;
+
+
+
 
 
         }
@@ -226,7 +196,22 @@ public abstract class Base extends AppCompatActivity
 
 
     public void afterRequest(String s){
-        Toast.makeText(getApplicationContext(), s,
-                Toast.LENGTH_SHORT).show();
+        if( s != "error" && signOut){
+
+
+            final SharedPreferences preferences = getSharedPreferences("MY_PREFS", MODE_PRIVATE);
+            SharedPreferences.Editor editor = preferences.edit();
+            editor.remove("TOKEN");
+            editor.remove("USER");
+            editor.commit();
+
+            Intent intent = new Intent(this, MainActivity.class);
+            this.startActivity(intent);
+
+
+
+
+
+        }
     }
 }
