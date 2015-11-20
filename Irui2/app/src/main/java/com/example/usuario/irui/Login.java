@@ -53,6 +53,10 @@ public class Login extends Base {
     }
 
     public void afterRequest(String resp){
+        if(resp == "error"){
+            Toast.makeText(getApplicationContext(), "Error de Servidor",
+                    Toast.LENGTH_LONG).show();
+        }
 
         JSONObject  jsonRootObject = null;
         try {
@@ -90,8 +94,9 @@ public class Login extends Base {
 
         } catch (JSONException e) {
             e.printStackTrace();
+            Toast.makeText(getApplicationContext(), "Datos Invalidos",
+                    Toast.LENGTH_LONG).show();
         }
-
 
     }
 
