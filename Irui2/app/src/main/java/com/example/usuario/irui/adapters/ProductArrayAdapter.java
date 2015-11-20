@@ -5,10 +5,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.usuario.irui.R;
 import com.example.usuario.irui.requestModels.Product;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -34,8 +36,11 @@ public class ProductArrayAdapter extends ArrayAdapter<Product> {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.view_product, parent, false);
         }
 
-       /* ImageView imageView = (ImageView)convertView.findViewById(R.id.icon);
-        imageView.setImageResource(R.drawable.ic_launcher);*/
+        ImageView imageView = (ImageView)convertView.findViewById(R.id.prodImg);
+        //imageView.setImageResource(R.drawable.ic_launcher);
+        Picasso.with(context)
+                .load(product.getImageUrl())
+                .into(imageView);
 
         TextView nameTextView = (TextView)convertView.findViewById(R.id.prodName);
         nameTextView.setText(product.getName().length()>22 ? product.getName().substring(0,22)+"...": product.getName());

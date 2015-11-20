@@ -8,14 +8,15 @@ public class Product {
     private int id;
     private String name;
     private Integer price;
-    private String[] imageUrl;
+    private String imageUrl;
     private String brand;
 
 
-    public Product(String name, int price, String brand){
+    public Product(String name, int price, String brand, String imageUrl){
         this.name = name;
         this.price = price;
         this.brand = brand;
+        this.imageUrl = imageUrl;
     }
 
     public int getId() {
@@ -30,7 +31,7 @@ public class Product {
         return price;
     }
 
-    public String[] getImageUrl() {
+    public String getImageUrl() {
         return imageUrl;
     }
 
