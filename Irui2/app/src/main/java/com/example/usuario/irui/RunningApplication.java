@@ -2,30 +2,33 @@ package com.example.usuario.irui;
 
 import android.app.Application;
 
+import com.example.usuario.irui.requestModels.User;
+
 /**
  * Created by natinavas on 11/19/15.
  */
 public class RunningApplication extends Application {
 
     private String authenticationToken;
-    private String name;
+    private User user;
 
 
-    private static RunningApplication ourInstance = new RunningApplication();
 
 
-    public static RunningApplication getInstance() {
-        return ourInstance;
-    }
 
-    private RunningApplication() {
+    public RunningApplication() {
+        super();
     }
 
     public void setAuthenticationToken(String token){
         this.authenticationToken = token;
     }
 
-    public void setName(String name){
-        this.name=name;
+    public void setUser(User user){
+        this.user=user;
+    }
+
+    public String getAuthenticationToken(){
+        return authenticationToken;
     }
 }

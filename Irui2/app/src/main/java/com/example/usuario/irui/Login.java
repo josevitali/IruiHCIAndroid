@@ -68,12 +68,18 @@ public class Login extends Base {
             Gson gson = new Gson();
             User user = gson.fromJson(account, User.class);
 
+            RunningApplication app = (RunningApplication)this.getApplication();
+
+            app.setAuthenticationToken(token);
+
+
+
 
             Toast.makeText(getApplicationContext(), user.toString(),
                     Toast.LENGTH_SHORT).show();
 
 
-            Toast.makeText(getApplicationContext(), "token : " + token,
+            Toast.makeText(getApplicationContext(), "token : " + app.getAuthenticationToken(),
                     Toast.LENGTH_SHORT).show();
 
 

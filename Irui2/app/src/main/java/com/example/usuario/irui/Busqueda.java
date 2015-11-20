@@ -86,6 +86,11 @@ public class Busqueda extends Base {
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        RunningApplication app = (RunningApplication)this.getApplication();
+
+        Toast.makeText(getApplicationContext(), "token : " + app.getAuthenticationToken(),
+                Toast.LENGTH_SHORT).show();
     }
 
 }
