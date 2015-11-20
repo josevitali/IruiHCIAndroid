@@ -1,6 +1,7 @@
 package com.example.usuario.irui;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -18,6 +19,9 @@ import android.widget.TextView;
 import android.view.inputmethod.EditorInfo;
 import android.view.KeyEvent;
 import android.widget.Toast;
+
+import com.example.usuario.irui.requestModels.User;
+import com.google.gson.Gson;
 
 import static android.widget.Toast.makeText;
 
@@ -65,7 +69,6 @@ public class Busqueda extends Base {
 //        });
 
 
-
         EditText edit_txt = (EditText) findViewById(R.id.search_text);
 
         edit_txt.setOnEditorActionListener(new EditText.OnEditorActionListener() {
@@ -87,10 +90,24 @@ public class Busqueda extends Base {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        RunningApplication app = (RunningApplication)this.getApplication();
 
-        Toast.makeText(getApplicationContext(), "token : " + app.getAuthenticationToken(),
+        final SharedPreferences preferences = getSharedPreferences("MY_PREFS", MODE_PRIVATE);
+
+        String token = preferences.getString("TOKEN", "no token defined");
+        String account = preferences.getString("USER", "no token defined");
+
+        {
+            Gson gson = new Gson();
+            User user = gson.fromJson(account, User.class);
+
+            Toast.makeText(getApplicationContext(), "username : " + user.getFirstName(),
+                    Toast.LENGTH_SHORT).show();
+
+        }
+
+        Toast.makeText(getApplicationContext(), "token : " + token,
                 Toast.LENGTH_SHORT).show();
+
     }
 
 }
