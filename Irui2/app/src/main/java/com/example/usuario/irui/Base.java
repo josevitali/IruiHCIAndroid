@@ -136,7 +136,7 @@ public abstract class Base extends AppCompatActivity
 
 
         } else if (id == R.id.nav_women) {
-            Intent intent = new Intent(this, ResultadosBusqueda.class);
+            Intent intent = new Intent(this, Mujeres.class);
             intent.putExtra("women", true);
             this.startActivity(intent);
 
