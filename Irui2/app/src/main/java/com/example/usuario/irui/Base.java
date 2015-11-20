@@ -30,9 +30,14 @@ public abstract class Base extends AppCompatActivity
         RunningApplication app = (RunningApplication)this.getApplication();
 
         if(app.getAuthenticationToken() == null){
+            View login = (View) findViewById(R.id.nav_login);
+//            login.setVisibility(View.GONE);
+
             Toast.makeText(getApplicationContext(), "nadie loggueado",
                     Toast.LENGTH_SHORT).show();
         }else{
+//            View login = (View) findViewById(R.id.nav_login);
+//            login.setVisibility(View.GONE);
             Toast.makeText(getApplicationContext(), "alguien loggueado",
                     Toast.LENGTH_SHORT).show();
         }

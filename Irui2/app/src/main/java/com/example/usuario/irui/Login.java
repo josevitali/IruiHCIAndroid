@@ -53,10 +53,6 @@ public class Login extends Base {
 
     public void afterRequest(String resp){
 
-        Toast.makeText(getApplicationContext(), resp,
-                Toast.LENGTH_SHORT).show();
-
-
         JSONObject  jsonRootObject = null;
         try {
             jsonRootObject = new JSONObject(resp);
@@ -72,15 +68,6 @@ public class Login extends Base {
             RunningApplication app = (RunningApplication)this.getApplication();
 
             app.setAuthenticationToken(token);
-
-
-
-            Toast.makeText(getApplicationContext(), user.toString(),
-                    Toast.LENGTH_SHORT).show();
-
-
-            Toast.makeText(getApplicationContext(), "token : " + app.getAuthenticationToken(),
-                    Toast.LENGTH_SHORT).show();
 
             Intent intent = new Intent(this, MainActivity.class);
             this.startActivity(intent);
