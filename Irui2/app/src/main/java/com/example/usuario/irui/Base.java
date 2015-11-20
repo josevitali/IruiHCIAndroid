@@ -1,9 +1,12 @@
 package com.example.usuario.irui;
 
+import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -15,6 +18,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+
 public abstract class Base extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -23,23 +27,73 @@ public abstract class Base extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
         setContentView(R.layout.activity_base);
+        NavigationView nv = (NavigationView)findViewById(R.id.nav_view);
+        Menu menu = nv.getMenu();
+        RunningApplication app = (RunningApplication)this.getApplication();
+
+        if(nv==null){
+            Toast.makeText(getApplicationContext(), "EL NV ES NULL",
+                    Toast.LENGTH_LONG).show();
+        }
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        RunningApplication app = (RunningApplication)this.getApplication();
+
 
         if(app.getAuthenticationToken() == null){
-            View login = (View) findViewById(R.id.nav_login);
+            MenuItem item = menu.findItem(R.id.nav_login);
+            if(item.isVisible() == true){
+                Toast.makeText(getApplicationContext(),"deberia serlo y es visible",
+                        Toast.LENGTH_SHORT).show();
+
+            }
+
+
+
+            menu.findItem(R.id.nav_share).setVisible(false);
+            menu.findItem(R.id.nav_send).setVisible(false);
+            menu.findItem(R.id.cerrar_sesion).setVisible(false);
+            menu.findItem(R.id.nav_login).setVisible(true);
+
+            if(item.isVisible() == true){
+                Toast.makeText(getApplicationContext(),"deberia serlo pero es visible",
+                        Toast.LENGTH_SHORT).show();
+
+            }
+
+            item = menu.findItem(R.id.nav_share);
+            if(item.isVisible() == true){
+                Toast.makeText(getApplicationContext(),"deberia serlo pero es visible",
+                        Toast.LENGTH_SHORT).show();
+
+            }
+
+
+//            Item login = (MenuItem)findViewById(R.id.nav_view_logged);
+//            login.setVisibility(View.GONE);
+//            View notLogged = findViewById(R.id.nav_view);
+//            notLogged.setVisibility(View.VISIBLE);
+
+        }else{
+            if(menu.findItem(R.id.nav_share) == null)
+            Toast.makeText(getApplicationContext(), "hay alguien loggueado",
+                    Toast.LENGTH_SHORT).show();
+
+            menu.findItem(R.id.nav_share).setVisible(true);
+            menu.findItem(R.id.nav_send).setVisible(true);
+            menu.findItem(R.id.cerrar_sesion).setVisible(true);
+            menu.findItem(R.id.nav_login).setVisible(false);
+
+
+//            View notLogged = (View) findViewById(R.id.nav_view);
+//            notLogged.setVisibility(View.GONE);
+//            View login = (View) findViewById(R.id.nav_view_logged);
 //            login.setVisibility(View.GONE);
 
-            Toast.makeText(getApplicationContext(), "nadie loggueado",
-                    Toast.LENGTH_SHORT).show();
-        }else{
-//            View login = (View) findViewById(R.id.nav_login);
-//            login.setVisibility(View.GONE);
-            Toast.makeText(getApplicationContext(), "alguien loggueado",
-                    Toast.LENGTH_SHORT).show();
         }
 
 
@@ -134,6 +188,9 @@ public abstract class Base extends AppCompatActivity
             Intent intent = new Intent(this, ResultadosBusqueda.class);
             intent.putExtra("new", true);
             this.startActivity(intent);
+        }else if(id == R.id.cerrar_sesion){
+            Toast.makeText(getApplicationContext(), "quiero cerrar sesion",
+                    Toast.LENGTH_SHORT).show();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

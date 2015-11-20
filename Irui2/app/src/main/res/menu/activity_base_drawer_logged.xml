@@ -16,16 +16,15 @@
 
     <item android:title="@string/user">
         <menu>
-            <item android:id="@+id/nav_login" android:icon="@drawable/user"
-                android:title="@string/login"/>
             <item android:id="@+id/nav_share" android:icon="@drawable/user"
                 android:title="@string/persInfo" />
             <item android:id="@+id/nav_send" android:icon="@android:drawable/ic_menu_send"
-                android:title="@string/orders"/>
+                android:title="@string/orders" />
             <item android:id="@+id/cerrar_sesion" android:icon="@drawable/log_out"
-                android:title="@string/signout"/>
+                android:title="@string/signout" />
         </menu>
     </item>
+
 
 
 </menu>
