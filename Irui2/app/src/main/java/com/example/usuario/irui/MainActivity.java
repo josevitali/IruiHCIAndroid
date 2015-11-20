@@ -28,9 +28,7 @@ import java.util.Date;
 public class MainActivity extends Base{
 
 
-    private AlarmManager alarmManager;
-    private PendingIntent alarmNotificationReceiverPendingIntent;
-    private final static int INTERVAL = 10000;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,24 +44,7 @@ public class MainActivity extends Base{
         drawer.addView(contentView, 0);
 
 
-        alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
 
-        Intent alarmNotificationReceiverIntent =
-                new Intent(MainActivity.this, ChangeOrderReceiver.class);
-        alarmNotificationReceiverPendingIntent =
-                PendingIntent.getBroadcast(MainActivity.this, 0, alarmNotificationReceiverIntent, 0);
-
-
-        final SharedPreferences preferences = getSharedPreferences("MY_PREFS", MODE_PRIVATE);
-
-        String token = preferences.getString("TOKEN", "no token defined");
-
-        alarmManager.set(AlarmManager.RTC_WAKEUP,
-                System.currentTimeMillis() + INTERVAL,
-                alarmNotificationReceiverPendingIntent);
-
-        Toast.makeText(MainActivity.this, "Single alarm set", Toast.LENGTH_LONG)
-                .show();
 
 
 
@@ -73,10 +54,7 @@ public class MainActivity extends Base{
 
     public void resultados(View view){
 
-        alarmManager.cancel(alarmNotificationReceiverPendingIntent);
 
-        Toast.makeText(MainActivity.this, "Repeating alarm cancelled", Toast.LENGTH_LONG)
-                .show();
 
 
         Intent intent = new Intent(this, ResultadosBusqueda.class);

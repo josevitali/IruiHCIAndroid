@@ -1,6 +1,8 @@
 package com.example.usuario.irui;
 
+import android.app.AlarmManager;
 import android.app.Fragment;
+import android.app.PendingIntent;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -204,6 +206,21 @@ public abstract class Base extends AppCompatActivity
             editor.remove("TOKEN");
             editor.remove("USER");
             editor.commit();
+
+            AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
+
+            PendingIntent alarmNotificationReceiverPendingIntent;
+
+            Intent alarmNotificationReceiverIntent =
+                    new Intent(this, ChangeOrderReceiver.class);
+            alarmNotificationReceiverPendingIntent =
+                    PendingIntent.getBroadcast(this, 0, alarmNotificationReceiverIntent, 0);
+
+            alarmManager.cancel(alarmNotificationReceiverPendingIntent);
+
+            Toast.makeText(this, "Repeating alarm cancelled", Toast.LENGTH_LONG)
+                    .show();
+
 
             Intent intent = new Intent(this, MainActivity.class);
             this.startActivity(intent);

@@ -18,7 +18,9 @@ public class ChangeOrderReceiver extends BroadcastReceiver {
 
         String token = preferences.getString("TOKEN", "no token defined");
 
-        ChangeInOrders changeInOrders = new ChangeInOrders();
-        changeInOrders.notify(context, "holaaa", 1);
+        if(!token.equals("no token defined")){
+            ChangeInOrders changeInOrders = new ChangeInOrders();
+            changeInOrders.notify(context, "Your orders have changed", 1);
+        }
     }
 }

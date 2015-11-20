@@ -1,9 +1,12 @@
 package com.example.usuario.irui;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -24,6 +27,10 @@ public class Login extends Base {
 
     private EditText mPasswordView;
     private EditText mUserView;
+
+    private AlarmManager alarmManager;
+    private PendingIntent alarmNotificationReceiverPendingIntent;
+    private final static int INTERVAL = 10000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,6 +92,25 @@ public class Login extends Base {
             editor.putString("TOKEN", token);
             editor.putString("USER", account);
             editor.commit();
+
+
+            alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
+
+            Intent alarmNotificationReceiverIntent =
+                    new Intent(this, ChangeOrderReceiver.class);
+            alarmNotificationReceiverPendingIntent =
+                    PendingIntent.getBroadcast(this, 0, alarmNotificationReceiverIntent, 0);
+
+
+
+
+            alarmManager.setRepeating(AlarmManager.ELAPSED_REALTIME,
+                    SystemClock.elapsedRealtime() + INTERVAL,
+                    INTERVAL,
+                    alarmNotificationReceiverPendingIntent);
+
+            Toast.makeText(this, "Reapeating alarm set", Toast.LENGTH_LONG)
+                    .show();
 
 
 
