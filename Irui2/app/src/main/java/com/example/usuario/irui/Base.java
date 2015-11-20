@@ -13,6 +13,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 public abstract class Base extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -25,6 +26,16 @@ public abstract class Base extends AppCompatActivity
         setContentView(R.layout.activity_base);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        RunningApplication app = (RunningApplication)this.getApplication();
+
+        if(app.getAuthenticationToken() == null){
+            Toast.makeText(getApplicationContext(), "nadie loggueado",
+                    Toast.LENGTH_SHORT).show();
+        }else{
+            Toast.makeText(getApplicationContext(), "alguien loggueado",
+                    Toast.LENGTH_SHORT).show();
+        }
 
 
         drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
