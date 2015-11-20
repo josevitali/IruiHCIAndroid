@@ -1,6 +1,7 @@
 package com.example.usuario.irui;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -19,6 +20,15 @@ public class Mujeres extends Base {
         View contentView = inflater.inflate(R.layout.activity_mujeres, null, false);
         drawer.addView(contentView, 0);
 
+
+
+
+    }
+
+    public void showAllWomen(View view){
+        Intent intent = new Intent(this, ResultadosBusqueda.class);
+        intent.putExtra("womenAll", true);
+        this.startActivity(intent);
     }
 
 }

@@ -128,12 +128,9 @@ public abstract class Base extends AppCompatActivity
             Intent intent = new Intent(this, Orders.class);
             this.startActivity(intent);
 
-
-
         } else if(id == R.id.nav_share){
             Intent intent = new Intent(this, PersonalInformation.class);
             this.startActivity(intent);
-
 
         } else if (id == R.id.nav_women) {
             Intent intent = new Intent(this, Mujeres.class);
@@ -159,6 +156,7 @@ public abstract class Base extends AppCompatActivity
             Intent intent = new Intent(this, ResultadosBusqueda.class);
             intent.putExtra("new", true);
             this.startActivity(intent);
+
         }else if(id == R.id.cerrar_sesion){
 
             final SharedPreferences preferences = getSharedPreferences("MY_PREFS", MODE_PRIVATE);
@@ -176,10 +174,6 @@ public abstract class Base extends AppCompatActivity
 
             new Connection(this, request).execute();
             signOut=true;
-
-
-
-
 
         }
 

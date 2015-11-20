@@ -1,6 +1,7 @@
 package com.example.usuario.irui;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -19,6 +20,12 @@ public class Ninos extends Base {
         View contentView = inflater.inflate(R.layout.activity_ninos, null, false);
         drawer.addView(contentView, 0);
 
+    }
+
+    public void showAllChildren(View view){
+        Intent intent = new Intent(this, ResultadosBusqueda.class);
+        intent.putExtra("childrenAll", true);
+        this.startActivity(intent);
     }
 
 }

@@ -38,27 +38,22 @@ public class ResultadosBusqueda extends Base{
 
         Intent myIntent = getIntent(); // gets the previously created intent
 
-        //dependiendo desde donde se llama la pagina de resultados busqueda son los productos
-        //que se muestran
         String request = "http://eiffel.itba.edu.ar/hci/service3/Catalog.groovy?method=GetAllProducts&page_size=1000";
 
         if(myIntent.hasExtra("searchText")){
             String s = myIntent.getStringExtra("searchText");
             request = "http://eiffel.itba.edu.ar/hci/service3/Catalog.groovy?method=GetProductsByName&name="+ s;
-            new Connection(this, request).execute();
 
-        }else if(myIntent.hasExtra("women")){
+        }else if(myIntent.hasExtra("womenAll")){
             request = "http://eiffel.itba.edu.ar/hci/service3/Catalog.groovy?method=GetAllProducts&filters=[%20{%20%22id%22:%201,%20%22value%22:%20%22Femenino%22%20}%20]&page_size=1000";
-            Toast.makeText(getApplicationContext(), "muestro ropa de mujeres",
-                    Toast.LENGTH_SHORT).show();
 
-        }else if(myIntent.hasExtra("men")){
-            Toast.makeText(getApplicationContext(), "muestro ropa de hombres",
-                    Toast.LENGTH_SHORT).show();
+        }else if(myIntent.hasExtra("menAll")){
+            request = "http://eiffel.itba.edu.ar/hci/service3/Catalog.groovy?method=GetAllProducts&filters=[%20{%20%22id%22:%201,%20%22value%22:%20%22Masculino%22%20}%20]&page_size=1000";
 
-        }else if(myIntent.hasExtra("children")){
+        }else if(myIntent.hasExtra("childrenAll")){
             Toast.makeText(getApplicationContext(), "muestro ropa de ni;os",
                     Toast.LENGTH_SHORT).show();
+           // request = "http://eiffel.itba.edu.ar/hci/service3/Catalog.groovy?method=GetAllProducts&filters=[%20{%20%22id%22:%201,%20%22value%22:%20%22Infantil%22%20}%20]&page_size=1000";
 
         }else if(myIntent.hasExtra("new")){
             Toast.makeText(getApplicationContext(), "muestro ropa nueva",
@@ -70,64 +65,18 @@ public class ResultadosBusqueda extends Base{
         }
 
 
-
-
-
-
-
-//        String s = "http://eiffel.itba.edu.ar/hci/service3/Common.groovy?method=GetAllStates";
-//
-//        new Connection(this).execute();
-
-    //    String s = "http://eiffel.itba.edu.ar/hci/service3/Catalog.groovy?method=GetAllProducts";
-
         new Connection(this, request).execute();
 
 
     }
 
-        //resp = connection.connect(s);
-/*
-        try {
-            resp.getJSONArray(r);
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-
-
-*/
-
 
         public void afterRequest(String resp){
 
-       /* Toast.makeText(getApplicationContext(), resp,
-                Toast.LENGTH_SHORT).show();
-
-            Gson gson = new Gson();*/
 
             apiCall(resp);
-
-
-           // Type type = new TypeToken<Respuesta>() {}.getType();
-
-            //gson.fromJson(resp, type);
     }
 
-/*
-    public class Meta{
-        String uuid;
-        String time;
-    }
-
-    public class ProductList{
-        Meta meta;
-        int page;
-        pageSize;
-        total;
-        List<Product> products;
-    }
-
-*/
 
 
     public void filtros(View view){
@@ -157,7 +106,7 @@ public class ResultadosBusqueda extends Base{
 
                 JSONObject j = products.getJSONObject(i);
                 JSONArray atts = j.getJSONArray("attributes");
-                String brand = "Marca no disponible";
+                String brand = "-";
                 for(int k = 0; k<atts.length(); k++){
                     if(atts.getJSONObject(k).getInt("id") == 9){
                         brand = atts.getJSONObject(k).getString("values");
