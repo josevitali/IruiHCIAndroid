@@ -40,7 +40,7 @@ public class ResultadosBusqueda extends Base{
 
         //dependiendo desde donde se llama la pagina de resultados busqueda son los productos
         //que se muestran
-        String request = "";
+        String request = "http://eiffel.itba.edu.ar/hci/service3/Catalog.groovy?method=GetAllProducts&page_size=1000";
 
         if(myIntent.hasExtra("searchText")){
             String s = myIntent.getStringExtra("searchText");
