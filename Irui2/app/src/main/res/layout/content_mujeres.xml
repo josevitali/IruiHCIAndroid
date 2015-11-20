@@ -24,7 +24,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/seeAll"
-            android:id="@+id/button5"
+            android:id="@+id/ver_todo_mujeres"
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
@@ -36,7 +36,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/sale"
-            android:id="@+id/button4"
+            android:id="@+id/sale_mujeres"
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
@@ -47,7 +47,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/newArr"
-            android:id="@+id/button3"
+            android:id="@+id/arrivos_mujeres"
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
@@ -58,13 +58,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/clothes"
-            android:id="@+id/button2" />
+            android:id="@+id/ropa_mujeres" />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/shoes"
-            android:id="@+id/button" />
+            android:id="@+id/zapatos_mujeres" />
 
         <Button
 
@@ -80,7 +80,7 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="25dp" />
+            android:layout_height="45dp" />
 
 
     </LinearLayout>

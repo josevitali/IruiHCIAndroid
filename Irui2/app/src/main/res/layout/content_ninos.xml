@@ -13,9 +13,9 @@
 
         <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="250dp"
             android:id="@+id/imageView2"
-            android:src="@drawable/hombres"
+            android:src="@drawable/chicos"
             android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" />
@@ -24,7 +24,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/seeAll"
-            android:id="@+id/ver_todo_hombres"
+            android:id="@+id/ver_todo_ninos"
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
@@ -36,7 +36,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/sale"
-            android:id="@+id/sale_hombres"
+            android:id="@+id/sale_ninos"
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
@@ -47,7 +47,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/newArr"
-            android:id="@+id/arrivos_hombres"
+            android:id="@+id/arrivos_ninos"
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
@@ -58,20 +58,20 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/clothes"
-            android:id="@+id/ropa_hombres" />
+            android:id="@+id/ropa_ninos" />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/shoes"
-            android:id="@+id/zapatos_hombres" />
+            android:id="@+id/zapatos_ninos" />
 
         <Button
 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/accesories"
-            android:id="@+id/novedades_hombres"
+            android:id="@+id/novedades_ninos"
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
@@ -80,7 +80,7 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="25dp" />
+            android:layout_height="45dp" />
 
 
     </LinearLayout>
