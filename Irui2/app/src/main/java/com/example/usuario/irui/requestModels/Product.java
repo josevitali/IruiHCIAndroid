@@ -5,23 +5,22 @@ package com.example.usuario.irui.requestModels;
  */
 public class Product {
 
-    private int id;
+
     private String name;
     private Integer price;
     private String imageUrl;
     private String brand;
+    private int id;
 
 
-    public Product(String name, int price, String brand, String imageUrl){
+    public Product(String name, int price, String brand, String imageUrl, int id){
         this.name = name;
         this.price = price;
         this.brand = brand;
         this.imageUrl = imageUrl;
+        this.id = id;
     }
 
-    public int getId() {
-        return id;
-    }
 
     public String getName() {
         return name;
@@ -39,4 +38,7 @@ public class Product {
         return brand;
     }
 
+    public Integer getId(){
+        return id;
+    }
 }

@@ -64,10 +64,6 @@ public class PaginaProducto extends Base {
                 Product product = gson.fromJson(prod, Product.class);
 
 
-                Intent intent = new Intent(this, MainActivity.class);
-                this.startActivity(intent);
-
-
             } catch (JSONException e) {
                 e.printStackTrace();
                 Toast.makeText(getApplicationContext(), "Datos Invalidos",

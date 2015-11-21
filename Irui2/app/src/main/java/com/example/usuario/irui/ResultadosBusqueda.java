@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -114,7 +115,7 @@ public class ResultadosBusqueda extends Base{
                     }
                 }
                 String imgUrl = j.getJSONArray("imageUrl").getString(0);
-                Product p = new Product(j.getString("name"), j.getInt("price"), brand, imgUrl);
+                Product p = new Product(j.getString("name"), j.getInt("price"), brand, imgUrl, j.getInt("id"));
                 prods[i]=p;
             }
 
@@ -135,8 +136,11 @@ public class ResultadosBusqueda extends Base{
 
     public void mostrarProducto(View view){
         Intent intent = new Intent(this, PaginaProducto.class);
-        intent.putExtra("prodId", view.getId());
-        this.startActivity(intent);
+        TextView idTextView = (TextView)view.findViewById(R.id.prodId);
+        Toast.makeText(getApplicationContext(),idTextView.getText().toString(),
+                Toast.LENGTH_LONG).show();
+        //intent.putExtra("prodId", "1");
+        //this.startActivity(intent);
     }
 
 }
