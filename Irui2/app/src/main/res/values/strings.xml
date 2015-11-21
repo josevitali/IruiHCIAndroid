@@ -55,9 +55,12 @@
     <string name="ordenarporRB">Order By</string>
 
     <!--Pag Prod-->
-    <string name="availableSizes">Available Sizes:</string>
-    <string name="availableColors">Available Colors:</string>
-    <string name="price">Price: $</string>
+    <string name="prodInfo">Details:</string>
+    <string name="infoBrand">Brand: </string>
+    <string name="infoOcassion">Ocassion: </string>
+    <string name="infoMaterial">Material: </string>
+    <string name="prodColors">Colors</string>
+    <string name="prodSizes">Sizes</string>
 
     <!--Ordenar Por-->
     <string name="ascendingPrice">Ascending Price</string>

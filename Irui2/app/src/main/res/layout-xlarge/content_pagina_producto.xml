@@ -6,7 +6,7 @@
     <Spinner
         android:layout_width="300dp"
         android:layout_height="80dp"
-        android:id="@+id/spinner"
+        android:id="@+id/prodColors"
         android:layout_marginBottom="118dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
@@ -17,9 +17,9 @@
         android:layout_width="300dp"
         android:layout_height="80dp"
         android:id="@+id/spinner2"
-        android:layout_alignTop="@+id/spinner"
-        android:layout_toEndOf="@+id/textView6"
-        android:layout_toRightOf="@+id/textView6" />
+        android:layout_alignTop="@+id/prodColors"
+        android:layout_toEndOf="@+id/infoBrand"
+        android:layout_toRightOf="@+id/infoBrand" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -34,9 +34,9 @@
     <ImageView
         android:layout_width="500dp"
         android:layout_height="800dp"
-        android:id="@+id/imageView2"
+        android:id="@+id/prodImg"
         android:src="@drawable/fotoej"
-        android:layout_above="@+id/spinner"
+        android:layout_above="@+id/prodColors"
         android:layout_centerHorizontal="true" />
 
     <TextView
@@ -45,8 +45,9 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Large Text"
         android:id="@+id/nombreProd"
-        android:layout_above="@+id/imageView2"
-        android:layout_toRightOf="@+id/spinner"
-        android:layout_toEndOf="@+id/spinner" />
+        android:layout_above="@+id/prodImg"
+        android:layout_toRightOf="@+id/prodColors"
+        android:layout_toEndOf="@+id/prodColors"
+        android:textSize="50dp" />
 
 </RelativeLayout>
