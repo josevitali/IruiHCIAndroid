@@ -24,7 +24,7 @@
             android:scaleType="fitXY"
             android:layout_width="400dp"
             android:layout_height="200dp"
-            android:src="@drawable/image"
+            android:src="@drawable/mujeres"
             android:layout_below="@+id/buttonHombres"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
