@@ -46,28 +46,32 @@ public class ResultadosBusqueda extends Base{
         String request = "http://eiffel.itba.edu.ar/hci/service3/Catalog.groovy?method=GetAllProducts&page_size=1000";
 
 
-        if(myIntent.hasExtra("searchText")) {
+
+
+        if(myIntent.hasExtra("search")) {
+            search = myIntent.getStringExtra("search");
+
+            switch (search) {
+                case "womenAll":
+                    request = "http://eiffel.itba.edu.ar/hci/service3/Catalog.groovy?method=GetAllProducts&filters=[%20{%20%22id%22:%201,%20%22value%22:%20%22Femenino%22%20}%20]&page_size=1000";
+                    break;
+                case "menAll":
+                    request = "http://eiffel.itba.edu.ar/hci/service3/Catalog.groovy?method=GetAllProducts&filters=[%20{%20%22id%22:%201,%20%22value%22:%20%22Masculino%22%20}%20]&page_size=1000";
+                    break;
+                case "womenOnSale":
+                    break;
+                case "womenNewArrivals":
+                    break;
+                case "childrenAll":
+                    break;
+                case "womenShoes":
+                    break;
+                default:
+                    break;
+            }
+        } else if(myIntent.hasExtra("searchText")) {
             String s = myIntent.getStringExtra("searchText");
             request = "http://eiffel.itba.edu.ar/hci/service3/Catalog.groovy?method=GetProductsByName&name=" + s;
-        }
-
-        search = myIntent.getStringExtra("search");
-
-        switch (search){
-            case "womenAll":
-                request = "http://eiffel.itba.edu.ar/hci/service3/Catalog.groovy?method=GetAllProducts&filters=[%20{%20%22id%22:%201,%20%22value%22:%20%22Femenino%22%20}%20]&page_size=1000";
-                break;
-            case "menAll":
-                request = "http://eiffel.itba.edu.ar/hci/service3/Catalog.groovy?method=GetAllProducts&filters=[%20{%20%22id%22:%201,%20%22value%22:%20%22Masculino%22%20}%20]&page_size=1000";
-                break;
-            case "womenOnSale":
-                break;
-            case "womenNewArrivals":
-                break;
-            case "childrenAll":
-                break;
-            case "womenShoes":
-                break;
         }
 
 
