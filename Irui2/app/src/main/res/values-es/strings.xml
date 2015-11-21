@@ -80,5 +80,8 @@
     <string name="accesories">Accesorios</string>
     <string name="seeAll">Ver Todo</string>
 
+    <!--Ordenes-->
+    <string name="orderDate">Pedido el:</string>
+
 
 </resources>

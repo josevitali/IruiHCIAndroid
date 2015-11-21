@@ -103,4 +103,9 @@
     <string name="title_activity_ninos">Ninos</string>
     <string name="title_activity_pagina_producto">PaginaProducto</string>
 
+    <!--Orden-->
+    <string name="orderDate">Ordered on:</string>
+
+
+
 </resources>
