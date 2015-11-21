@@ -101,12 +101,14 @@ public class ResultadosBusqueda extends Base{
         Intent myIntent = getIntent(); // gets the previously created intent
 
 
-        Intent intent = new Intent(this, OrdenarPor.class);
 
-        intent.putExtra("search", search);
+        if(myIntent.hasExtra("search")) {
+            Intent intent = new Intent(this, OrdenarPor.class);
+            intent.putExtra("search", search);
+            this.startActivityForResult(intent, GET_SUBCATEGORY);
+        }
 
 
-        this.startActivityForResult(intent, GET_SUBCATEGORY);
     }
 
 
