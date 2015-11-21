@@ -151,8 +151,8 @@ public class ResultadosBusqueda extends Base{
         TextView idTextView = (TextView)view.findViewById(R.id.prodId);
         Toast.makeText(getApplicationContext(),idTextView.getText().toString(),
                 Toast.LENGTH_LONG).show();
-        //intent.putExtra("prodId", "1");
-        //this.startActivity(intent);
+        intent.putExtra("prodId", idTextView.getText().toString());
+        this.startActivity(intent);
     }
 
 }

@@ -15,10 +15,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Toast;
 
+import com.example.usuario.irui.requestModels.Attribute;
 import com.example.usuario.irui.requestModels.Product;
+import com.example.usuario.irui.requestModels.ProductComplete;
 import com.example.usuario.irui.requestModels.User;
 import com.google.gson.Gson;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -35,6 +38,8 @@ public class PaginaProducto extends Base {
         Intent myIntent = getIntent();
 
         if(myIntent.hasExtra("prodId") && myIntent.getStringExtra("prodId") != null) {
+            Toast.makeText(getApplicationContext(), "NOOOOO",
+                    Toast.LENGTH_LONG).show();
             String request = "http://eiffel.itba.edu.ar/hci/service3/Catalog.groovy?method=GetProductById&id=" + myIntent.getStringExtra("prodId");
             Toast.makeText(getApplicationContext(), request,
                     Toast.LENGTH_LONG).show();
@@ -57,11 +62,35 @@ public class PaginaProducto extends Base {
 
             try {
                 jsonRootObject = new JSONObject(s);
+                String product = jsonRootObject.getString("product");
 
-                String prod = jsonRootObject.getString("product");
 
-                Gson gson = new Gson();
-                Product product = gson.fromJson(prod, Product.class);
+
+                JSONObject prod = new JSONObject(product);
+                JSONArray atts = prod.getJSONArray("attributes");
+
+                Toast.makeText(getApplicationContext(), atts.toString(),
+                        Toast.LENGTH_LONG).show();
+
+
+
+//
+//                Gson gson = new Gson();
+//                Attribute attr =
+
+//                JSONObject j = products.getJSONObject(i);
+//                JSONArray atts = j.getJSONArray("attributes");
+//                String brand = "-";
+//                for(int k = 0; k<atts.length(); k++){
+//                    if(atts.getJSONObject(k).getInt("id") == 9){
+//                        brand = atts.getJSONObject(k).getString("values");
+//                        brand = brand.substring(2,brand.length()-2).split(",")[0];
+//                    }
+//                }
+//                String imgUrl = j.getJSONArray("imageUrl").getString(0);
+//                Product p = new Product(j.getString("name"), j.getInt("price"), brand, imgUrl, j.getInt("id"));
+//                prods[i]=p;
+
 
 
             } catch (JSONException e) {
