@@ -132,6 +132,13 @@ public class ResultadosBusqueda extends Base{
 
 
     }
+
+    public void mostrarProducto(View view){
+        Intent intent = new Intent(this, PaginaProducto.class);
+        intent.putExtra("prodId", view.getId());
+        this.startActivity(intent);
+    }
+
 }
 
 

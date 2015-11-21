@@ -4,8 +4,8 @@
     android:layout_height="match_parent">
 
     <Spinner
-        android:layout_width="150dp"
-        android:layout_height="40dp"
+        android:layout_width="300dp"
+        android:layout_height="80dp"
         android:id="@+id/spinner"
         android:layout_marginBottom="118dp"
         android:layout_alignParentBottom="true"
@@ -14,8 +14,8 @@
         android:layout_marginLeft="20dp" />
 
     <Spinner
-        android:layout_width="150dp"
-        android:layout_height="40dp"
+        android:layout_width="300dp"
+        android:layout_height="80dp"
         android:id="@+id/spinner2"
         android:layout_alignTop="@+id/spinner"
         android:layout_toEndOf="@+id/textView6"
@@ -24,19 +24,29 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Small Text"
-        android:id="@+id/textView6"
+        android:id="@+id/precioProd"
         android:layout_marginBottom="46dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
 
     <ImageView
-        android:layout_width="190dp"
-        android:layout_height="300dp"
+        android:layout_width="500dp"
+        android:layout_height="800dp"
         android:id="@+id/imageView2"
         android:src="@drawable/fotoej"
         android:layout_above="@+id/spinner"
         android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Large Text"
+        android:id="@+id/nombreProd"
+        android:layout_above="@+id/imageView2"
+        android:layout_toRightOf="@+id/spinner"
+        android:layout_toEndOf="@+id/spinner" />
 
 </RelativeLayout>

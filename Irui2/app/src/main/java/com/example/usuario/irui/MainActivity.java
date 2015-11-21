@@ -44,20 +44,22 @@ public class MainActivity extends Base{
         drawer.addView(contentView, 0);
 
 
-
-
-
-
-
     }
 
 
-    public void resultados(View view){
 
+    public void pagHombres(View view){
+        Intent intent = new Intent(this, Hombres.class);
+        this.startActivity(intent);
+    }
 
+    public void pagMujeres(View view){
+        Intent intent = new Intent(this, Mujeres.class);
+        this.startActivity(intent);
+    }
 
-
-        Intent intent = new Intent(this, ResultadosBusqueda.class);
+    public void pagNinos(View view){
+        Intent intent = new Intent(this, Ninos.class);
         this.startActivity(intent);
     }
 
