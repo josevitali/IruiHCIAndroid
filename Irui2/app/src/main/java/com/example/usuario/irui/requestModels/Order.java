@@ -1,5 +1,11 @@
 package com.example.usuario.irui.requestModels;
 
+import com.example.usuario.irui.requestModels.Address;
+import com.example.usuario.irui.requestModels.CreditCard;
+import com.example.usuario.irui.requestModels.OrderItem;
+import com.example.usuario.irui.requestModels.OrderStatus;
+
+import java.util.Arrays;
 
 public class Order{
 
@@ -67,11 +73,11 @@ public class Order{
                 ", latitude=" + latitude +
                 ", longitude=" + longitude +
                 ", notifications=" + notifications +
-                ", items=" + items.toString() +
+                ", items=" + Arrays.toString(items) +
                 '}';
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 

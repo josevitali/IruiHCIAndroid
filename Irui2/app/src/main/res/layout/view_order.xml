@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="120dp">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="250dp"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="70dp"
+                android:layout_height="match_parent"></LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="180dp"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="orderAddress"
+                            android:id="@+id/orderAddress"
+                            android:layout_centerHorizontal="true"
+                            android:layout_alignParentBottom="false"
+                            android:textStyle="bold"
+                            android:textSize="20dp" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:text="orderId"
+                            android:id="@+id/orderId"
+                            android:layout_centerHorizontal="true" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>
