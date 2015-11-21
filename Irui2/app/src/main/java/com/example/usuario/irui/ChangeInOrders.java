@@ -50,9 +50,9 @@ public class ChangeInOrders {
         final Bitmap picture = BitmapFactory.decodeResource(res, R.drawable.example_picture);
 
 
-        final String ticker = exampleString;
+        final String ticker = res.getString(R.string.change_in_orders_notification_title_template);
         final String title = res.getString(
-                R.string.change_in_orders_notification_title_template, exampleString);
+                R.string.change_in_orders_notification_title_template, R.string.change_in_orders_notification_title_template);
         final String text = res.getString(
                 R.string.change_in_orders_notification_placeholder_text_template, exampleString);
 
@@ -81,9 +81,6 @@ public class ChangeInOrders {
                         // Set ticker text (preview) information for this notification.
                 .setTicker(ticker)
 
-                        // Show a number. This is useful when stacking notifications of
-                        // a single type.
-                .setNumber(number)
 
                         // If this notification relates to a past or upcoming event, you
                         // should set the relevant time information using the setWhen
@@ -100,7 +97,7 @@ public class ChangeInOrders {
                         PendingIntent.getActivity(
                                 context,
                                 0,
-                                new Intent(context, Busqueda.class),
+                                new Intent(context, Orders.class),
                                 PendingIntent.FLAG_UPDATE_CURRENT))
 
                         // Automatically dismiss the notification when it is touched.

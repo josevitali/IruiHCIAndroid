@@ -32,6 +32,8 @@
     <!--Personal Information-->
     <string name="title_activity_personal_information">Personal Information</string>
 
+    <string name="change_in_orders_notification_title_template">Sus pedidos han cambiado</string>
+
 
     <string name="title_activity_pag_prod">PagProd</string>
     <string name="section_format">Hola mundo de sección: %1$d</string>
