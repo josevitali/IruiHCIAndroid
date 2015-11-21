@@ -52,7 +52,7 @@ public class ProductArrayAdapter extends ArrayAdapter<Product> {
         priceTextView.setText("$" + product.getPrice().toString());
 
         TextView idTextView = (TextView)convertView.findViewById(R.id.prodId);
-        priceTextView.setText(product.getId().toString());
+        idTextView.setText(product.getId().toString());
 
         return convertView;
     }
