@@ -34,7 +34,7 @@ public class ProductArrayAdapter extends ArrayAdapter<Product> {
 
         if (convertView == null) {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.view_product, parent, false);
-        }
+    }
 
         ImageView imageView = (ImageView)convertView.findViewById(R.id.prodImg);
         //imageView.setImageResource(R.drawable.ic_launcher);

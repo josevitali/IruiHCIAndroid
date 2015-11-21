@@ -2,15 +2,18 @@ package com.example.usuario.irui.adapters;
 
 import android.app.Activity;
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.usuario.irui.R;
 import com.example.usuario.irui.requestModels.Order;
+import com.example.usuario.irui.requestModels.OrderStatus;
 import com.example.usuario.irui.requestModels.Product;
 import com.squareup.picasso.Picasso;
 
@@ -44,6 +47,14 @@ public class OrderArrayAdapter extends ArrayAdapter<Order>{
 
         TextView brandTextView = (TextView)convertView.findViewById(R.id.orderId);
         brandTextView.setText("Id: #" + order.getId().toString());
+
+
+        OrderStatus status = order.getStatus();
+
+
+        if(order.getStatus() == OrderStatus.CREATED){
+            
+        }
 
 
         return convertView;

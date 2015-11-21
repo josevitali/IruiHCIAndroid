@@ -13,6 +13,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.usuario.irui.requestModels.Attribute;
@@ -64,13 +65,6 @@ public class PaginaProducto extends Base {
                 jsonRootObject = new JSONObject(s);
                 String product = jsonRootObject.getString("product");
 
-
-
-//                JSONObject prod = new JSONObject(product);
-//                JSONArray atts = prod.getJSONArray("attributes");
-
-
-
                 Gson gson = new Gson();
                 ProductComplete product2 = gson.fromJson(product, ProductComplete.class);
 
@@ -78,9 +72,11 @@ public class PaginaProducto extends Base {
                 Toast.makeText(getApplicationContext(), product2.getName(),
                         Toast.LENGTH_LONG).show();
 
+                TextView nombreProd = (TextView)findViewById(R.id.productName);
+                nombreProd.setText(product2.getName());
 
-
-
+                TextView prodPrice = (TextView)findViewById(R.id.prodPrice);
+                prodPrice.setText("$"+ product2.getPrice());
 
 //                Attribute attr =
 
