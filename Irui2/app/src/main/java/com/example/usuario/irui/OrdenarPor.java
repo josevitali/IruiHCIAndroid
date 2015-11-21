@@ -93,6 +93,7 @@ public class OrdenarPor extends Base {
 
                 JSONObject j = subcategories.getJSONObject(i);
                 String name = j.getString("name");
+                int id = j.getInt("id");
 
 /*
                     RadioButton rdbtn = new RadioButton(this);
@@ -102,13 +103,13 @@ public class OrdenarPor extends Base {
 
                 RadioButton radioButton = new RadioButton(this);
                 radioButton.setText(name);
-                radioButton.setId(i);
+                radioButton.setId(id);
                 radioButton.setTextSize(25);
                 rprms= new RadioGroup.LayoutParams(RadioGroup.LayoutParams.WRAP_CONTENT, RadioGroup.LayoutParams.WRAP_CONTENT);
                 rgp.addView(radioButton, rprms);
-/*
-                Toast.makeText(getApplicationContext(), name,
-                        Toast.LENGTH_SHORT).show();*/
+
+                Toast.makeText(getApplicationContext(), "" + id + " : " + name,
+                        Toast.LENGTH_SHORT).show();
 
             }
 
