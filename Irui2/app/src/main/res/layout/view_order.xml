@@ -6,19 +6,19 @@
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="120dp"
-        android:layout_marginTop="5dp">
+        android:layout_height="130dp"
+        android:layout_marginTop="5dp"
+        android:weightSum="1">
 
         <LinearLayout
             android:orientation="horizontal"
-            android:layout_width="250dp"
+            android:layout_width="106dp"
             android:layout_height="match_parent"
             android:weightSum="1">
 
             <TableLayout
-                android:layout_width="50dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1.98">
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
 
                 <TableRow
@@ -129,109 +129,42 @@
                         android:id="@+id/imageDelivered"
                         android:src="@drawable/process"
                         android:layout_column="9" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
                 </TableRow>
             </TableLayout>
 
 
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="180dp"
-                android:layout_height="match_parent">
-
-                <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <RelativeLayout
-                        android:layout_width="165dp"
-                        android:layout_height="94dp"
-                        android:layout_marginTop="10dp">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textAppearance="?android:attr/textAppearanceMedium"
-                            android:text="orderAddress"
-                            android:id="@+id/orderAddress"
-                            android:layout_centerHorizontal="true"
-                            android:layout_alignParentBottom="false"
-                            android:textStyle="bold"
-                            android:textSize="20dp"
-                            android:layout_marginBottom="15dp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textAppearance="?android:attr/textAppearanceSmall"
-                            android:text="orderId"
-                            android:layout_below="@+id/orderAddress"
-                            android:id="@+id/orderId"
-                            android:layout_centerHorizontal="true"
-                            android:layout_marginTop="5dp" />
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textAppearance="?android:attr/textAppearanceSmall"
-                            android:text="orderPrice"
-                            android:layout_below="@+id/orderId"
-                            android:id="@+id/orderPrice"
-                            android:layout_centerHorizontal="true"
-                            android:layout_marginTop="5dp"
-                            android:layout_alignParentBottom="true" />
-
-                    </RelativeLayout>
-                </LinearLayout>
-
-            </LinearLayout>
         </LinearLayout>
 
-        <RelativeLayout
-            android:orientation="horizontal"
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="20dp">
+            android:layout_height="match_parent">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/orderedConstant"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="@string/orderDate"
-                android:layout_centerHorizontal="true" />
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="New Text"
-                android:layout_below="@+id/orderedConstant"
-                android:id="@+id/orderDate"
-                android:layout_marginLeft="25dp" />
-
-            <Space
-                android:layout_width="0dp"
-                android:layout_height="5dp"/>
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="addressName"
+                android:id="@+id/addressName"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/shippedDate"
-                android:layout_below="@+id/orderDate"
-                android:id="@+id/shippedConstant"
-                android:layout_marginLeft="25dp"
-                android:layout_marginTop="10dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="New Text"
-                android:layout_below="@+id/shippedConstant"
-                android:id="@+id/shipDate"
-                android:layout_marginLeft="25dp" />
-
-        </RelativeLayout>
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="orderId"
+                android:id="@+id/orderId"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="15dp" />
+        </LinearLayout>
 
     </LinearLayout>
 

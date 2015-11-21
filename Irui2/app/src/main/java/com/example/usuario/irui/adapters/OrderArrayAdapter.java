@@ -14,6 +14,8 @@ import com.example.usuario.irui.requestModels.Order;
 import com.example.usuario.irui.requestModels.Product;
 import com.squareup.picasso.Picasso;
 
+import org.w3c.dom.Text;
+
 /**
  * Created by Francisco on 20/11/2015.
  */
@@ -37,11 +39,12 @@ public class OrderArrayAdapter extends ArrayAdapter<Order>{
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.view_order, parent, false);
         }
 
-        TextView nameTextView = (TextView)convertView.findViewById(R.id.orderAddress);
+        TextView nameTextView = (TextView)convertView.findViewById(R.id.addressName);
         nameTextView.setText(order.getAddress() == null ? "-" : order.getAddress().getName());
 
         TextView brandTextView = (TextView)convertView.findViewById(R.id.orderId);
-        brandTextView.setText("Id: " + order.getId().toString());
+        brandTextView.setText("Id: #" + order.getId().toString());
+
 
         return convertView;
     }
