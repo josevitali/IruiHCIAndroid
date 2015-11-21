@@ -1,5 +1,7 @@
 package com.example.usuario.irui.requestModels;
 
+import java.util.Arrays;
+
 /**
  * Created by natinavas on 11/21/15.
  */
@@ -7,14 +9,14 @@ public class ProductComplete {
 
     private int id;
     private String name;
-    private int price;
+    private double price;
     private String[] imageURL;
     private Category category;
     private Category subcategory;
     private Attribute[] attributes;
 
 
-    public ProductComplete(int id, String name, int price, String[] imageURL, Category category, Category subcategory, Attribute[] attributes) {
+    public ProductComplete(int id, String name, double price, String[] imageURL, Category category, Category subcategory, Attribute[] attributes) {
         this.id = id;
         this.name = name;
         this.price = price;
@@ -33,7 +35,7 @@ public class ProductComplete {
         return name;
     }
 
-    public int getPrice() {
+    public double getPrice() {
         return price;
     }
 
@@ -61,7 +63,7 @@ public class ProductComplete {
         this.name = name;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
@@ -79,5 +81,38 @@ public class ProductComplete {
 
     public void setAttributes(Attribute[] attributes) {
         this.attributes = attributes;
+    }
+
+
+
+    public class Category {
+        private int id;
+        private String name;
+
+        public Category(int id, String name){
+            this.id = id;
+            this.name = name;
+        }
+
+        public int getId() {
+            return id;
+        }
+
+        public String getName() {
+            return name;
+        }
+    }
+
+
+    public class Attribute {
+        private int id;
+        private String name;
+        private String[] values;
+
+        public Attribute(int id, String name, String[] values) {
+            this.id = id;
+            this.name = name;
+            this.values = values;
+        }
     }
 }

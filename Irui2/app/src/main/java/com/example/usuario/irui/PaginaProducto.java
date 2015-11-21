@@ -66,16 +66,22 @@ public class PaginaProducto extends Base {
 
 
 
-                JSONObject prod = new JSONObject(product);
-                JSONArray atts = prod.getJSONArray("attributes");
+//                JSONObject prod = new JSONObject(product);
+//                JSONArray atts = prod.getJSONArray("attributes");
 
-                Toast.makeText(getApplicationContext(), atts.toString(),
+
+
+                Gson gson = new Gson();
+                ProductComplete product2 = gson.fromJson(product, ProductComplete.class);
+
+
+                Toast.makeText(getApplicationContext(), product2.getName(),
                         Toast.LENGTH_LONG).show();
 
 
 
-//
-//                Gson gson = new Gson();
+
+
 //                Attribute attr =
 
 //                JSONObject j = products.getJSONObject(i);
