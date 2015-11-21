@@ -6,7 +6,7 @@
     <Spinner
         android:layout_width="150dp"
         android:layout_height="40dp"
-        android:id="@+id/prodColors"
+        android:id="@+id/spinner"
         android:layout_marginBottom="118dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
@@ -17,128 +17,37 @@
     <Spinner
         android:layout_width="150dp"
         android:layout_height="40dp"
-        android:id="@+id/prodSizes"
-        android:entries="@array/array_name"
-        android:layout_below="@+id/prodImg"
-        android:layout_toRightOf="@+id/prodColors"
-        android:layout_toEndOf="@+id/prodColors" />
+        android:id="@+id/spinner2"
+        android:layout_alignTop="@+id/spinner"
+        android:layout_toEndOf="@+id/textView6"
+        android:layout_toRightOf="@+id/textView6"
+        android:entries="@array/array_name"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Small Text"
+        android:id="@+id/textView6"
+        android:layout_marginBottom="46dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
 
     <ImageView
         android:layout_width="190dp"
-        android:layout_height="250dp"
-        android:id="@+id/prodImg"
+        android:layout_height="300dp"
+        android:id="@+id/imageView2"
         android:src="@drawable/fotoej"
-        android:layout_above="@+id/prodColors"
+        android:layout_above="@+id/spinner"
         android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Precio Producto"
-        android:id="@+id/prodPrice"
-        android:layout_above="@+id/prodImg"
-        android:layout_centerHorizontal="true"
-        android:textSize="18dp" />
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/prodSizes"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="31dp"
-                android:id="@+id/linearLayout3">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="Small Text"
-                    android:id="@+id/prodInfo"
-                    android:textStyle="bold"
-                    android:textSize="15dp"
-                    android:paddingLeft="10dp"
-                    android:layout_gravity="center_vertical" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="31dp"
-                android:layout_below="@+id/linearLayout3"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:id="@+id/linearLayout4">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="Small Text"
-                    android:id="@+id/infoBrand"
-                    android:layout_gravity="center_vertical"
-                    android:paddingLeft="20dp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="31dp"
-                android:id="@+id/linearLayout5"
-                android:layout_below="@+id/linearLayout4"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="Small Text"
-                    android:id="@+id/infoOcassion"
-                    android:layout_gravity="center_vertical"
-                    android:paddingLeft="20dp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="31dp"
-                android:id="@+id/linearLayout6"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="Small Text"
-                    android:id="@+id/infoMaterial"
-                    android:layout_gravity="center_vertical"
-                    android:paddingLeft="20dp" />
-            </LinearLayout>
-
-        </RelativeLayout>
-    </LinearLayout>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Nombre Producto"
-        android:id="@+id/textView5"
-        android:layout_above="@+id/prodPrice"
+        android:id="@+id/productName"
+        android:layout_above="@+id/imageView2"
         android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
