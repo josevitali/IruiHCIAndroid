@@ -13,6 +13,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,6 +22,7 @@ import com.example.usuario.irui.requestModels.Product;
 import com.example.usuario.irui.requestModels.ProductComplete;
 import com.example.usuario.irui.requestModels.User;
 import com.google.gson.Gson;
+import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -77,6 +79,11 @@ public class PaginaProducto extends Base {
 
                 TextView prodPrice = (TextView)findViewById(R.id.prodPrice);
                 prodPrice.setText("$"+ product2.getPrice());
+
+                ImageView imageView = (ImageView)findViewById(R.id.prodImg);
+                Picasso.with(this)
+                        .load(product2.getImageURL()[0])
+                        .into(imageView);
 
 //                Attribute attr =
 
