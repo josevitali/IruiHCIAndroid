@@ -31,4 +31,34 @@ public class Mujeres extends Base {
         this.startActivity(intent);
     }
 
+    public void showOnSale(View view){
+        Intent intent = new Intent(this, ResultadosBusqueda.class);
+        intent.putExtra("womenOnSale", true);
+        this.startActivity(intent);
+    }
+
+    public void showNewArrivals(View view){
+        Intent intent = new Intent(this, ResultadosBusqueda.class);
+        intent.putExtra("womenNewArrivals", true);
+        this.startActivity(intent);
+    }
+
+    public void showClothes(View view){
+        Intent intent = new Intent(this, ResultadosBusqueda.class);
+        intent.putExtra("womenClothes", true);
+        this.startActivity(intent);
+    }
+
+    public void showShoes(View view){
+        Intent intent = new Intent(this, ResultadosBusqueda.class);
+        intent.putExtra("womenShoes", true);
+        this.startActivity(intent);
+    }
+
+    public void showAccesories(View view){
+        Intent intent = new Intent(this, ResultadosBusqueda.class);
+        intent.putExtra("womenAccesories", true);
+        this.startActivity(intent);
+    }
+
 }

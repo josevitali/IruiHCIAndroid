@@ -48,8 +48,20 @@ public class ResultadosBusqueda extends Base{
         }else if(myIntent.hasExtra("womenAll")){
             request = "http://eiffel.itba.edu.ar/hci/service3/Catalog.groovy?method=GetAllProducts&filters=[%20{%20%22id%22:%201,%20%22value%22:%20%22Femenino%22%20}%20]&page_size=1000";
 
-        }else if(myIntent.hasExtra("menAll")){
+        }else if(myIntent.hasExtra("menAll")) {
             request = "http://eiffel.itba.edu.ar/hci/service3/Catalog.groovy?method=GetAllProducts&filters=[%20{%20%22id%22:%201,%20%22value%22:%20%22Masculino%22%20}%20]&page_size=1000";
+
+        }else if(myIntent.hasExtra("womenOnSale")) {
+
+
+            request = "http://eiffel.itba.edu.ar/hci/service3/Catalog.groovy?method=GetAllProducts&filtros=[%20{%20%22id%22:%205,%20%22value%22:%20%22Oferta%22%20}%20]%20[%20{%20%22id%22:%201,%20%22value%22:%20%22Femenino%22%20}%20]";
+
+        }else if(myIntent.hasExtra("womenNewArrivals")) {
+
+            Toast.makeText(getApplicationContext(), "fadfdsgafdhagdhgf",
+                    Toast.LENGTH_SHORT).show();
+
+            request = "http://eiffel.itba.edu.ar/hci/service3/Catalog.groovy?method=GetAllProducts&filters=[%20{%20%22id%22:%201,%20%22value%22:%20%22Femenino%22%20}%20][%20{%20%22id%22:%206,%20%22value%22:%20%22Nuevo%22%20}%20]&page_size=1000";
 
         }else if(myIntent.hasExtra("childrenAll")){
             Toast.makeText(getApplicationContext(), "muestro ropa de ni;os",
