@@ -74,8 +74,8 @@ public class ResultadosBusqueda extends Base{
 
         public void afterRequest(String resp){
 
-
-            apiCall(resp);
+            if(resp != "error")
+                apiCall(resp);
     }
 
 
@@ -127,7 +127,7 @@ public class ResultadosBusqueda extends Base{
 
         } catch (JSONException e) {
             e.printStackTrace();
-            Toast.makeText(getApplicationContext(),"exception",
+            Toast.makeText(getApplicationContext(),"No se encontraron productos que cumplan con la condición",
                     Toast.LENGTH_LONG).show();
         }
 

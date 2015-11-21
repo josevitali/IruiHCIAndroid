@@ -72,6 +72,10 @@ public class Busqueda extends Base {
         EditText edit_txt = (EditText) findViewById(R.id.search_text);
 
         edit_txt.setOnEditorActionListener(new EditText.OnEditorActionListener() {
+
+
+
+
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 if (event != null && event.getAction() != KeyEvent.ACTION_DOWN) {

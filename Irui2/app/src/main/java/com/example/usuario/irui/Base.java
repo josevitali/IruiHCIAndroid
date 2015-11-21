@@ -53,14 +53,12 @@ public abstract class Base extends AppCompatActivity
         final SharedPreferences preferences = getSharedPreferences("MY_PREFS", MODE_PRIVATE);
 
         if(!preferences.contains("TOKEN")){
-            menu.findItem(R.id.nav_share).setVisible(false);
             menu.findItem(R.id.nav_send).setVisible(false);
             menu.findItem(R.id.cerrar_sesion).setVisible(false);
             menu.findItem(R.id.nav_login).setVisible(true);
 
         }else{
             menu.findItem(R.id.nav_login).setVisible(false);
-            menu.findItem(R.id.nav_share).setVisible(true);
             menu.findItem(R.id.nav_send).setVisible(true);
             menu.findItem(R.id.cerrar_sesion).setVisible(true);
 
@@ -126,10 +124,6 @@ public abstract class Base extends AppCompatActivity
         }
         else if(id == R.id.nav_send){
             Intent intent = new Intent(this, Orders.class);
-            this.startActivity(intent);
-
-        } else if(id == R.id.nav_share){
-            Intent intent = new Intent(this, PersonalInformation.class);
             this.startActivity(intent);
 
         } else if (id == R.id.nav_women) {

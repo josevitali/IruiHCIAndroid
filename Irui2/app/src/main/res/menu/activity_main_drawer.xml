@@ -16,8 +16,6 @@
 
     <item android:title="Mi usuario">
         <menu>
-            <item android:id="@+id/nav_share" android:icon="@drawable/user"
-                android:title="Mi Información Personal" />
             <item android:id="@+id/nav_send" android:icon="@android:drawable/ic_menu_send"
                 android:title="Mis Pedidos" />
         </menu>
