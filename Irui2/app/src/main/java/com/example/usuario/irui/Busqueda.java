@@ -91,23 +91,6 @@ public class Busqueda extends Base {
         setSupportActionBar(toolbar);
 
 
-        final SharedPreferences preferences = getSharedPreferences("MY_PREFS", MODE_PRIVATE);
-
-        String token = preferences.getString("TOKEN", "no token defined");
-        String account = preferences.getString("USER", "no token defined");
-
-        {
-            Gson gson = new Gson();
-            User user = gson.fromJson(account, User.class);
-
-            Toast.makeText(getApplicationContext(), "username : " + user.getFirstName(),
-                    Toast.LENGTH_SHORT).show();
-
-        }
-
-        Toast.makeText(getApplicationContext(), "token : " + token,
-                Toast.LENGTH_SHORT).show();
-
     }
 
 }

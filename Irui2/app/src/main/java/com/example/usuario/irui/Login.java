@@ -5,6 +5,7 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.support.design.widget.FloatingActionButton;
@@ -16,12 +17,20 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.usuario.irui.requestModels.Order;
 import com.example.usuario.irui.requestModels.User;
 import com.google.gson.Gson;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.io.BufferedInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
 
 public class Login extends Base {
 
@@ -55,6 +64,8 @@ public class Login extends Base {
                 "&password=" + pass;
 
         new Connection(this, request).execute();
+
+
 
 
     }
@@ -113,6 +124,11 @@ public class Login extends Base {
                     .show();
 
 
+            String request ="http://eiffel.itba.edu.ar/hci/service3/Order.groovy?method=GetAllOrders&username="
+                    + user.getUsername() + "&authentication_token=" + token;
+
+
+            new Connection2(this, request).execute();
 
             Intent intent = new Intent(this, MainActivity.class);
             this.startActivity(intent);
@@ -123,6 +139,104 @@ public class Login extends Base {
             Toast.makeText(getApplicationContext(), "Datos Invalidos",
                     Toast.LENGTH_LONG).show();
         }
+
+    }
+
+    public void afterOrders(String resp){
+
+        if(resp == "error"){
+            Toast.makeText(getApplicationContext(), "Error de Servidor",
+                    Toast.LENGTH_LONG).show();
+        }
+
+        JSONObject  jsonRootObject = null;
+        try {
+            jsonRootObject = new JSONObject(resp);
+
+            String orders = jsonRootObject.getString("orders");
+
+            final SharedPreferences preferences = getSharedPreferences("MY_PREFS", MODE_PRIVATE);
+
+            SharedPreferences.Editor editor = preferences.edit();
+            editor.putString("ORDERS", orders);
+            editor.commit();
+
+
+
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+            Toast.makeText(getApplicationContext(), "Datos Invalidos",
+                    Toast.LENGTH_LONG).show();
+        }
+
+    }
+
+
+    private class Connection2 extends AsyncTask<Void, Void, String> {
+
+
+
+
+        private String myUrl = "";
+        private Login activity = null;
+
+        public Connection2(Login  activity, String url) {
+            this.activity = activity;
+            this.myUrl = url;
+        }
+
+
+
+        private static final String TAG = "HttpGetTask";
+
+
+        @Override
+        protected String doInBackground(Void... params) {
+
+            HttpURLConnection urlConnection = null;
+
+            try {
+                URL url = new URL(myUrl);
+                urlConnection = (HttpURLConnection) url.openConnection();
+                InputStream in = new BufferedInputStream(urlConnection.getInputStream());
+                return readStream(in);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+                return "error";
+            }
+            finally {
+                if (urlConnection != null)
+                    urlConnection.disconnect();
+            }
+        }
+
+
+        @Override
+        protected void onPostExecute(String result) {
+            activity.afterOrders(result);
+        }
+
+
+        private String readStream(InputStream inputStream) {
+            try {
+                ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+                int i = inputStream.read();
+                while(i != -1) {
+                    outputStream.write(i);
+                    i = inputStream.read();
+                }
+                return outputStream.toString();
+            } catch (IOException e) {
+                return "";
+            }
+        }
+
+
+
+
+
+
 
     }
 
