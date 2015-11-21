@@ -44,6 +44,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/prodInfo"
                     android:id="@+id/prodInfo"
                     android:textStyle="bold"
                     android:textSize="15dp"
@@ -65,6 +66,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/infoBrand"
                     android:id="@+id/infoBrand"
                     android:layout_gravity="center_vertical"
                     android:paddingLeft="20dp" />
@@ -83,6 +85,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/infoOcassion"
                     android:id="@+id/infoOcassion"
                     android:layout_gravity="center_vertical"
                     android:paddingLeft="20dp" />
@@ -101,6 +104,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/infoMaterial"
                     android:id="@+id/infoMaterial"
                     android:layout_gravity="center_vertical"
                     android:paddingLeft="20dp" />
@@ -110,6 +114,7 @@
                 android:layout_width="150dp"
                 android:layout_height="40dp"
                 android:id="@+id/prodSizes"
+                android:text="@string/prodSizes"
                 android:entries="@array/array_name"
                 android:layout_below="@+id/linearLayout6"
                 android:layout_alignParentLeft="true"
@@ -118,6 +123,7 @@
             <Spinner
                 android:layout_width="150dp"
                 android:layout_height="40dp"
+                android:text="@string/prodColors"
                 android:id="@+id/prodColors"
                 android:entries="@array/array_name"
                 android:layout_below="@+id/prodSizes"
@@ -132,7 +138,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Nombre Producto"
-        android:id="@+id/textView5"
+        android:id="@+id/productName"
         android:layout_above="@+id/prodPrice"
         android:layout_centerHorizontal="true" />
 
