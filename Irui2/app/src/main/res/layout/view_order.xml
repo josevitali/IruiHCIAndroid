@@ -85,22 +85,26 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/imageCreated"
-                        android:src="@drawable/created"
-                        android:layout_column="7"
-                        android:layout_marginLeft="25dp"
-                        android:layout_marginTop="25dp" />
+                </TableRow>
 
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/imageConfirmed"
-                        android:src="@drawable/confirmed"
-                        android:layout_column="9"
-                        android:layout_marginTop="25dp" />
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"></TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"></TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
                 </TableRow>
 
                 <TableRow
@@ -118,24 +122,10 @@
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/imageShipped"
-                        android:src="@drawable/shipped"
-                        android:layout_column="7"
-                        android:layout_marginLeft="25dp" />
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/imageDelivered"
-                        android:src="@drawable/process"
-                        android:layout_column="9" />
-
-                </TableRow>
-
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
+                        android:id="@+id/statusIcon"
+                        android:layout_column="2"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp" />
                 </TableRow>
             </TableLayout>
 
