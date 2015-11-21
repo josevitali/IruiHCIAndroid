@@ -99,6 +99,7 @@
 
     <!--Orden-->
     <string name="orderDate">Ordered on:</string>
+    <string name="shippedDate">Shipped on:</string>
 
 
 

@@ -84,6 +84,7 @@
 
     <!--Ordenes-->
     <string name="orderDate">Pedido el:</string>
+    <string name="shippedDate">Entregado el:</string>
 
 
 </resources>
