@@ -24,37 +24,37 @@ public class Hombres extends Base {
 
     public void showAllMen(View view){
         Intent intent = new Intent(this, ResultadosBusqueda.class);
-        intent.putExtra("menAll", true);
+        intent.putExtra("search", "menAll");
         this.startActivity(intent);
     }
 
     public void showOnSale(View view){
         Intent intent = new Intent(this, ResultadosBusqueda.class);
-        intent.putExtra("menOnSale", true);
+        intent.putExtra("search", "menOnSale");
         this.startActivity(intent);
     }
 
     public void showNewArrivals(View view){
         Intent intent = new Intent(this, ResultadosBusqueda.class);
-        intent.putExtra("menNewArrivals", true);
+        intent.putExtra("search", "menNewArrivals");
         this.startActivity(intent);
     }
 
     public void showClothes(View view){
         Intent intent = new Intent(this, ResultadosBusqueda.class);
-        intent.putExtra("menClothes", true);
+        intent.putExtra("search", "menClothes");
         this.startActivity(intent);
     }
 
     public void showShoes(View view){
         Intent intent = new Intent(this, ResultadosBusqueda.class);
-        intent.putExtra("menShoes", true);
+        intent.putExtra("search", "menShoes");
         this.startActivity(intent);
     }
 
     public void showAccesories(View view){
         Intent intent = new Intent(this, ResultadosBusqueda.class);
-        intent.putExtra("menAccesories", true);
+        intent.putExtra("search", "menAccesories");
         this.startActivity(intent);
     }
 

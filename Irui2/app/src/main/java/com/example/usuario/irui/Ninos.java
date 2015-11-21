@@ -24,7 +24,7 @@ public class Ninos extends Base {
 
     public void showAllChildren(View view){
         Intent intent = new Intent(this, ResultadosBusqueda.class);
-        intent.putExtra("childrenAll", true);
+        intent.putExtra("search", "childrenAll");
         this.startActivity(intent);
     }
 

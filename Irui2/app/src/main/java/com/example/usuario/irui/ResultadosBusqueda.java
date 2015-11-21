@@ -24,6 +24,10 @@ import java.util.List;
 
 public class ResultadosBusqueda extends Base{
 
+    static final int GET_SUBCATEGORY = 1;
+
+    private String search;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,40 +45,29 @@ public class ResultadosBusqueda extends Base{
 
         String request = "http://eiffel.itba.edu.ar/hci/service3/Catalog.groovy?method=GetAllProducts&page_size=1000";
 
-        if(myIntent.hasExtra("searchText")){
+
+        if(myIntent.hasExtra("searchText")) {
             String s = myIntent.getStringExtra("searchText");
-            request = "http://eiffel.itba.edu.ar/hci/service3/Catalog.groovy?method=GetProductsByName&name="+ s;
+            request = "http://eiffel.itba.edu.ar/hci/service3/Catalog.groovy?method=GetProductsByName&name=" + s;
+        }
 
-        }else if(myIntent.hasExtra("womenAll")){
-            request = "http://eiffel.itba.edu.ar/hci/service3/Catalog.groovy?method=GetAllProducts&filters=[%20{%20%22id%22:%201,%20%22value%22:%20%22Femenino%22%20}%20]&page_size=1000";
+        search = myIntent.getStringExtra("search");
 
-        }else if(myIntent.hasExtra("menAll")) {
-            request = "http://eiffel.itba.edu.ar/hci/service3/Catalog.groovy?method=GetAllProducts&filters=[%20{%20%22id%22:%201,%20%22value%22:%20%22Masculino%22%20}%20]&page_size=1000";
-
-        }else if(myIntent.hasExtra("womenOnSale")) {
-
-
-            request = "http://eiffel.itba.edu.ar/hci/service3/Catalog.groovy?method=GetAllProducts&filtros=[%20{%20%22id%22:%205,%20%22value%22:%20%22Oferta%22%20}%20]%20[%20{%20%22id%22:%201,%20%22value%22:%20%22Femenino%22%20}%20]";
-
-        }else if(myIntent.hasExtra("womenNewArrivals")) {
-
-            Toast.makeText(getApplicationContext(), "fadfdsgafdhagdhgf",
-                    Toast.LENGTH_SHORT).show();
-
-            request = "http://eiffel.itba.edu.ar/hci/service3/Catalog.groovy?method=GetAllProducts&filters=[%20{%20%22id%22:%201,%20%22value%22:%20%22Femenino%22%20}%20][%20{%20%22id%22:%206,%20%22value%22:%20%22Nuevo%22%20}%20]&page_size=1000";
-
-        }else if(myIntent.hasExtra("childrenAll")){
-            Toast.makeText(getApplicationContext(), "muestro ropa de ni;os",
-                    Toast.LENGTH_SHORT).show();
-           // request = "http://eiffel.itba.edu.ar/hci/service3/Catalog.groovy?method=GetAllProducts&filters=[%20{%20%22id%22:%201,%20%22value%22:%20%22Infantil%22%20}%20]&page_size=1000";
-
-        }else if(myIntent.hasExtra("new")){
-            Toast.makeText(getApplicationContext(), "muestro ropa nueva",
-                    Toast.LENGTH_SHORT).show();
-
-        }else if(myIntent.hasExtra("sale")){
-            Toast.makeText(getApplicationContext(), "muestro ropa en descuento",
-                    Toast.LENGTH_SHORT).show();
+        switch (search){
+            case "womenAll":
+                request = "http://eiffel.itba.edu.ar/hci/service3/Catalog.groovy?method=GetAllProducts&filters=[%20{%20%22id%22:%201,%20%22value%22:%20%22Femenino%22%20}%20]&page_size=1000";
+                break;
+            case "menAll":
+                request = "http://eiffel.itba.edu.ar/hci/service3/Catalog.groovy?method=GetAllProducts&filters=[%20{%20%22id%22:%201,%20%22value%22:%20%22Masculino%22%20}%20]&page_size=1000";
+                break;
+            case "womenOnSale":
+                break;
+            case "womenNewArrivals":
+                break;
+            case "childrenAll":
+                break;
+            case "womenShoes":
+                break;
         }
 
 
@@ -84,10 +77,10 @@ public class ResultadosBusqueda extends Base{
     }
 
 
-        public void afterRequest(String resp){
+    public void afterRequest(String resp){
 
-            if(resp != "error")
-                apiCall(resp);
+        if(resp != "error")
+            apiCall(resp);
     }
 
 
@@ -99,9 +92,36 @@ public class ResultadosBusqueda extends Base{
     }
 
     public void ordenarPor(View view){
+
+
+        Intent myIntent = getIntent(); // gets the previously created intent
+
+
         Intent intent = new Intent(this, OrdenarPor.class);
-        this.startActivity(intent);
+
+        intent.putExtra("search", search);
+
+
+        this.startActivityForResult(intent, GET_SUBCATEGORY);
     }
+
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        // Check which request we're responding to
+        if (requestCode == GET_SUBCATEGORY) {
+            // Make sure the request was successful
+            if (resultCode == RESULT_OK) {
+                String subcategory = data.getStringExtra("subcategory");
+
+                Toast.makeText(getApplicationContext(),subcategory,
+                        Toast.LENGTH_LONG).show();
+            }
+        }
+    }
+
+
+
 
     private void apiCall(String url){
         JSONObject jsonRootObject = null;
