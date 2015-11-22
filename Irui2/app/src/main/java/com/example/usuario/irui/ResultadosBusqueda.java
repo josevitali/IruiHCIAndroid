@@ -94,6 +94,17 @@ public class ResultadosBusqueda extends Base{
                 filters += "{\"id\":1,\"value\":\"Masculino\"},";
             }
 
+            if(search.contains("Adult")){
+              //  gender = "Femenino";
+                filters += "{\"id\":2,\"value\":\"Adulto\"},";
+            } else if(search.contains("Kid")){
+             //   gender = "Masculino";
+                filters += "{\"id\":2,\"value\":\"Infantil\"},";
+            } else if(search.contains("Baby")){
+             //   gender = "Masculino";
+                filters += "{\"id\":2,\"value\":\"Bebe\"},";
+            }
+
 
             filters = filters.substring(0, filters.length() -1);
             filters += "]";

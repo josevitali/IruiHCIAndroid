@@ -1,6 +1,7 @@
 package com.example.usuario.irui;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -21,5 +22,42 @@ public class Girls extends Base {
         drawer.addView(contentView, 0);
 
     }
+
+    public void showAllGirls(View view){
+        Intent intent = new Intent(this, ResultadosBusqueda.class);
+        intent.putExtra("search", "womenAllKid");
+        this.startActivity(intent);
+    }
+
+    public void showOnSale(View view){
+        Intent intent = new Intent(this, ResultadosBusqueda.class);
+        intent.putExtra("search", "womenOnSaleKid");
+        this.startActivity(intent);
+    }
+
+    public void showNewArrivals(View view){
+        Intent intent = new Intent(this, ResultadosBusqueda.class);
+        intent.putExtra("search", "womenNewArrivalsKid");
+        this.startActivity(intent);
+    }
+
+    public void showClothes(View view){
+        Intent intent = new Intent(this, ResultadosBusqueda.class);
+        intent.putExtra("search", "womenClothesKid");
+        this.startActivity(intent);
+    }
+
+    public void showShoes(View view){
+        Intent intent = new Intent(this, ResultadosBusqueda.class);
+        intent.putExtra("search", "womenShoesKid");
+        this.startActivity(intent);
+    }
+
+    public void showAccesories(View view){
+        Intent intent = new Intent(this, ResultadosBusqueda.class);
+        intent.putExtra("search", "womenAccesoriesKid");
+        this.startActivity(intent);
+    }
+
 
 }

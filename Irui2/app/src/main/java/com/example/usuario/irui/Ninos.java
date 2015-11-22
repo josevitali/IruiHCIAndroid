@@ -22,10 +22,41 @@ public class Ninos extends Base {
 
     }
 
-    public void showAllChildren(View view){
+    public void showAllBoys(View view){
         Intent intent = new Intent(this, ResultadosBusqueda.class);
-        intent.putExtra("search", "childrenAll");
+        intent.putExtra("search", "menAllKid");
         this.startActivity(intent);
     }
+
+    public void showOnSale(View view){
+        Intent intent = new Intent(this, ResultadosBusqueda.class);
+        intent.putExtra("search", "menOnSaleKid");
+        this.startActivity(intent);
+    }
+
+    public void showNewArrivals(View view){
+        Intent intent = new Intent(this, ResultadosBusqueda.class);
+        intent.putExtra("search", "menNewArrivalsKid");
+        this.startActivity(intent);
+    }
+
+    public void showClothes(View view){
+        Intent intent = new Intent(this, ResultadosBusqueda.class);
+        intent.putExtra("search", "menClothesKid");
+        this.startActivity(intent);
+    }
+
+    public void showShoes(View view){
+        Intent intent = new Intent(this, ResultadosBusqueda.class);
+        intent.putExtra("search", "menShoesKid");
+        this.startActivity(intent);
+    }
+
+    public void showAccesories(View view){
+        Intent intent = new Intent(this, ResultadosBusqueda.class);
+        intent.putExtra("search", "menAccesoriesKid");
+        this.startActivity(intent);
+    }
+
 
 }
