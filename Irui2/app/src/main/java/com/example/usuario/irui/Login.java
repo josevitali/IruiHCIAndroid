@@ -74,9 +74,6 @@ public class Login extends Base {
 
         String request = builtUri.toString();
 
-        Toast.makeText(getApplicationContext(), request,
-                Toast.LENGTH_LONG).show();
-
         new Connection(this, request).execute();
 
 
@@ -103,11 +100,6 @@ public class Login extends Base {
             RunningApplication app = (RunningApplication)this.getApplication();
 
             app.setAuthenticationToken(token);
-
-
-
-            Toast.makeText(getApplicationContext(), "token : " + token,
-                    Toast.LENGTH_SHORT).show();
 
             final SharedPreferences preferences = getSharedPreferences("MY_PREFS", MODE_PRIVATE);
 
