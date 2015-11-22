@@ -14,14 +14,25 @@
             android:title="@string/newArr" />
     </group>
 
-    <item android:title="@string/user">
+    <item android:title="@string/user"
+        android:id="@+id/title">
         <menu>
-            <item android:id="@+id/nav_login" android:icon="@drawable/user"
+            <item
+                android:id="@+id/nav_login"
+                android:icon="@drawable/user"
+                android:layout_below="@+id/title"
                 android:title="@string/login"/>
 
-            <item android:id="@+id/nav_send" android:icon="@android:drawable/ic_menu_send"
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@android:drawable/ic_menu_send"
+                android:layout_below="@+id/title"
                 android:title="@string/orders"/>
-            <item android:id="@+id/cerrar_sesion" android:icon="@drawable/log_out"
+
+            <item
+                android:id="@+id/cerrar_sesion"
+                android:icon="@drawable/log_out"
+                android:layout_below="@+id/nav_send"
                 android:title="@string/signout"/>
         </menu>
     </item>

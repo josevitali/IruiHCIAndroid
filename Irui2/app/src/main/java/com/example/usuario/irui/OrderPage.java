@@ -3,6 +3,7 @@ package com.example.usuario.irui;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -14,6 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.usuario.irui.requestModels.Order;
+import com.example.usuario.irui.requestModels.OrderStatus;
 import com.example.usuario.irui.requestModels.User;
 import com.google.gson.Gson;
 
@@ -40,9 +42,20 @@ public class OrderPage extends Base {
         Gson gson = new Gson();
         User user = gson.fromJson(account, User.class);
 
-        String request = "http://eiffel.itba.edu.ar/hci/service3/Order.groovy?method=GetOrderById&username="+
-                user.getUsername() +"&authentication_token=" + token + "&id=" + myIntent.getStringExtra("id");
 
+
+        String baseUrl = "http://eiffel.itba.edu.ar/hci/service3/Order.groovy?";
+
+        Uri.Builder builder = new Uri.Builder();
+
+        Uri builtUri = Uri.parse(baseUrl)
+                .buildUpon()
+                .appendQueryParameter("method", "GetOrderById")
+                .appendQueryParameter("username", user.getUsername())
+                .appendQueryParameter("authentication_token", token)
+                .appendQueryParameter("id", myIntent.getStringExtra("id"))
+                .build();
+        String request = builtUri.toString();
 
 
 
@@ -78,18 +91,53 @@ public class OrderPage extends Base {
                     Toast.makeText(getApplicationContext(), "la orden es null por alguna razon",
                             Toast.LENGTH_SHORT).show();
 
-//                TextView addressName = (TextView)findViewById(R.id.addrName);
-//                addressName.setText((order.getAddress() == null || order.getAddress().getName() == null)? "-" : order.getAddress().getName());
+                TextView addressName = (TextView)findViewById(R.id.addrName);
+                addressName.setText((order.getAddress() == null || order.getAddress().getName() == null)? "-" : order.getAddress().getName());
 
 
-//                TextView createDate = (TextView)findViewById(R.id.orderDate);
-//                createDate.setText(order.getProcessedDate() == null ? "-" : order.getProcessedDate());
-//
-//                TextView shipDate = (TextView)findViewById(R.id.deliverDate);
-//                shipDate.setText(order.getShippedDate() == null ? "-" : order.getShippedDate());
+                TextView createDate = (TextView)findViewById(R.id.orderDate);
+                createDate.setText(order.getProcessedDate() == null ? "-" : order.getProcessedDate());
 
-//                TextView orderNumber = (TextView)findViewById(R.id.orderNumber);
-//                orderNumber.setText(order.getAddress() == null ? "-" : "#" + order.getId().toString());
+                TextView shipDate = (TextView)findViewById(R.id.deliverDate);
+                shipDate.setText(order.getShippedDate() == null ? "-" : order.getShippedDate());
+
+                TextView orderNumber = (TextView)findViewById(R.id.orderNumber);
+                orderNumber.setText(order.getAddress() == null ? "-" : "#" + order.getId().toString());
+
+                TextView createdView = (TextView)findViewById(R.id.orderStateCreated);
+                TextView shippedView = (TextView)findViewById(R.id.orderStateShipped);
+                TextView deliveredView = (TextView)findViewById(R.id.orderStateDelivered);
+                TextView confirmedView = (TextView)findViewById(R.id.orderStateConfirmed);
+
+                OrderStatus status = order.getStatus();
+
+                if(status == OrderStatus.DELIVERED){
+                    createdView.setVisibility(View.GONE);
+                    shippedView.setVisibility(View.GONE);
+                    deliveredView.setVisibility(View.VISIBLE);
+                    confirmedView.setVisibility(View.GONE);
+
+
+                }else if(status == OrderStatus.CREATED){
+                    createdView.setVisibility(View.VISIBLE);
+                    shippedView.setVisibility(View.GONE);
+                    deliveredView.setVisibility(View.GONE);
+                    confirmedView.setVisibility(View.GONE);
+
+                }else if(status == OrderStatus.SHIPPED){
+                    createdView.setVisibility(View.GONE);
+                    shippedView.setVisibility(View.VISIBLE);
+                    deliveredView.setVisibility(View.GONE);
+                    confirmedView.setVisibility(View.GONE);
+
+                }else{
+                    createdView.setVisibility(View.GONE);
+                    shippedView.setVisibility(View.GONE);
+                    deliveredView.setVisibility(View.GONE);
+                    confirmedView.setVisibility(View.VISIBLE);
+
+                }
+
 
 
 

@@ -99,6 +99,10 @@
     <string name="shippedDate">Entregado el:</string>
     <string name="title_activity_order_page">Orden</string>
     <string name="orderNumber">Número de Orden:</string>
+    <string name="shipped">En proceso de envío</string>
+    <string name="confirmed">Confirmado</string>
+    <string name="delivered">Entregado</string>
+    <string name="created">Creado</string>
 
 
 </resources>

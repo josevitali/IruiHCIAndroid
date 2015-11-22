@@ -108,6 +108,10 @@
     <string name="orderDate">Ordered on:</string>
     <string name="shippedDate">Shipped on:</string>
     <string name="orderNumber">Order Number:</string>
+    <string name="shipped">Shipped</string>
+    <string name="confirmed">Confirmed</string>
+    <string name="delivered">Delivered</string>
+    <string name="created">Created</string>
 
 
 
