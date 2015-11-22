@@ -44,6 +44,9 @@
     <string name="mujeres">Mujeres</string>
     <string name="hombres">Hombres</string>
     <string name="children">Infantiles</string>
+    <string name="baby">Bebes</string>
+    <string name="girl">Niñas</string>
+    <string name="boy">Niños</string>
     <string name="sale">Ofertas</string>
     <string name="newArr">Nuevos</string>
     <string name="user">Mi Usuario</string>

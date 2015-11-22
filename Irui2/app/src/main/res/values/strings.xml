@@ -41,6 +41,9 @@
     <string name="mujeres">Women</string>
     <string name="hombres">Men</string>
     <string name="children">Children</string>
+    <string name="baby">Babies</string>
+    <string name="girl">Girls</string>
+    <string name="boy">Boys</string>
     <string name="sale">Sale</string>
     <string name="newArr">New Arrivals</string>
     <string name="user">My User</string>
@@ -49,6 +52,7 @@
     <string name="signout">Sign Out</string>
     <string name="search">Search</string>
     <string name="title_activity_busqueda">Search</string>
+
 
     <!--Resultados Busqueda-->
     <string name="ordenarporRB">Subcategories</string>
@@ -119,6 +123,8 @@
         <item>Array Item Three</item>
     </string-array>
     <string name="title_activity_order_page">Order</string>
+    <string name="title_activity_girls">Girls</string>
+    <string name="title_activity_babies">Babies</string>
 
 
 </resources>

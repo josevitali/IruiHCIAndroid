@@ -147,17 +147,17 @@ public abstract class Base extends AppCompatActivity
 
         } else if (id == R.id.nav_children) {
             Intent intent = new Intent(this, Ninos.class);
-            intent.putExtra("children", true);
+            //intent.putExtra("children", true);
             this.startActivity(intent);
 
         } else if (id == R.id.nav_sale) {
-            Intent intent = new Intent(this, ResultadosBusqueda.class);
-            intent.putExtra("search", "sale");
+            Intent intent = new Intent(this, Girls.class);
+           // intent.putExtra("search", "sale");
             this.startActivity(intent);
 
         }else if (id == R.id.nav_new) {
-            Intent intent = new Intent(this, ResultadosBusqueda.class);
-            intent.putExtra("search", "new");
+            Intent intent = new Intent(this, Babies.class);
+            //intent.putExtra("search", "new");
             this.startActivity(intent);
 
         }else if(id == R.id.cerrar_sesion){
