@@ -207,9 +207,9 @@ public class ResultadosBusqueda extends Base{
 
         try {
 
-            if(hideSub){
+            if(!hideSub){
                 View b = findViewById(R.id.buttonSubcategories);
-                b.setVisibility(View.GONE);
+                b.setVisibility(View.VISIBLE);
                 hideSub=false;
             }
 
