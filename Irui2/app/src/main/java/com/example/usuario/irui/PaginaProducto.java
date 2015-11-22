@@ -75,6 +75,24 @@ public class PaginaProducto extends Base {
                         .load(jp.getString(0))
                         .into(imageView);
 
+
+                if(jp.getString(1) != null) {
+                    ImageView imageView2 = (ImageView) findViewById(R.id.firstImage);
+                    imageView2.setVisibility(View.VISIBLE);
+                    Picasso.with(this)
+                            .load(jp.getString(1))
+                            .into(imageView2);
+                }
+
+
+                if(jp.getString(2) != null) {
+                    ImageView imageView3 = (ImageView) findViewById(R.id.secondImage);
+                    imageView3.setVisibility(View.VISIBLE);
+                    Picasso.with(this)
+                            .load(jp.getString(2))
+                            .into(imageView3);
+                }
+
                 //busco marca
                 jp = jsProd.getJSONArray("attributes");
                 for(int i = 0; i < jp.length(); i++){
@@ -137,8 +155,6 @@ public class PaginaProducto extends Base {
 
             } catch (JSONException e) {
                 e.printStackTrace();
-                Toast.makeText(getApplicationContext(), "Datos Invalidos",
-                        Toast.LENGTH_LONG).show();
             }
 
 
@@ -147,6 +163,15 @@ public class PaginaProducto extends Base {
 
         }
 
+
+    }
+
+
+    public void changeFirstPic(View view){
+
+    }
+
+    public void changeSecondPic(View view){
 
     }
 

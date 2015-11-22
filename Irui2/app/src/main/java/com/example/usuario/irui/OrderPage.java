@@ -78,6 +78,8 @@ public class OrderPage extends Base {
                     addressName.setText((order.getAddress() == null || order.getAddress().getName() == null) ? "-" : order.getAddress().getName());
 
 
+
+
                     TextView createDate = (TextView) findViewById(R.id.orderDate);
                     createDate.setText(order.getProcessedDate() == null ? "-" : order.getProcessedDate());
 
