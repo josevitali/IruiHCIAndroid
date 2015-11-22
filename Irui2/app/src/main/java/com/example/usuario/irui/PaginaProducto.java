@@ -70,6 +70,8 @@ public class PaginaProducto extends Base {
                 //busco imagen
                 JSONObject jsProd = jsonRootObject.getJSONObject("product");
                 JSONArray jp = jsProd.getJSONArray("imageUrl");
+                TextView imageUrl = (TextView)findViewById(R.id.imageUrl);
+                imageUrl.setText(jp.getString(0));
                 ImageView imageView = (ImageView)findViewById(R.id.prodImg);
                 Picasso.with(this)
                         .load(jp.getString(0))
@@ -174,9 +176,12 @@ public class PaginaProducto extends Base {
     public void changeFirstPic(View view){
         TextView firstImageUrl = (TextView)findViewById(R.id.firstImageUrl);
         String url = firstImageUrl.getText().toString();
-        Toast.makeText(getApplicationContext(), url,
-                Toast.LENGTH_LONG).show();
 
+        TextView imageUrl = (TextView)findViewById(R.id.imageUrl);
+        String url2 = imageUrl.getText().toString();
+
+        firstImageUrl.setText(url2);
+        imageUrl.setText(url);
 
         ImageView imageView = (ImageView)findViewById(R.id.prodImg);
         Picasso.with(this)
@@ -184,23 +189,35 @@ public class PaginaProducto extends Base {
                 .into(imageView);
 
 
-
+        ImageView imageView1 = (ImageView)findViewById(R.id.firstImage);
+        Picasso.with(this)
+                .load(url2)
+                .into(imageView1);
 
 
     }
 
     public void changeSecondPic(View view){
-        TextView firstImageUrl = (TextView)findViewById(R.id.secondImageUrl);
-        String url = firstImageUrl.getText().toString();
-        Toast.makeText(getApplicationContext(), url,
-                Toast.LENGTH_LONG).show();
+
+        TextView secondImageUrl = (TextView)findViewById(R.id.secondImageUrl);
+        String url1 = secondImageUrl.getText().toString();
+
+        TextView imageUrl = (TextView)findViewById(R.id.imageUrl);
+        String url2 = imageUrl.getText().toString();
+
+        imageUrl.setText(url1);
+        secondImageUrl.setText(url2);
 
 
         ImageView imageView = (ImageView)findViewById(R.id.prodImg);
         Picasso.with(this)
-                .load(url)
+                .load(url1)
                 .into(imageView);
 
+        ImageView imageView1 = (ImageView)findViewById(R.id.secondImage);
+        Picasso.with(this)
+                .load(url2)
+                .into(imageView1);
 
 
     }
