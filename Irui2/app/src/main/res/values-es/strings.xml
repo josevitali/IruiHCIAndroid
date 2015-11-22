@@ -72,7 +72,7 @@
     <string name="descendingPrice">Precio Descendente</string>
     <string name="order_name">Nombre</string>
     <string name="order_brand">Marca</string>
-    <string name="title_activity_ordenar_por">Order By</string>
+    <string name="title_activity_ordenar_por">Subcategorías</string>
     <string name="title_activity_orders">Orders</string>
     <string name="applyFilters">Aplicar Filtros</string>
     <string name="color">Color</string>

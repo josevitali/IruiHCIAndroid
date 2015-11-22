@@ -27,6 +27,8 @@ public class ResultadosBusqueda extends Base{
     static final int GET_SUBCATEGORY = 1;
 
     private String search;
+    private String num = "";
+    private String gender = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -48,15 +48,37 @@ public class OrdenarPor extends Base {
         Intent myIntent = getIntent(); // gets the previously created intent
 
 
-        Intent intent = new Intent(this, OrdenarPor.class);
-        String search = myIntent.getStringExtra("search");
+        String num = "";
+        String gender = "";
+
+        if(myIntent.hasExtra("num")) {
+            num = myIntent.getStringExtra("num");
+            if(!myIntent.hasExtra("gender")){
+                request = "http://eiffel.itba.edu.ar/hci/service3/Catalog.groovy?method=GetAllSubcategories&id="+ num;
+            }
+            else{
+                gender = myIntent.getStringExtra("gender");
+                request = "http://eiffel.itba.edu.ar/hci/service3/Catalog.groovy?method=GetAllSubcategories&id="+ num +"&filters=[{%20%22id%22:%201,%20%22value%22:%20%22"+gender+"%22%20}]";
+            }
+        }else{
+            if(myIntent.hasExtra("gender")) {
+                gender = myIntent.getStringExtra("gender");
+
+            }
+        }
+
+
+
         switch(search){
             case "womenClothes":
-                request = "http://eiffel.itba.edu.ar/hci/service3/Catalog.groovy?method=GetAllSubcategories&id=2&filters=[{%20%22id%22:%201,%20%22value%22:%20%22Femenino%22%20}]";
+                request = "http://eiffel.itba.edu.ar/hci/service3/Catalog.groovy?method=GetAllSubcategories&id=2&filters=[{%20%22id%22:%201,%20%22value%22:%20%22"+gender+"%22%20}]";
                 break;
 
         }
 
+
+
+        request = "http://eiffel.itba.edu.ar/hci/service3/Catalog.groovy?method=GetAllSubcategories&id="+ num +"&filters=[{%20%22id%22:%201,%20%22value%22:%20%22"+gender+"%22%20}]";
 
 
         new Connection(this, request).execute();
