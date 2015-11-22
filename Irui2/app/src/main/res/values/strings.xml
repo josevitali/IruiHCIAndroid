@@ -115,6 +115,7 @@
         <item>Array Item Two</item>
         <item>Array Item Three</item>
     </string-array>
+    <string name="title_activity_order">Order</string>
 
 
 </resources>
