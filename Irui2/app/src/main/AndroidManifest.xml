@@ -36,6 +36,7 @@
         </activity>
         <activity
             android:name=".ResultadosBusqueda"
+            android:configChanges="orientation|screenSize"
             android:label="@string/title_activity_resultados_busqueda"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>

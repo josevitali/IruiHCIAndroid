@@ -1,5 +1,6 @@
 package com.example.usuario.irui;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
@@ -34,6 +35,8 @@ public class ResultadosBusqueda extends Base{
     private String filters = "[";
     private String baseUrl = "http://eiffel.itba.edu.ar/hci/service3/Catalog.groovy?";
     private String method;
+
+    private ProgressDialog pDialog;
 
     private boolean hideSub = false;
 
@@ -134,6 +137,11 @@ public class ResultadosBusqueda extends Base{
             request = "http://eiffel.itba.edu.ar/hci/service3/Catalog.groovy?method=GetProductsByName&name=" + s;
         }
 
+
+        pDialog = new ProgressDialog(this);
+        pDialog.setMessage("Loading...");
+        pDialog.show();
+
         new Connection(this, request).execute();
 
 
@@ -141,6 +149,9 @@ public class ResultadosBusqueda extends Base{
 
 
     public void afterRequest(String resp){
+
+
+        pDialog.dismiss();
 
         if(resp != "error")
             apiCall(resp);
@@ -193,9 +204,6 @@ public class ResultadosBusqueda extends Base{
                 String subcategory = data.getStringExtra("subcategory");
                 int id = data.getIntExtra("id", -1);
 
-                Toast.makeText(getApplicationContext(),"" + id + " : " + subcategory,
-                        Toast.LENGTH_LONG).show();
-
                 Uri builtUri = Uri.parse(baseUrl)
                         .buildUpon()
                         .appendQueryParameter("method", "GetProductsBySubcategoryId")
@@ -204,6 +212,10 @@ public class ResultadosBusqueda extends Base{
                         .appendQueryParameter("page_size", "1000")
                         .build();
                 request = builtUri.toString();
+
+                pDialog = new ProgressDialog(this);
+                pDialog.setMessage("Loading...");
+                pDialog.show();
 
                 new Connection(this, request).execute();
             }

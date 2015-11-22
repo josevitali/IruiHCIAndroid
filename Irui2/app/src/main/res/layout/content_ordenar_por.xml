@@ -43,7 +43,8 @@
         android:layout_toRightOf="@+id/buttonOrdenar"
         android:layout_toEndOf="@+id/buttonOrdenar"
         android:layout_marginLeft="55dp"
-        android:layout_marginStart="55dp" />
+        android:layout_marginStart="55dp"
+        android:onClick="cancel" />
 
 
 </RelativeLayout>

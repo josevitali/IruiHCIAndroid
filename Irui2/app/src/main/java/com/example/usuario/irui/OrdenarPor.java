@@ -144,12 +144,24 @@ public class OrdenarPor extends Base {
 
     }
 
+    public void cancel(View view){
+        Intent returnIntent = new Intent();
+        setResult(Activity.RESULT_CANCELED,returnIntent);
+        finish();
+    }
+
     public void ordenar(View view){
 
 
         RadioGroup rgp= (RadioGroup) findViewById(R.id.radioGroup);
 
         int id = rgp.getCheckedRadioButtonId();
+
+        if(id == -1){
+            Toast.makeText(getApplicationContext(),"Seleccione una subcategoría",
+                    Toast.LENGTH_LONG).show();
+            return;
+        }
 
         RadioButton rb = (RadioButton) findViewById(id);
 
