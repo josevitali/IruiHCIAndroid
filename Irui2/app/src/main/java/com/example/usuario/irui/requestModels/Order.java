@@ -19,7 +19,6 @@ public class Order{
     private String deliveredDate;
     private int latitude;
     private int longitude;
-    private boolean notifications = false;
     private OrderItem[] items;
 
     public Order(int id, Address address, CreditCard creditCard, OrderStatus status, String receivedDate, String processedDate, String shippedDate, String deliveredDate, int latitude, int longitude, OrderItem[] items) {
@@ -51,13 +50,6 @@ public class Order{
 
     }
 
-    public boolean hasNotifications() {
-        return notifications;
-    }
-
-    public void setNotifications(boolean notifications) {
-        this.notifications = notifications;
-    }
 
     @Override
     public String toString() {
@@ -72,7 +64,6 @@ public class Order{
                 ", deliveredDate='" + deliveredDate + '\'' +
                 ", latitude=" + latitude +
                 ", longitude=" + longitude +
-                ", notifications=" + notifications +
                 ", items=" + Arrays.toString(items) +
                 '}';
     }
@@ -135,3 +126,5 @@ public class Order{
         return subtotal;
     }
 }
+
+
