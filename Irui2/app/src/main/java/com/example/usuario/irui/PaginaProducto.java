@@ -34,11 +34,9 @@ public class PaginaProducto extends Base {
         Intent myIntent = getIntent();
 
         if(myIntent.hasExtra("prodId") && myIntent.getStringExtra("prodId") != null) {
-            Toast.makeText(getApplicationContext(), "NOOOOO",
-                    Toast.LENGTH_LONG).show();
+
             String request = "http://eiffel.itba.edu.ar/hci/service3/Catalog.groovy?method=GetProductById&id=" + myIntent.getStringExtra("prodId");
-            Toast.makeText(getApplicationContext(), request,
-                    Toast.LENGTH_LONG).show();
+
 
             new Connection(this, request).execute();
         }
@@ -62,11 +60,7 @@ public class PaginaProducto extends Base {
 
                 Gson gson = new Gson();
                 ProductComplete product2 = gson.fromJson(product, ProductComplete.class);
-
-
-                Toast.makeText(getApplicationContext(), product2.getName(),
-                        Toast.LENGTH_LONG).show();
-
+                
                 TextView nombreProd = (TextView)findViewById(R.id.productName);
                 nombreProd.setText(product2.getName());
 
