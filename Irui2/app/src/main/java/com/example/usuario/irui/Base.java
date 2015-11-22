@@ -197,7 +197,7 @@ public abstract class Base extends AppCompatActivity
     }
 
 
-    public void backToHome(){
+    public void backToHome(View view){
         Intent a = new Intent(this,MainActivity.class);
         a.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(a);
@@ -237,7 +237,7 @@ public abstract class Base extends AppCompatActivity
             signOut=false;
            // Intent intent = new Intent(this, MainActivity.class);
             //this.startActivity(intent);
-            backToHome();
+            backToHome(this.findViewById(R.id.homepage));
 
 
 
