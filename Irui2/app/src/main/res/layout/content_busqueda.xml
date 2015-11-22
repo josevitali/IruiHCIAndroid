@@ -11,7 +11,7 @@
     tools:showIn="@layout/activity_busqueda" tools:context="com.example.usuario.irui.Busqueda">
 
     <EditText
-        android:layout_width="match_parent"
+        android:layout_width="310dp"
         android:layout_height="wrap_content"
         android:id="@+id/search_text"
         android:layout_alignParentTop="true"

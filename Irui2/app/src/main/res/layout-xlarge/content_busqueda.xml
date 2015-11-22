@@ -20,8 +20,8 @@
 
     <ImageButton
         android:id="@+id/search_action"
-        android:layout_width="23dp"
-        android:layout_height="23dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:src="@drawable/search"
         android:onClick="realizarBusqueda"
         android:layout_marginLeft="700dp" />

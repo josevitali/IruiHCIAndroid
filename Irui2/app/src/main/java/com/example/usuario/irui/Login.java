@@ -5,6 +5,7 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.SystemClock;
@@ -60,12 +61,23 @@ public class Login extends Base {
 
 
 
-        String request = "http://eiffel.itba.edu.ar/hci/service3/Account.groovy?method=SignIn&username=" + user +
-                "&password=" + pass;
+        String baseUrl = "http://eiffel.itba.edu.ar/hci/service3/Account.groovy?";
+
+        Uri.Builder builder = new Uri.Builder();
+
+        Uri builtUri = Uri.parse(baseUrl)
+                .buildUpon()
+                .appendQueryParameter("method", "SignIn")
+                .appendQueryParameter("username", user)
+                .appendQueryParameter("password", pass)
+                .build();
+
+        String request = builtUri.toString();
+
+        Toast.makeText(getApplicationContext(), request,
+                Toast.LENGTH_LONG).show();
 
         new Connection(this, request).execute();
-
-
 
 
     }
@@ -122,6 +134,11 @@ public class Login extends Base {
 
             Toast.makeText(this, "Reapeating alarm set", Toast.LENGTH_LONG)
                     .show();
+
+
+
+
+
 
 
             String request ="http://eiffel.itba.edu.ar/hci/service3/Order.groovy?method=GetAllOrders&username="

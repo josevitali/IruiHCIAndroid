@@ -103,7 +103,7 @@
     <string name="confirmed">Confirmado</string>
     <string name="delivered">Entregado</string>
     <string name="created">Creado</string>
-    <string name="totalPrice">Total Price:</string>
+    <string name="totalPrice">Precio Total:</string>
 
 
 </resources>
