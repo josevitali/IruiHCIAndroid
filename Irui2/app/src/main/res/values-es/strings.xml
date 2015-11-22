@@ -67,6 +67,8 @@
     <string name="infoMaterial">Material: </string>
     <string name="prodColors">Colores</string>
     <string name="prodSizes">Talles</string>
+    <string name="prodColorsText">Colores</string>
+    <string name="prodSizesText">Talles</string>
 
     <!--Ordenar Por-->
     <string name="ascendingPrice">Precio Ascendente</string>

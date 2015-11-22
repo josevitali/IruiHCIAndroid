@@ -16,11 +16,11 @@ public class ProductComplete {
     private Attribute[] attributes;
 
 
-    public ProductComplete(int id, String name, double price, String[] imageURL, Category category, Category subcategory, Attribute[] attributes) {
+    public ProductComplete(int id, String name, double price, String[] imageUrl, Category category, Category subcategory, Attribute[] attributes) {
         this.id = id;
         this.name = name;
         this.price = price;
-        this.imageURL = imageURL;
+        this.imageURL = imageUrl;
         this.category = category;
         this.subcategory = subcategory;
         this.attributes = attributes;
