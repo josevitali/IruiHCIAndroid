@@ -69,12 +69,6 @@ public class OrdenarPor extends Base {
 
 
 
-        switch(search){
-            case "womenClothes":
-                request = "http://eiffel.itba.edu.ar/hci/service3/Catalog.groovy?method=GetAllSubcategories&id=2&filters=[{%20%22id%22:%201,%20%22value%22:%20%22"+gender+"%22%20}]";
-                break;
-
-        }
 
 
 
