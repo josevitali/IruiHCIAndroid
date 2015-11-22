@@ -56,6 +56,7 @@
 
     <!--Resultados Busqueda-->
     <string name="ordenarporRB">Subcategories</string>
+    <string name="noResults">No results match your enquiry</string>
 
     <!--Pag Prod-->
     <string name="availableSizes">Available Sizes:</string>

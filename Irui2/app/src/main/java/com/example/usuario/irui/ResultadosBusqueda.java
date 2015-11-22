@@ -20,6 +20,7 @@ import com.google.gson.Gson;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -241,33 +242,42 @@ public class ResultadosBusqueda extends Base{
             Gson gson = new Gson();
 
 
-            ArrayList<Product> prodList = new ArrayList<>();
-            Product[] prods = new Product[products.length()];
-            for(int i = 0; i<products.length(); i++){
 
-                JSONObject j = products.getJSONObject(i);
-                JSONArray atts = j.getJSONArray("attributes");
-                String brand = "-";
-                for(int k = 0; k<atts.length(); k++){
-                    if(atts.getJSONObject(k).getInt("id") == 9){
-                        brand = atts.getJSONObject(k).getString("values");
-                        brand = brand.substring(2,brand.length()-2).split(",")[0];
+
+            ArrayList<Product> prodList = new ArrayList<>();
+
+
+                Product[] prods = new Product[products.length()];
+                for (int i = 0; i < products.length(); i++) {
+
+                    JSONObject j = products.getJSONObject(i);
+                    JSONArray atts = j.getJSONArray("attributes");
+                    String brand = "-";
+                    for (int k = 0; k < atts.length(); k++) {
+                        if (atts.getJSONObject(k).getInt("id") == 9) {
+                            brand = atts.getJSONObject(k).getString("values");
+                            brand = brand.substring(2, brand.length() - 2).split(",")[0];
+                        }
                     }
+                    String imgUrl = j.getJSONArray("imageUrl").getString(0);
+                    Product p = new Product(j.getString("name"), j.getInt("price"), brand, imgUrl, j.getInt("id"));
+                    prods[i] = p;
                 }
-                String imgUrl = j.getJSONArray("imageUrl").getString(0);
-                Product p = new Product(j.getString("name"), j.getInt("price"), brand, imgUrl, j.getInt("id"));
-                prods[i]=p;
-            }
 
             if(products.length() == 0){
                 
             }
 
 
-            ProductArrayAdapter adapter = new ProductArrayAdapter(this, prods);
+            if(prods.length != 0) {
+                ProductArrayAdapter adapter = new ProductArrayAdapter(this, prods);
 
-            ListView listView = (ListView)this.findViewById(R.id.prodList);
-            listView.setAdapter(adapter);
+                ListView listView = (ListView) this.findViewById(R.id.prodList);
+                listView.setAdapter(adapter);
+            }else{
+                TextView noResults = (TextView)findViewById(R.id.noResults);
+                noResults.setVisibility(View.VISIBLE);
+            }
 
         } catch (JSONException e) {
             e.printStackTrace();

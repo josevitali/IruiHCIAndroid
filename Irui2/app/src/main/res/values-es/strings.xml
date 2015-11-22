@@ -58,6 +58,7 @@
 
     <!--Resultados Busqueda-->
     <string name="ordenarporRB">Subcategorías</string>
+    <string name="noResults">No se han encontrado resultados</string>
 
     <!--Pag Prod-->
     <string name="availableSizes">Talles disponibles:</string>
