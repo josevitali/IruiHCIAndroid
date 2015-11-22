@@ -79,6 +79,8 @@ public class PaginaProducto extends Base {
                 if(jp.getString(1) != null) {
                     ImageView imageView2 = (ImageView) findViewById(R.id.firstImage);
                     imageView2.setVisibility(View.VISIBLE);
+                    TextView firstImageUrl = (TextView)findViewById(R.id.firstImageUrl);
+                    firstImageUrl.setText(jp.getString(1));
                     Picasso.with(this)
                             .load(jp.getString(1))
                             .into(imageView2);
@@ -88,6 +90,8 @@ public class PaginaProducto extends Base {
                 if(jp.getString(2) != null) {
                     ImageView imageView3 = (ImageView) findViewById(R.id.secondImage);
                     imageView3.setVisibility(View.VISIBLE);
+                    TextView secondImageUrl = (TextView)findViewById(R.id.secondImageUrl);
+                    secondImageUrl.setText(jp.getString(2));
                     Picasso.with(this)
                             .load(jp.getString(2))
                             .into(imageView3);
@@ -168,10 +172,36 @@ public class PaginaProducto extends Base {
 
 
     public void changeFirstPic(View view){
+        TextView firstImageUrl = (TextView)findViewById(R.id.firstImageUrl);
+        String url = firstImageUrl.getText().toString();
+        Toast.makeText(getApplicationContext(), url,
+                Toast.LENGTH_LONG).show();
+
+
+        ImageView imageView = (ImageView)findViewById(R.id.prodImg);
+        Picasso.with(this)
+                .load(url)
+                .into(imageView);
+
+
+
+
 
     }
 
     public void changeSecondPic(View view){
+        TextView firstImageUrl = (TextView)findViewById(R.id.secondImageUrl);
+        String url = firstImageUrl.getText().toString();
+        Toast.makeText(getApplicationContext(), url,
+                Toast.LENGTH_LONG).show();
+
+
+        ImageView imageView = (ImageView)findViewById(R.id.prodImg);
+        Picasso.with(this)
+                .load(url)
+                .into(imageView);
+
+
 
     }
 
