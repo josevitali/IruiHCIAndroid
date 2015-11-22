@@ -62,5 +62,15 @@ public class MainActivity extends Base{
         Intent intent = new Intent(this, Ninos.class);
         this.startActivity(intent);
     }
+    
+    public void pagNinas(View view){
+        Intent intent = new Intent(this, Girls.class);
+        this.startActivity(intent);
+    }
+
+    public void pagBebes(View view){
+        Intent intent = new Intent(this, Babies.class);
+        this.startActivity(intent);
+    }
 
 }

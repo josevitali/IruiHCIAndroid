@@ -42,6 +42,29 @@
             android:onClick="pagNinos"
             android:clickable="true" />
 
+        <ImageButton android:id="@+id/buttonNinas"
+            android:scaleType="fitXY"
+            android:layout_width="400dp"
+            android:layout_height="200dp"
+            android:src="@drawable/girls"
+            android:layout_below="@+id/buttonNinos"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:onClick="pagNinas"
+            android:clickable="true" />
+
+        <ImageButton android:id="@+id/buttonBebes"
+            android:scaleType="fitXY"
+            android:layout_width="400dp"
+            android:layout_height="200dp"
+            android:src="@drawable/bebes"
+            android:layout_below="@+id/buttonNinas"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:onClick="pagBebes"
+            android:clickable="true" />
+
+
 
     </RelativeLayout>
 </ScrollView>
