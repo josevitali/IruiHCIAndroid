@@ -49,6 +49,8 @@ public class OrderArrayAdapter extends ArrayAdapter<Order>{
         TextView brandTextView = (TextView) convertView.findViewById(R.id.orderId);
         brandTextView.setText("Id: #" + order.getId().toString());
 
+        TextView idTextView = (TextView) convertView.findViewById(R.id.orderViewId);
+        idTextView.setText(order.getId().toString());
 
         ImageView imageView = (ImageView) convertView.findViewById(R.id.statusIcon);
 

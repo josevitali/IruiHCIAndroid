@@ -105,6 +105,7 @@
     <!--Orden-->
     <string name="orderDate">Ordered on:</string>
     <string name="shippedDate">Shipped on:</string>
+    <string name="orderNumber">Order Number:</string>
 
 
 

@@ -11,6 +11,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.usuario.irui.adapters.OrderArrayAdapter;
@@ -60,8 +61,6 @@ public class Orders extends Base {
     public void afterRequest(String s) {
 
         if(s != "error") {
-            Toast.makeText(getApplicationContext(), s,
-                    Toast.LENGTH_LONG).show();
             apiCall(s);
 
 
@@ -84,16 +83,6 @@ public class Orders extends Base {
             Gson gson = new Gson();
 
             Order[] ords = gson.fromJson(orders, Order[].class);
-           // for(Order o: ords){
-
-
-                //if(j.getJSONObject("address") != null){
-                  //  ordAddress = j.getJSONObject("address").getString("name");
-                //}
-                //Order o = new Order(j.getInt("id"), j.getJSONObject("address").getString("name"));
-                //ords[i]=o;
-            //}
-
 
             OrderArrayAdapter adapter = new OrderArrayAdapter(this, ords);
 
@@ -108,7 +97,9 @@ public class Orders extends Base {
     }
 
     public void openOrder(View view){
+        TextView idTextView = (TextView)view.findViewById(R.id.orderViewId);
         Intent intent = new Intent(this, OrderPage.class);
+        intent.putExtra("id", idTextView.getText().toString());
         this.startActivity(intent);
     }
 

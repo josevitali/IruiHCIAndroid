@@ -96,6 +96,7 @@
     <string name="orderDate">Pedido el:</string>
     <string name="shippedDate">Entregado el:</string>
     <string name="title_activity_order_page">Orden</string>
+    <string name="orderNumber">Número de Orden:</string>
 
 
 </resources>
