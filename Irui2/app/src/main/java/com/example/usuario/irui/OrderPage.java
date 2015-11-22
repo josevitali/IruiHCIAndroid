@@ -69,10 +69,6 @@ public class OrderPage extends Base {
 
     public void afterRequest(String s){
 
-
-        Toast.makeText(getApplicationContext(), s,
-                Toast.LENGTH_SHORT).show();
-
         JSONObject jsonRootObject = null;
         if(s!= "error"){
 
@@ -80,21 +76,9 @@ public class OrderPage extends Base {
                 jsonRootObject = new JSONObject(s);
                 String orderAux = jsonRootObject.getString("order");
 
-                Toast.makeText(getApplicationContext(), orderAux,
-                        Toast.LENGTH_SHORT).show();
-
-
                 Gson gson = new Gson();
                 Order order = gson.fromJson(orderAux, Order.class);
 
-
-                if(order !=null)
-                Toast.makeText(getApplicationContext(), order.getId().toString(),
-                        Toast.LENGTH_SHORT).show();
-
-                if(order == null)
-                    Toast.makeText(getApplicationContext(), "la orden es null por alguna razon",
-                            Toast.LENGTH_SHORT).show();
 
                 TextView addressName = (TextView)findViewById(R.id.addrName);
                 addressName.setText((order.getAddress() == null || order.getAddress().getName() == null)? "-" : order.getAddress().getName());
@@ -107,7 +91,10 @@ public class OrderPage extends Base {
                 shipDate.setText(order.getShippedDate() == null ? "-" : order.getShippedDate());
 
                 TextView orderNumber = (TextView)findViewById(R.id.orderNumber);
-                orderNumber.setText(order.getAddress() == null ? "-" : "#" + order.getId().toString());
+                orderNumber.setText("#" + order.getId().toString());
+
+                TextView paymentInfoView = (TextView)findViewById(R.id.paymentInfo);
+                paymentInfoView.setText(order.getCreditCard() == null ? "-" : order.getCreditCard().getNumber().toString());
 
                 TextView createdView = (TextView)findViewById(R.id.orderStateCreated);
                 TextView shippedView = (TextView)findViewById(R.id.orderStateShipped);
@@ -147,7 +134,7 @@ public class OrderPage extends Base {
 
 
             }catch(JSONException e){
-                Toast.makeText(getApplicationContext(), "aca flasheo",
+                Toast.makeText(getApplicationContext(), "exception",
                         Toast.LENGTH_SHORT).show();
             }catch(JsonParseException e2){
                 Toast.makeText(getApplicationContext(), e2.toString(),

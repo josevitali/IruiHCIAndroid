@@ -202,14 +202,23 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="Order Date"
-                android:id="@+id/orderDate"
+                android:text="@string/orderDate"
+                android:id="@+id/orderDateConstant"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:layout_marginLeft="52dp"
-                android:layout_marginStart="52dp"
-                android:layout_marginTop="20dp" />
+                android:layout_marginStart="52dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="date"
+                android:id="@+id/orderDate"
+                android:layout_alignParentBottom="true"
+                android:layout_alignLeft="@+id/orderDateConstant"
+                android:layout_alignStart="@+id/orderDateConstant" />
 
 
         </RelativeLayout>
@@ -243,14 +252,23 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="Delivered Date"
-                android:id="@+id/deliverDate"
+                android:text="@string/shippedDate"
+                android:id="@+id/shipDateConstant"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:layout_marginLeft="52dp"
-                android:layout_marginStart="52dp"
-                android:layout_marginTop="20dp" />
+                android:layout_marginStart="52dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="date"
+                android:id="@+id/deliverDate"
+                android:layout_alignParentBottom="true"
+                android:layout_alignLeft="@+id/shipDateConstant"
+                android:layout_alignStart="@+id/shipDateConstant" />
 
 
         </RelativeLayout>
