@@ -47,7 +47,7 @@ public class ChangeInOrders {
 
         // This image is used as the notification's large icon (thumbnail).
         // TODO: Remove this if your notification has no relevant thumbnail.
-        final Bitmap picture = BitmapFactory.decodeResource(res, R.drawable.example_picture);
+        final Bitmap picture = BitmapFactory.decodeResource(res, R.drawable.irui);
 
 
         final String ticker = res.getString(R.string.change_in_orders_notification_title_template);
