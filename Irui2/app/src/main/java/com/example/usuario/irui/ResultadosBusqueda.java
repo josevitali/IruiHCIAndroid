@@ -244,8 +244,6 @@ public class ResultadosBusqueda extends Base{
     public void mostrarProducto(View view){
         Intent intent = new Intent(this, PaginaProducto.class);
         TextView idTextView = (TextView)view.findViewById(R.id.prodId);
-        Toast.makeText(getApplicationContext(),idTextView.getText().toString(),
-                Toast.LENGTH_LONG).show();
         intent.putExtra("prodId", idTextView.getText().toString());
         this.startActivity(intent);
     }

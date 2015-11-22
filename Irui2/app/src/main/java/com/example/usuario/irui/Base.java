@@ -5,6 +5,7 @@ import android.app.Fragment;
 import android.app.PendingIntent;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -162,11 +163,22 @@ public abstract class Base extends AppCompatActivity
             User user = gson.fromJson(account, User.class);
 
 
-           String request = "http://eiffel.itba.edu.ar/hci/service3/Account.groovy?method=SignOut&username=" + user.getUsername()
-                  +  "&authentication_token=" + token;
 
+            String baseUrl = "http://eiffel.itba.edu.ar/hci/service3/Account.groovy?";
+
+            Uri.Builder builder = new Uri.Builder();
+
+            Uri builtUri = Uri.parse(baseUrl)
+                    .buildUpon()
+                    .appendQueryParameter("method", "SignOut")
+                    .appendQueryParameter("username", user.getUsername())
+                    .appendQueryParameter("authentication_token ", token)
+                    .build();
+
+            String request = builtUri.toString();
 
             new Connection(this, request).execute();
+
             signOut=true;
 
         }
@@ -210,6 +222,7 @@ public abstract class Base extends AppCompatActivity
                     .show();
 
 
+            signOut=false;
             Intent intent = new Intent(this, MainActivity.class);
             this.startActivity(intent);
 
