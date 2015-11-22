@@ -4,7 +4,6 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
-    <string name="action_settings">SettingsHOLAAA</string>
     <string name="title_activity_login">Sign in</string>
 
     <!--General Strings-->
@@ -26,14 +25,14 @@
     <string name="filtros">Filters</string>
     <string name="ordenar_por">Order By</string>
     <string name="title_activity_base">Base</string>
-    <string name="title_activity_filtros">Filtros</string>
+    <string name="title_activity_filtros">Filters</string>
 
 
     <!--Personal Information-->
     <string name="title_activity_personal_information">Personal Information</string>
 
 
-    <string name="title_activity_pag_prod">PagProd</string>
+    <string name="title_activity_pag_prod">Product</string>
     <string name="section_format">Hello World from section: %1$d</string>
 
 
@@ -49,6 +48,7 @@
     <string name="orders">Orders</string>
     <string name="signout">Sign Out</string>
     <string name="search">Search</string>
+    <string name="title_activity_busqueda">Search</string>
 
     <!--Resultados Busqueda-->
     <string name="filtrosRB">Filters</string>
@@ -76,7 +76,6 @@
     <string name="color">Color</string>
     <string name="brand">Brand</string>
     <string name="ocasion">Occasion</string>
-    <string name="title_activity_busqueda">Busqueda</string>
     <string name="cancelOP">Cancel</string>
     <string name="orderOP">Order</string>
 
@@ -91,7 +90,6 @@
     <!-- TODO: remove this placeholder text -->
     <string name="change_in_orders_notification_placeholder_text_template">
     </string>
-    <string name="title_activity_mujeres">Mujeres</string>
 
 
     <!--Mujeres hombres ni;os-->
@@ -99,9 +97,10 @@
     <string name="shoes">Shoes</string>
     <string name="accesories">Accesories</string>
     <string name="seeAll">See All</string>
-    <string name="title_activity_hombres">Hombres</string>
-    <string name="title_activity_ninos">Ninos</string>
-    <string name="title_activity_pagina_producto">PaginaProducto</string>
+    <string name="title_activity_hombres">Men</string>
+    <string name="title_activity_ninos">Children</string>
+    <string name="title_activity_mujeres">Women</string>
+    <string name="title_activity_pagina_producto">Product</string>
 
     <!--Orden-->
     <string name="orderDate">Ordered on:</string>
@@ -115,6 +114,7 @@
         <item>Array Item Two</item>
         <item>Array Item Three</item>
     </string-array>
+    <string name="title_activity_order_page">Order</string>
 
 
 </resources>

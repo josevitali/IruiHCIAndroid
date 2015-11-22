@@ -1,6 +1,7 @@
 package com.example.usuario.irui;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -104,6 +105,11 @@ public class Orders extends Base {
             Toast.makeText(getApplicationContext(),"exception",
                     Toast.LENGTH_LONG).show();
         }
+    }
+
+    public void openOrder(View view){
+        Intent intent = new Intent(this, OrderPage.class);
+        this.startActivity(intent);
     }
 
 }
