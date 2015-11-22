@@ -259,6 +259,10 @@ public class ResultadosBusqueda extends Base{
                 prods[i]=p;
             }
 
+            if(products.length() == 0){
+                
+            }
+
 
             ProductArrayAdapter adapter = new ProductArrayAdapter(this, prods);
 
