@@ -72,7 +72,7 @@ public class OrdenarPor extends Base {
 
 
 
-        request = "http://eiffel.itba.edu.ar/hci/service3/Catalog.groovy?method=GetAllSubcategories&id="+ num +"&filters=[{%20%22id%22:%201,%20%22value%22:%20%22"+gender+"%22%20}]";
+      //  request = "http://eiffel.itba.edu.ar/hci/service3/Catalog.groovy?method=GetAllSubcategories&id="+ num +"&filters=[{%20%22id%22:%201,%20%22value%22:%20%22"+gender+"%22%20}]";
 
 
         new Connection(this, request).execute();
@@ -124,8 +124,6 @@ public class OrdenarPor extends Base {
                 rprms= new RadioGroup.LayoutParams(RadioGroup.LayoutParams.WRAP_CONTENT, RadioGroup.LayoutParams.WRAP_CONTENT);
                 rgp.addView(radioButton, rprms);
 
-                Toast.makeText(getApplicationContext(), "" + id + " : " + name,
-                        Toast.LENGTH_SHORT).show();
 
             }
 
@@ -158,6 +156,7 @@ public class OrdenarPor extends Base {
 
         Intent returnIntent = new Intent();
         returnIntent.putExtra("subcategory",rb.getText());
+        returnIntent.putExtra("id",id);
         setResult(Activity.RESULT_OK,returnIntent);
         finish();
     }

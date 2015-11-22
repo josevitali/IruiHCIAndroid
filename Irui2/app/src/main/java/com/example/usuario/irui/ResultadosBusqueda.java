@@ -2,6 +2,7 @@ package com.example.usuario.irui;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -29,6 +30,10 @@ public class ResultadosBusqueda extends Base{
     private String search;
     private String num = "";
     private String gender = "";
+    private String request;
+    private String filters = "[";
+    private String baseUrl = "http://eiffel.itba.edu.ar/hci/service3/Catalog.groovy?";
+    private String method;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +50,12 @@ public class ResultadosBusqueda extends Base{
 
         Intent myIntent = getIntent(); // gets the previously created intent
 
-        String request = "http://eiffel.itba.edu.ar/hci/service3/Catalog.groovy?method=GetAllProducts&page_size=1000";
+
+
+        String baseUrl = "http://eiffel.itba.edu.ar/hci/service3/Catalog.groovy?";
+
+        method = "GetProductsByCategoryId";
+
 
 
 
@@ -53,29 +63,61 @@ public class ResultadosBusqueda extends Base{
         if(myIntent.hasExtra("search")) {
             search = myIntent.getStringExtra("search");
 
-            switch (search) {
-                case "womenAll":
-                    request = "http://eiffel.itba.edu.ar/hci/service3/Catalog.groovy?method=GetAllProducts&filters=[%20{%20%22id%22:%201,%20%22value%22:%20%22Femenino%22%20}%20]&page_size=1000";
-                    break;
-                case "menAll":
-                    request = "http://eiffel.itba.edu.ar/hci/service3/Catalog.groovy?method=GetAllProducts&filters=[%20{%20%22id%22:%201,%20%22value%22:%20%22Masculino%22%20}%20]&page_size=1000";
-                    break;
-                case "womenOnSale":
-                    break;
-                case "womenNewArrivals":
-                    break;
-                case "childrenAll":
-                    break;
-                case "womenShoes":
-                    break;
-                default:
-                    break;
+
+
+            if(search.contains("Shoes")){
+                num = "1";
+            } else if(search.contains("Clothes")){
+                num = "2";
+            } else if(search.contains("Accesories")){
+                num = "3";
+            } else{
+                method = "GetAllProducts";
+
+                if(search.contains("OnSale")) {
+                    filters += "{\"id\":5,\"value\":\"Oferta\"},";
+                } else if(search.contains("NewArrivals")){
+                    filters += "{\"id\":6,\"value\":\"Nuevo\"},";
+                }
             }
+
+
+            if(search.contains("women")){
+                gender = "Femenino";
+                filters += "{\"id\":1,\"value\":\"Femenino\"},";
+            } else if(search.contains("men")){
+                gender = "Masculino";
+                filters += "{\"id\":1,\"value\":\"Masculino\"},";
+            }
+
+
+            filters = filters.substring(0, filters.length() -1);
+            filters += "]";
+
+            if(!num.equals("")) {
+                Uri builtUri = Uri.parse(baseUrl)
+                        .buildUpon()
+                        .appendQueryParameter("method", method)
+                        .appendQueryParameter("id", num)
+                        .appendQueryParameter("filters", filters)
+                .appendQueryParameter("page_size", "1000")
+                        .build();
+                request = builtUri.toString();
+            } else{
+
+                Uri builtUri = Uri.parse(baseUrl)
+                        .buildUpon()
+                        .appendQueryParameter("method", "GetAllProducts")
+                        .appendQueryParameter("filters", filters)
+                        .appendQueryParameter("page_size", "1000")
+                        .build();
+                request = builtUri.toString();
+            }
+
         } else if(myIntent.hasExtra("searchText")) {
             String s = myIntent.getStringExtra("searchText");
             request = "http://eiffel.itba.edu.ar/hci/service3/Catalog.groovy?method=GetProductsByName&name=" + s;
         }
-
 
         new Connection(this, request).execute();
 
@@ -87,6 +129,11 @@ public class ResultadosBusqueda extends Base{
 
         if(resp != "error")
             apiCall(resp);
+        else{
+            Toast.makeText(getApplicationContext(),resp
+                    ,
+                    Toast.LENGTH_LONG).show();
+        }
     }
 
 
@@ -104,9 +151,17 @@ public class ResultadosBusqueda extends Base{
 
 
 
+
+
         if(myIntent.hasExtra("search")) {
             Intent intent = new Intent(this, OrdenarPor.class);
-            intent.putExtra("search", search);
+            if(!num.equals("")){
+                intent.putExtra("num", num);
+                if(!gender.equals("")){
+                    intent.putExtra("gender", gender);
+                }
+
+            }
             this.startActivityForResult(intent, GET_SUBCATEGORY);
         }
 
@@ -121,9 +176,21 @@ public class ResultadosBusqueda extends Base{
             // Make sure the request was successful
             if (resultCode == RESULT_OK) {
                 String subcategory = data.getStringExtra("subcategory");
+                int id = data.getIntExtra("id", -1);
 
-                Toast.makeText(getApplicationContext(),subcategory,
+                Toast.makeText(getApplicationContext(),"" + id + " : " + subcategory,
                         Toast.LENGTH_LONG).show();
+
+                Uri builtUri = Uri.parse(baseUrl)
+                        .buildUpon()
+                        .appendQueryParameter("method", "GetProductsBySubcategoryId")
+                        .appendQueryParameter("id", "" + id)
+                        .appendQueryParameter("filters", filters)
+                        .appendQueryParameter("page_size", "1000")
+                        .build();
+                request = builtUri.toString();
+
+                new Connection(this, request).execute();
             }
         }
     }
