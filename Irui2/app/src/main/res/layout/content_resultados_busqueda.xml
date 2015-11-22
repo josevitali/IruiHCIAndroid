@@ -30,7 +30,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/ordenarporRB"
-                    android:id="@+id/buttonOrdenarPor"
+                    android:id="@+id/buttonSubcategories"
                     android:onClick="ordenarPor"
                     android:layout_alignParentTop="false"
                     android:layout_alignParentRight="false"

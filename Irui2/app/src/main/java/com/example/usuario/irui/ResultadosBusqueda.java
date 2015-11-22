@@ -35,6 +35,8 @@ public class ResultadosBusqueda extends Base{
     private String baseUrl = "http://eiffel.itba.edu.ar/hci/service3/Catalog.groovy?";
     private String method;
 
+    private boolean hideSub = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -73,6 +75,8 @@ public class ResultadosBusqueda extends Base{
                 num = "3";
             } else{
                 method = "GetAllProducts";
+
+                hideSub = true;
 
                 if(search.contains("OnSale")) {
                     filters += "{\"id\":5,\"value\":\"Oferta\"},";
@@ -202,6 +206,12 @@ public class ResultadosBusqueda extends Base{
         JSONObject jsonRootObject = null;
 
         try {
+
+            if(hideSub){
+                View b = findViewById(R.id.buttonSubcategories);
+                b.setVisibility(View.GONE);
+                hideSub=false;
+            }
 
             jsonRootObject = new JSONObject(url);
             JSONArray products = jsonRootObject.getJSONArray("products");
