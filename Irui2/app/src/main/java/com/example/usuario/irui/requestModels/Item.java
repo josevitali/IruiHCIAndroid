@@ -3,13 +3,13 @@ package com.example.usuario.irui.requestModels;
 /**
  * Created by natinavas on 11/20/15.
  */
-public class OrderItem {
+public class Item {
     private int id;
     private Product product;
     private int quantity;
-    private int price;
+    private double price;
 
-    public OrderItem(int id, Product product, int quantity, int price) {
+    public Item(int id, Product product, int quantity, double price) {
         this.id = id;
         this.product = product;
         this.quantity = quantity;
@@ -23,7 +23,7 @@ public class OrderItem {
 
     @Override
     public String toString() {
-        return "OrderItem{" +
+        return "Item{" +
                 "id=" + id +
                 ", product=" + product.toString() +
                 ", quantity=" + quantity +
@@ -39,7 +39,7 @@ public class OrderItem {
         return quantity;
     }
 
-    public int getPrice() {
+    public double getPrice() {
         return price;
     }
 }

@@ -1,10 +1,5 @@
 package com.example.usuario.irui.requestModels;
 
-import com.example.usuario.irui.requestModels.Address;
-import com.example.usuario.irui.requestModels.CreditCard;
-import com.example.usuario.irui.requestModels.OrderItem;
-import com.example.usuario.irui.requestModels.OrderStatus;
-
 import java.util.Arrays;
 
 public class Order{
@@ -19,9 +14,9 @@ public class Order{
     private String deliveredDate;
     private int latitude;
     private int longitude;
-    private OrderItem[] items;
+    private Item[] items;
 
-    public Order(int id, Address address, CreditCard creditCard, OrderStatus status, String receivedDate, String processedDate, String shippedDate, String deliveredDate, int latitude, int longitude, OrderItem[] items) {
+    public Order(int id, Address address, CreditCard creditCard, OrderStatus status, String receivedDate, String processedDate, String shippedDate, String deliveredDate, int latitude, int longitude, Item[] items) {
         this.id = id;
         this.address = address;
         this.creditCard = creditCard;
@@ -80,7 +75,7 @@ public class Order{
         return creditCard;
     }
 
-    public OrderItem[] getItems() {
+    public Item[] getItems() {
         return items;
     }
 
@@ -117,7 +112,7 @@ public class Order{
         int subtotal = 0;
 
         for (int i = 0; i < items.length; i++) {
-            OrderItem item = items[i];
+            Item item = items[i];
 
             subtotal += item.getPrice();
 

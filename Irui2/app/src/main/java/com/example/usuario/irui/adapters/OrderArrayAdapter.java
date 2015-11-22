@@ -54,23 +54,19 @@ public class OrderArrayAdapter extends ArrayAdapter<Order>{
 
         ImageView imageView = (ImageView) convertView.findViewById(R.id.statusIcon);
 
-
         OrderStatus status = order.getStatus();
         if (status == OrderStatus.CREATED) {
             imageView.setImageResource(R.drawable.created);
 
-
         } else if (status == OrderStatus.DELIVERED){
-
             imageView.setImageResource(R.drawable.shipped);
 
         }else if(status == OrderStatus.SHIPPED){
             imageView.setImageResource(R.drawable.process);
+
         }else{
             imageView.setImageResource(R.drawable.confirmed);
         }
-
-
 
         return convertView;
     }

@@ -18,6 +18,7 @@ import com.example.usuario.irui.requestModels.Order;
 import com.example.usuario.irui.requestModels.OrderStatus;
 import com.example.usuario.irui.requestModels.User;
 import com.google.gson.Gson;
+import com.google.gson.JsonParseException;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -78,6 +79,10 @@ public class OrderPage extends Base {
             try {
                 jsonRootObject = new JSONObject(s);
                 String orderAux = jsonRootObject.getString("order");
+
+                Toast.makeText(getApplicationContext(), orderAux,
+                        Toast.LENGTH_SHORT).show();
+
 
                 Gson gson = new Gson();
                 Order order = gson.fromJson(orderAux, Order.class);
@@ -144,12 +149,15 @@ public class OrderPage extends Base {
             }catch(JSONException e){
                 Toast.makeText(getApplicationContext(), "aca flasheo",
                         Toast.LENGTH_SHORT).show();
+            }catch(JsonParseException e2){
+                Toast.makeText(getApplicationContext(), e2.toString(),
+                        Toast.LENGTH_SHORT).show();
             }
 
 
         }else{
             Toast.makeText(getApplicationContext(), "Hubo un error conectando al servidor",
-                    Toast.LENGTH_SHORT).show();
+                    Toast.LENGTH_LONG).show();
         }
     }
 
