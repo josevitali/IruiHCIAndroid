@@ -82,21 +82,15 @@
     <string name="cancelOP">Cancelar</string>
     <string name="orderOP">Ordenar</string>
 
-
     <!--Mujeres hombres ni;os-->
     <string name="clothes">Indumentaria</string>
     <string name="shoes">Calzado</string>
     <string name="accesories">Accesorios</string>
     <string name="seeAll">Ver Todo</string>
-    <string name="title_activity_mujeres">Mujeres</string>
-    <string name="title_activity_hombres">Hombres</string>
-    <string name="title_activity_ninos">Niños</string>
-    <string name="title_activity_pagina_producto">Producto</string>
 
     <!--Ordenes-->
     <string name="orderDate">Pedido el:</string>
     <string name="shippedDate">Entregado el:</string>
-    <string name="title_activity_order">Orden</string>
 
 
 </resources>
