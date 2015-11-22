@@ -20,7 +20,8 @@
             android:text="Nombre Producto"
             android:id="@+id/productName"
             android:layout_above="@+id/prodPrice"
-            android:layout_centerHorizontal="true" />
+            android:layout_centerHorizontal="true"
+            android:gravity="center_horizontal" />
 
 
         <TextView
