@@ -47,26 +47,12 @@ public class Busqueda extends Base {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_busqueda);
 
         LayoutInflater inflater = (LayoutInflater) this
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View contentView = inflater.inflate(R.layout.activity_busqueda, null, false);
         drawer.addView(contentView, 0);
 
-//        final EditText mEditText = (EditText) findViewById(R.id.search_text);
-//        mEditText.setOnKeyListener(new View.OnKeyListener() {
-//            public boolean onKey(View v, int keyCode, KeyEvent event) {
-//                // If the event is a key-down event on the "enter" button
-//                if ((event.getAction() == KeyEvent.ACTION_DOWN) &&
-//                        (keyCode == KeyEvent.KEYCODE_ENTER)) {
-//                    // Perform action on key press
-//                    makeText(HelloFormStuff.this, mEditText.getText(), Toast.LENGTH_SHORT).show();
-//                    return true;
-//                }
-//                return false;
-//            }
-//        });
 
 
         EditText edit_txt = (EditText) findViewById(R.id.search_text);
@@ -91,8 +77,8 @@ public class Busqueda extends Base {
         });
 
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+//        setSupportActionBar(toolbar);
 
 
     }
