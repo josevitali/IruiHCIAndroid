@@ -113,11 +113,6 @@
             android:label="@string/title_activity_pagina_producto"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
-        <activity
-            android:name=".Order"
-            android:label="@string/title_activity_order"
-            android:theme="@style/AppTheme.NoActionBar" >
-        </activity>
     </application>
 
 </manifest>

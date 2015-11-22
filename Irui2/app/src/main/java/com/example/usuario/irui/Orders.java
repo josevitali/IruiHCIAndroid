@@ -1,7 +1,6 @@
 package com.example.usuario.irui;
 
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -105,17 +104,6 @@ public class Orders extends Base {
             Toast.makeText(getApplicationContext(),"exception",
                     Toast.LENGTH_LONG).show();
         }
-    }
-
-
-
-    public void openOrder(View view){
-        Toast.makeText(getApplicationContext(),"no exploto pero entro",
-                Toast.LENGTH_LONG).show();
-
-
-//        Intent intent = new Intent(this, Order.class);
-//        this.startActivity(intent);
     }
 
 }
