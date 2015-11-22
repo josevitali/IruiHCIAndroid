@@ -140,7 +140,7 @@ public class ResultadosBusqueda extends Base{
 
 
         pDialog = new ProgressDialog(this);
-        pDialog.setMessage("Loading...");
+        pDialog.setMessage(getString(R.string.loading));
         pDialog.show();
 
         new Connection(this, request).execute();
@@ -215,7 +215,7 @@ public class ResultadosBusqueda extends Base{
                 request = builtUri.toString();
 
                 pDialog = new ProgressDialog(this);
-                pDialog.setMessage("Loading...");
+                pDialog.setMessage(getString(R.string.loading));
                 pDialog.show();
 
                 new Connection(this, request).execute();
