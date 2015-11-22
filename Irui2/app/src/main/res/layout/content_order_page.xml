@@ -84,6 +84,7 @@
                 android:layout_alignParentTop="true"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
+                android:paddingTop="5dp"
                 android:layout_marginLeft="52dp"
                 android:layout_marginStart="52dp" />
 
@@ -95,7 +96,8 @@
                 android:id="@+id/realAddress"
                 android:layout_alignParentBottom="true"
                 android:layout_alignLeft="@+id/addrName"
-                android:layout_alignStart="@+id/addrName" />
+                android:layout_alignStart="@+id/addrName"
+                android:visibility="invisible"/>
         </RelativeLayout>
 
     </TableRow>
@@ -340,14 +342,23 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="aca mostrariamos productos"
-                android:id="@+id/productInOrder"
+                android:text="@string/totalPrice"
+                android:id="@+id/totalPriceConstant"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:layout_marginLeft="52dp"
-                android:layout_marginStart="52dp"
-                android:layout_marginTop="20dp" />
+                android:layout_marginStart="52dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="price"
+                android:id="@+id/totalPrice"
+                android:layout_alignParentBottom="true"
+                android:layout_alignLeft="@+id/totalPriceConstant"
+                android:layout_alignStart="@+id/totalPriceConstant" />
 
 
         </RelativeLayout>

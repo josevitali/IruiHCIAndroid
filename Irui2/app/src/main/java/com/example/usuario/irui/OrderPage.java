@@ -25,6 +25,7 @@ import org.json.JSONObject;
 
 public class OrderPage extends Base {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,8 +44,6 @@ public class OrderPage extends Base {
         Gson gson = new Gson();
         User user = gson.fromJson(account, User.class);
 
-
-
         String baseUrl = "http://eiffel.itba.edu.ar/hci/service3/Order.groovy?";
 
         Uri.Builder builder = new Uri.Builder();
@@ -58,94 +57,93 @@ public class OrderPage extends Base {
                 .build();
         String request = builtUri.toString();
 
-
-
         new Connection(this, request).execute();
-
-
-
 
     }
 
     public void afterRequest(String s){
 
-        JSONObject jsonRootObject = null;
-        if(s!= "error"){
+            JSONObject jsonRootObject = null;
+            if (s != "error") {
 
-            try {
-                jsonRootObject = new JSONObject(s);
-                String orderAux = jsonRootObject.getString("order");
+                try {
+                    jsonRootObject = new JSONObject(s);
+                    String orderAux = jsonRootObject.getString("order");
 
-                Gson gson = new Gson();
-                Order order = gson.fromJson(orderAux, Order.class);
-
-
-                TextView addressName = (TextView)findViewById(R.id.addrName);
-                addressName.setText((order.getAddress() == null || order.getAddress().getName() == null)? "-" : order.getAddress().getName());
+                    Gson gson = new Gson();
+                    Order order = gson.fromJson(orderAux, Order.class);
 
 
-                TextView createDate = (TextView)findViewById(R.id.orderDate);
-                createDate.setText(order.getProcessedDate() == null ? "-" : order.getProcessedDate());
-
-                TextView shipDate = (TextView)findViewById(R.id.deliverDate);
-                shipDate.setText(order.getShippedDate() == null ? "-" : order.getShippedDate());
-
-                TextView orderNumber = (TextView)findViewById(R.id.orderNumber);
-                orderNumber.setText("#" + order.getId().toString());
-
-                TextView paymentInfoView = (TextView)findViewById(R.id.paymentInfo);
-                paymentInfoView.setText(order.getCreditCard() == null ? "-" : order.getCreditCard().getNumber().toString());
-
-                TextView createdView = (TextView)findViewById(R.id.orderStateCreated);
-                TextView shippedView = (TextView)findViewById(R.id.orderStateShipped);
-                TextView deliveredView = (TextView)findViewById(R.id.orderStateDelivered);
-                TextView confirmedView = (TextView)findViewById(R.id.orderStateConfirmed);
-
-                OrderStatus status = order.getStatus();
-
-                if(status == OrderStatus.DELIVERED){
-                    createdView.setVisibility(View.GONE);
-                    shippedView.setVisibility(View.GONE);
-                    deliveredView.setVisibility(View.VISIBLE);
-                    confirmedView.setVisibility(View.GONE);
+                    TextView addressName = (TextView) findViewById(R.id.addrName);
+                    addressName.setText((order.getAddress() == null || order.getAddress().getName() == null) ? "-" : order.getAddress().getName());
 
 
-                }else if(status == OrderStatus.CREATED){
-                    createdView.setVisibility(View.VISIBLE);
-                    shippedView.setVisibility(View.GONE);
-                    deliveredView.setVisibility(View.GONE);
-                    confirmedView.setVisibility(View.GONE);
+                    TextView createDate = (TextView) findViewById(R.id.orderDate);
+                    createDate.setText(order.getProcessedDate() == null ? "-" : order.getProcessedDate());
 
-                }else if(status == OrderStatus.SHIPPED){
-                    createdView.setVisibility(View.GONE);
-                    shippedView.setVisibility(View.VISIBLE);
-                    deliveredView.setVisibility(View.GONE);
-                    confirmedView.setVisibility(View.GONE);
+                    TextView shipDate = (TextView) findViewById(R.id.deliverDate);
+                    shipDate.setText(order.getShippedDate() == null ? "-" : order.getShippedDate());
 
-                }else{
-                    createdView.setVisibility(View.GONE);
-                    shippedView.setVisibility(View.GONE);
-                    deliveredView.setVisibility(View.GONE);
-                    confirmedView.setVisibility(View.VISIBLE);
+                    TextView orderNumber = (TextView) findViewById(R.id.orderNumber);
+                    orderNumber.setText("#" + order.getId().toString());
 
+                    TextView paymentInfoView = (TextView) findViewById(R.id.paymentInfo);
+                    paymentInfoView.setText(order.getCreditCard() == null ? "-" : order.getCreditCard().getNumber().toString());
+
+                    TextView priceView = (TextView) findViewById(R.id.totalPrice);
+                    priceView.setText("$" + order.getSubtotal());
+
+
+
+
+                    TextView createdView = (TextView) findViewById(R.id.orderStateCreated);
+                    TextView shippedView = (TextView) findViewById(R.id.orderStateShipped);
+                    TextView deliveredView = (TextView) findViewById(R.id.orderStateDelivered);
+                    TextView confirmedView = (TextView) findViewById(R.id.orderStateConfirmed);
+
+                    OrderStatus status = order.getStatus();
+
+                    if (status == OrderStatus.DELIVERED) {
+                        createdView.setVisibility(View.GONE);
+                        shippedView.setVisibility(View.GONE);
+                        deliveredView.setVisibility(View.VISIBLE);
+                        confirmedView.setVisibility(View.GONE);
+
+
+                    } else if (status == OrderStatus.CREATED) {
+                        createdView.setVisibility(View.VISIBLE);
+                        shippedView.setVisibility(View.GONE);
+                        deliveredView.setVisibility(View.GONE);
+                        confirmedView.setVisibility(View.GONE);
+
+                    } else if (status == OrderStatus.SHIPPED) {
+                        createdView.setVisibility(View.GONE);
+                        shippedView.setVisibility(View.VISIBLE);
+                        deliveredView.setVisibility(View.GONE);
+                        confirmedView.setVisibility(View.GONE);
+
+                    } else {
+                        createdView.setVisibility(View.GONE);
+                        shippedView.setVisibility(View.GONE);
+                        deliveredView.setVisibility(View.GONE);
+                        confirmedView.setVisibility(View.VISIBLE);
+
+                    }
+
+
+                } catch (JSONException e) {
+                    Toast.makeText(getApplicationContext(), "exception",
+                            Toast.LENGTH_SHORT).show();
+                } catch (JsonParseException e2) {
+                    Toast.makeText(getApplicationContext(), e2.toString(),
+                            Toast.LENGTH_SHORT).show();
                 }
 
 
-
-
-            }catch(JSONException e){
-                Toast.makeText(getApplicationContext(), "exception",
-                        Toast.LENGTH_SHORT).show();
-            }catch(JsonParseException e2){
-                Toast.makeText(getApplicationContext(), e2.toString(),
-                        Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(getApplicationContext(), "Hubo un error conectando al servidor",
+                        Toast.LENGTH_LONG).show();
             }
-
-
-        }else{
-            Toast.makeText(getApplicationContext(), "Hubo un error conectando al servidor",
-                    Toast.LENGTH_LONG).show();
-        }
     }
 
 }

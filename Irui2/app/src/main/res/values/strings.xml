@@ -112,6 +112,7 @@
     <string name="confirmed">Confirmed</string>
     <string name="delivered">Delivered</string>
     <string name="created">Created</string>
+    <string name="totalPrice">Total Price:</string>
 
 
 
