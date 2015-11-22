@@ -91,6 +91,8 @@
     <string name="title_activity_ninos">Niños</string>
     <string name="title_activity_pagina_producto">Producto</string>
     <string name="title_activity_mujeres">Mujeres</string>
+    <string name="title_activity_girls">Niñas</string>
+    <string name="title_activity_babies">Bebes</string>
 
     <!--Ordenes-->
     <string name="orderDate">Pedido el:</string>
