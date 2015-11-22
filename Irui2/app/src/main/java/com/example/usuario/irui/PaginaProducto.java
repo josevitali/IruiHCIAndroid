@@ -40,9 +40,6 @@ public class PaginaProducto extends Base {
 
             new Connection(this, request).execute();
         }
-        else
-            Toast.makeText(getApplicationContext(), "NOOOOO",
-                    Toast.LENGTH_LONG).show();
 
     }
 

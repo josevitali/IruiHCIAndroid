@@ -42,7 +42,7 @@
 
 
             <ImageView
-                android:layout_width="190dp"
+                android:layout_width="250dp"
                 android:layout_height="250dp"
                 android:layout_weight="0.7"
                 android:id="@+id/prodImg"
@@ -57,11 +57,13 @@
                 android:id="@+id/imageUrl"/>
 
             <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
                 android:layout_weight="0.3"
                 android:id="@+id/firstImage"
+                android:layout_alignTop="@+id/prodImg"
                 android:layout_alignParentTop="true"
+                android:scaleType="fitXY"
                 android:layout_toRightOf="@+id/prodImg"
                 android:layout_toEndOf="@+id/prodImg"
                 android:onClick="changeFirstPic"
@@ -75,13 +77,14 @@
 
 
             <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
                 android:id="@+id/secondImage"
                 android:layout_below="@+id/firstImage"
                 android:layout_toRightOf="@+id/prodImg"
                 android:layout_toEndOf="@+id/prodImg"
                 android:layout_marginTop="44dp"
+                android:scaleType="fitXY"
                 android:onClick="changeSecondPic"
                 android:visibility="gone"/>
 
