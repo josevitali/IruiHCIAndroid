@@ -114,7 +114,8 @@
     <string name="created">Created</string>
     <string name="totalPrice">Total Price:</string>
 
-
+    <!--Orden view-->
+    <string name="orderId">Order number:</string>
 
 
     <string-array name="array_name">
