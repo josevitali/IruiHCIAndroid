@@ -6,6 +6,7 @@ import android.app.PendingIntent;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -24,6 +25,13 @@ import android.widget.Toast;
 
 import com.example.usuario.irui.requestModels.User;
 import com.google.gson.Gson;
+
+import java.io.BufferedInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
 
 
 public abstract class Base extends AppCompatActivity
@@ -177,7 +185,7 @@ public abstract class Base extends AppCompatActivity
 
             String request = builtUri.toString();
 
-            new Connection(this, request).execute();
+            new Connection4(this, request).execute();
 
             signOut=true;
 
@@ -196,8 +204,12 @@ public abstract class Base extends AppCompatActivity
         return;
     }
 
-
     public void afterRequest(String s){
+
+    }
+
+
+    public void afterRequestSignOut(String s){
         if( s != "error" && signOut){
 
 
@@ -230,6 +242,70 @@ public abstract class Base extends AppCompatActivity
 
 
 
+        }
+    }
+
+
+
+    private static class Connection4 extends AsyncTask<Void, Void, String> {
+
+
+        public interface AsyncResponse {
+            void processFinish(String output);
+        }
+
+        private String myUrl = "";
+        private Base activity = null;
+
+        private Connection4(Base  activity, String url) {
+            this.activity = activity;
+            this.myUrl = url;
+        }
+
+
+
+        private static final String TAG = "HttpGetTask";
+
+
+        @Override
+        protected String doInBackground(Void... params) {
+
+            HttpURLConnection urlConnection = null;
+
+            try {
+                URL url = new URL(myUrl);
+                urlConnection = (HttpURLConnection) url.openConnection();
+                InputStream in = new BufferedInputStream(urlConnection.getInputStream());
+                return readStream(in);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+                return "error";
+            }
+            finally {
+                if (urlConnection != null)
+                    urlConnection.disconnect();
+            }
+        }
+
+
+        @Override
+        protected void onPostExecute(String result) {
+            activity.afterRequestSignOut(result);
+        }
+
+
+        private String readStream(InputStream inputStream) {
+            try {
+                ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+                int i = inputStream.read();
+                while(i != -1) {
+                    outputStream.write(i);
+                    i = inputStream.read();
+                }
+                return outputStream.toString();
+            } catch (IOException e) {
+                return "";
+            }
         }
     }
 }
