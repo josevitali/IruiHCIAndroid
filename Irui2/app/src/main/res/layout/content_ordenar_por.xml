@@ -15,52 +15,6 @@
         android:orientation="vertical"
         android:id="@+id/radioGroup">
 
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/descendingPrice"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:id="@+id/ascending_price"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:checked="false" />
-
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/ascendingPrice"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:id="@+id/descending_price"
-            android:layout_below="@+id/ascending_price"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="34dp"
-            android:checked="false" />
-
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/order_brand"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:id="@+id/radioButton3"
-            android:layout_marginTop="36dp"
-            android:layout_below="@+id/descending_price"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:checked="false" />
-
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/order_name"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:id="@+id/radioButton4"
-            android:layout_below="@+id/radioButton3"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="34dp" />
-
         <Space
             android:layout_width="match_parent"
             android:layout_height="25dp" />

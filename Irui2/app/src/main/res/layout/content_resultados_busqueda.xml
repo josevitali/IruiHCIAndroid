@@ -18,37 +18,29 @@
 
         <LinearLayout
             android:orientation="vertical"
-            android:layout_width="100dp"
-            android:layout_height="match_parent">
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="100dp"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:paddingBottom="10dp">
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/ordenarporRB"
-                android:id="@+id/buttonOrdenarPor"
-                android:onClick="ordenarPor"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ordenarporRB"
+                    android:id="@+id/buttonOrdenarPor"
+                    android:onClick="ordenarPor"
+                    android:layout_alignParentTop="false"
+                    android:layout_alignParentRight="false"
+                    android:layout_alignParentEnd="false"
+                    android:layout_alignParentLeft="false"
+                    android:layout_centerInParent="true"
+                    android:layout_alignParentStart="false" />
+            </RelativeLayout>
         </LinearLayout>
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:text="@string/filtrosRB"
-            android:id="@+id/buttonFiltros"
-            android:onClick="filtros"
-            android:layout_alignTop="@+id/buttonOrdenarPor"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
     </LinearLayout>
 
     <LinearLayout
