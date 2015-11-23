@@ -139,8 +139,9 @@ public class Login extends Base {
 
             new Connection2(this, request).execute();
 
-            Intent intent = new Intent(this, MainActivity.class);
-            this.startActivity(intent);
+            //Intent intent = new Intent(this, MainActivity.class);
+            //this.startActivity(intent);
+            backToHome(this.findViewById(R.id.homepage));
 
 
         } catch (JSONException e) {
@@ -148,6 +149,7 @@ public class Login extends Base {
             Toast.makeText(getApplicationContext(), "Datos Invalidos",
                     Toast.LENGTH_LONG).show();
         }
+
 
     }
 
