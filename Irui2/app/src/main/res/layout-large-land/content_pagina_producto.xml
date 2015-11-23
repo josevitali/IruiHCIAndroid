@@ -22,7 +22,7 @@
             android:layout_above="@+id/prodPrice"
             android:layout_centerHorizontal="true"
             android:gravity="center_horizontal"
-            android:textSize="50dp" />
+            android:textSize="40dp" />
 
 
         <TextView
@@ -168,7 +168,7 @@
                             android:id="@+id/prodInfo"
                             android:text="@string/prodInfo"
                             android:textStyle="bold"
-                            android:textSize="30dp"
+                            android:textSize="23dp"
                             android:paddingLeft="50dp"
                             android:layout_gravity="center_vertical" />
 
