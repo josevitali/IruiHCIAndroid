@@ -18,47 +18,57 @@
 
     <ImageButton android:id="@+id/buttonHombres"
         android:scaleType="fitXY"
-        android:layout_width="155dp"
+        android:layout_width="600dp"
         android:layout_height="300dp"
-        android:src="@drawable/hombres2"
+        android:src="@drawable/novedades"
         android:onClick="pagHombres"
-        android:clickable="true" />
+        android:clickable="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 
     <ImageButton android:id="@+id/buttonMujeres"
         android:scaleType="fitXY"
-        android:layout_width="155dp"
+        android:layout_width="600dp"
         android:layout_height="300dp"
-        android:src="@drawable/mujeres2"
-        android:layout_toRightOf="@+id/buttonHombres"
+        android:src="@drawable/image"
         android:onClick="pagMujeres"
-        android:clickable="true" />
+        android:clickable="true"
+        android:layout_below="@+id/buttonHombres"
+        android:layout_alignLeft="@+id/buttonHombres"
+        android:layout_alignStart="@+id/buttonHombres" />
 
     <ImageButton android:id="@+id/buttonNinos"
         android:scaleType="fitXY"
-        android:layout_width="155dp"
+        android:layout_width="600dp"
         android:layout_height="300dp"
-        android:src="@drawable/chicos2"
-        android:layout_toRightOf="@+id/buttonMujeres"
+        android:src="@drawable/boys2"
         android:onClick="pagNinos"
-        android:clickable="true" />
+        android:clickable="true"
+        android:layout_below="@+id/buttonMujeres"
+        android:layout_alignLeft="@+id/buttonMujeres"
+        android:layout_alignStart="@+id/buttonMujeres" />
 
     <ImageButton android:id="@+id/buttonNinas"
         android:scaleType="fitXY"
-        android:layout_width="155dp"
+        android:layout_width="600dp"
         android:layout_height="300dp"
-        android:src="@drawable/ninas2"
-        android:layout_toRightOf="@+id/buttonNinos"
+        android:src="@drawable/girls"
         android:onClick="pagNinas"
-        android:clickable="true" />
+        android:clickable="true"
+        android:layout_below="@+id/buttonNinos"
+        android:layout_alignLeft="@+id/buttonNinos"
+        android:layout_alignStart="@+id/buttonNinos" />
 
     <ImageButton android:id="@+id/buttonBebes"
         android:scaleType="fitXY"
-        android:layout_width="155dp"
+        android:layout_width="600dp"
         android:layout_height="300dp"
-        android:src="@drawable/bebes2"
-        android:layout_toRightOf="@+id/buttonNinas"
+        android:src="@drawable/bebes"
         android:onClick="pagBebes"
-        android:clickable="true" />
+        android:clickable="true"
+        android:layout_below="@+id/buttonNinas"
+        android:layout_alignLeft="@+id/buttonNinas"
+        android:layout_alignStart="@+id/buttonNinas" />
 
 
 </RelativeLayout>
