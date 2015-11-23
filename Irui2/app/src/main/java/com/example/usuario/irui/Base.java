@@ -109,8 +109,7 @@ public abstract class Base extends AppCompatActivity
             return true;
         }
         else if(id == R.id.buscar_item){
-            Intent intent = new Intent(this, Busqueda.class);
-            this.startActivity(intent);
+            buscar();
         }
 
         return super.onOptionsItemSelected(item);
@@ -312,5 +311,10 @@ public abstract class Base extends AppCompatActivity
                 return "";
             }
         }
+    }
+
+    public void buscar(){
+        Intent intent = new Intent(this, Busqueda.class);
+        this.startActivity(intent);
     }
 }

@@ -98,4 +98,9 @@ public class Busqueda extends Base {
 
     }
 
+   @Override
+   public void buscar() {
+       return;
+   }
+
 }
