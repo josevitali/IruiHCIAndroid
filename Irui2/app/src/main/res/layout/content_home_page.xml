@@ -39,7 +39,7 @@
         android:scaleType="fitXY"
         android:layout_width="400dp"
         android:layout_height="200dp"
-        android:src="@drawable/boys2"
+        android:src="@drawable/boys"
         android:layout_below="@+id/buttonMujeres"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"

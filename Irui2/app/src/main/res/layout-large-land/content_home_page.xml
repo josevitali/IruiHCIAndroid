@@ -41,7 +41,7 @@
         android:scaleType="fitXY"
         android:layout_width="600dp"
         android:layout_height="300dp"
-        android:src="@drawable/boys2"
+        android:src="@drawable/boys"
         android:onClick="pagNinos"
         android:clickable="true"
         android:layout_below="@+id/buttonMujeres"
