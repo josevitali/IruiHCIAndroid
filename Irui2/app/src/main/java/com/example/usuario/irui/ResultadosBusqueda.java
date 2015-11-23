@@ -274,9 +274,12 @@ public class ResultadosBusqueda extends Base{
 
                 ListView listView = (ListView) this.findViewById(R.id.prodList);
                 listView.setAdapter(adapter);
+                listView.setVisibility(View.VISIBLE);
             }else{
                 TextView noResults = (TextView)findViewById(R.id.noResults);
                 noResults.setVisibility(View.VISIBLE);
+                ListView listView = (ListView) this.findViewById(R.id.prodList);
+                listView.setVisibility(View.GONE);
             }
 
         } catch (JSONException e) {
