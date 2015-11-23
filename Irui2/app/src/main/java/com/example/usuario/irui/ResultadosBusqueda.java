@@ -239,13 +239,6 @@ public class ResultadosBusqueda extends Base{
 
             jsonRootObject = new JSONObject(url);
             JSONArray products = jsonRootObject.getJSONArray("products");
-            Gson gson = new Gson();
-
-
-
-
-            ArrayList<Product> prodList = new ArrayList<>();
-
 
                 Product[] prods = new Product[products.length()];
                 for (int i = 0; i < products.length(); i++) {
@@ -264,14 +257,8 @@ public class ResultadosBusqueda extends Base{
                     prods[i] = p;
                 }
 
-            if(products.length() == 0){
-                
-            }
-
-
             if(prods.length != 0) {
                 ProductArrayAdapter adapter = new ProductArrayAdapter(this, prods);
-
                 ListView listView = (ListView) this.findViewById(R.id.prodList);
                 listView.setAdapter(adapter);
                 listView.setVisibility(View.VISIBLE);
