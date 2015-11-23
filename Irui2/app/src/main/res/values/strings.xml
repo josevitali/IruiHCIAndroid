@@ -37,10 +37,10 @@
 
 
     <!--Toolbar-->
-    <string name="login">Log In</string>
+    <string name="login">Sign In</string>
     <string name="mujeres">Women</string>
     <string name="hombres">Men</string>
-    <string name="children">Children</string>
+    <string name="children">Boys</string>
     <string name="baby">Babies</string>
     <string name="girl">Girls</string>
     <string name="boy">Boys</string>
