@@ -43,7 +43,7 @@ public class ProductArrayAdapter extends ArrayAdapter<Product> {
                 .into(imageView);
 
         TextView nameTextView = (TextView)convertView.findViewById(R.id.prodName);
-        nameTextView.setText(product.getName().length() > 22 ? product.getName().substring(0, 22) + "..." : product.getName());
+        nameTextView.setText(product.getName().length() > 13 ? product.getName().substring(0, 13) + "..." : product.getName());
 
         TextView brandTextView = (TextView)convertView.findViewById(R.id.prodBrand);
         brandTextView.setText(product.getBrand());

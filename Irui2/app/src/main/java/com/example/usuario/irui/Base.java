@@ -49,11 +49,6 @@ public abstract class Base extends AppCompatActivity
         NavigationView nv = (NavigationView)findViewById(R.id.nav_view);
         Menu menu = nv.getMenu();
 
-        if(nv==null){
-            Toast.makeText(getApplicationContext(), "EL NV ES NULL",
-                    Toast.LENGTH_LONG).show();
-        }
-
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
