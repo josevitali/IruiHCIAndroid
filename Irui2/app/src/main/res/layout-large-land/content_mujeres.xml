@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="120dp">
+
+        <RelativeLayout
+            android:layout_width="300dp"
+            android:layout_height="match_parent"
+            android:id="@+id/relativeLayout2"
+            android:layout_toLeftOf="@+id/relativeLayout3"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true">
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:id="@+id/imageView2"
+                android:src="@drawable/mujeres"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+
+
+
+        </RelativeLayout>
+
+
+
+        <RelativeLayout
+            android:layout_width="300dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:id="@+id/relativeLayout3"
+            android:paddingRight="70dp">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/seeAll"
+                android:id="@+id/ver_todo_mujeres"
+                android:layout_gravity="center_horizontal"
+                android:onClick="showAllWomen"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/sale"
+                android:id="@+id/sale_mujeres"
+                android:layout_below="@+id/ver_todo_mujeres"
+                android:onClick="showOnSale" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/newArr"
+                android:id="@+id/arrivos_mujeres"
+                android:layout_below="@+id/sale_mujeres"
+                android:onClick="showNewArrivals" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/clothes"
+                android:id="@+id/ropa_mujeres"
+                android:layout_below="@+id/arrivos_mujeres"
+                android:onClick="showClothes" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/shoes"
+                android:id="@+id/zapatos_mujeres"
+                android:layout_below="@+id/ropa_mujeres"
+                android:onClick="showShoes" />
+
+            <Button
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/accesories"
+                android:id="@+id/novedades_mujeres"
+                android:layout_below="@+id/zapatos_mujeres"
+                android:onClick="showAccesories" />
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+</ScrollView>
