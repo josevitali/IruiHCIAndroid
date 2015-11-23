@@ -2,9 +2,11 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="schemas.android.com/tools"
     tools:context="com.example.sample.YourActivity"
-    xmlns:yourapp="http://schemas.android.com/apk/res-auto">
+    xmlns:yourapp="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/toolbar3">
     <item android:id="@+id/buscar_item"
         android:icon="@drawable/search"
         android:title="@string/search"
         yourapp:showAsAction="always"/>
 </menu>
+

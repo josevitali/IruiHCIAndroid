@@ -225,8 +225,7 @@ public abstract class Base extends AppCompatActivity
 
             alarmManager.cancel(alarmNotificationReceiverPendingIntent);
 
-            Toast.makeText(this, "Repeating alarm cancelled", Toast.LENGTH_LONG)
-                    .show();
+
 
 
             signOut=false;

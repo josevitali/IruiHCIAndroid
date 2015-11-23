@@ -1,5 +1,6 @@
 package com.example.usuario.irui;
 
+import android.content.ClipData;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -8,6 +9,8 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.KeyEvent;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.LayoutInflater;
 import android.content.Context;
@@ -38,7 +41,6 @@ public class Busqueda extends Base {
 
         a.putExtra("searchText", mEdit.getText().toString());
         startActivity(a);
-        return;
     }
 
 
@@ -60,8 +62,6 @@ public class Busqueda extends Base {
         edit_txt.setOnEditorActionListener(new EditText.OnEditorActionListener() {
 
 
-
-
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 if (event != null && event.getAction() != KeyEvent.ACTION_DOWN) {
@@ -75,6 +75,21 @@ public class Busqueda extends Base {
                 return false;
             }
         });
+
+
+
+//        Menu menu = (Menu) findViewById(R.id.toolbar3);
+//
+//       // MenuItem item = (MenuItem)findViewById(R.id.buscar_item);
+//
+//        if(menu == null){
+//            Toast.makeText(getApplicationContext(), "no encontro el menu",
+//                    Toast.LENGTH_LONG).show();
+//        }
+
+
+
+
 
 
 //        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
