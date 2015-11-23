@@ -40,7 +40,7 @@ public class Login extends Base {
 
     private AlarmManager alarmManager;
     private PendingIntent alarmNotificationReceiverPendingIntent;
-    private final static int INTERVAL = 10000;
+    private final static int INTERVAL = 30000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
