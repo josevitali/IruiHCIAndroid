@@ -44,7 +44,13 @@ public class OrderArrayAdapter extends ArrayAdapter<Order>{
         }
 
         TextView nameTextView = (TextView) convertView.findViewById(R.id.addressName);
-        nameTextView.setText(order.getAddress() == null ? "-" : order.getAddress().getName());
+        String orderAdd = null;
+        if(order.getAddress() != null) {
+            orderAdd = order.getAddress().getName();
+            if (orderAdd.length() > 9)
+                orderAdd = orderAdd.substring(0, 8) + "...";
+        }
+        nameTextView.setText(order.getAddress() == null ? "-" : orderAdd);
 
         TextView brandTextView = (TextView) convertView.findViewById(R.id.orderId);
         brandTextView.setText( context.getString(R.string.orderId) + order.getId().toString());
