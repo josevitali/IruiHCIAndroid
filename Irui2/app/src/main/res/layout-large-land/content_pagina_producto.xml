@@ -168,7 +168,7 @@
                             android:text="@string/prodInfo"
                             android:textStyle="bold"
                             android:textSize="15dp"
-                            android:paddingLeft="10dp"
+                            android:paddingLeft="50dp"
                             android:layout_gravity="center_vertical" />
 
                     </LinearLayout>
@@ -189,7 +189,7 @@
                             android:text="@string/infoBrand"
                             android:id="@+id/infoBrand"
                             android:layout_gravity="center_vertical"
-                            android:paddingLeft="20dp"
+                            android:paddingLeft="60dp"
                             android:paddingTop="5dp" />
                     </LinearLayout>
 
@@ -209,7 +209,7 @@
                             android:text="@string/infoOcassion"
                             android:id="@+id/infoOcassion"
                             android:layout_gravity="center_vertical"
-                            android:paddingLeft="20dp"
+                            android:paddingLeft="60dp"
                             android:paddingTop="5dp" />
                     </LinearLayout>
 
@@ -230,7 +230,7 @@
                             android:text="@string/infoMaterial"
                             android:id="@+id/infoMaterial"
                             android:layout_gravity="center_vertical"
-                            android:paddingLeft="20dp"
+                            android:paddingLeft="60dp"
                             android:paddingTop="5dp" />
                     </LinearLayout>
 
