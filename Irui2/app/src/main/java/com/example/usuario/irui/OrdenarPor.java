@@ -158,7 +158,7 @@ public class OrdenarPor extends Base {
         int id = rgp.getCheckedRadioButtonId();
 
         if(id == -1){
-            Toast.makeText(getApplicationContext(),"Seleccione una subcategoría",
+            Toast.makeText(getApplicationContext(),getString(R.string.subcatSelect),
                     Toast.LENGTH_LONG).show();
             return;
         }

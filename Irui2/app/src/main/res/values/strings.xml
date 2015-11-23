@@ -135,5 +135,6 @@
     <string name="connectivityError">There was an error while connecting to the server</string>
     <string name="invalidData">Invalid Data</string>
     <string name="signIn">Sign In</string>
+    <string name="subcatSelect">Select subcategory</string>
 
 </resources>

@@ -118,5 +118,6 @@
     <string name="connectivityError">Hubo un error al intentar conectarse con el servidor</string>
     <string name="invalidData">Datos Invalidos</string>
     <string name="signIn">Iniciar Sesión</string>
+    <string name="subcatSelect">Seleccione una subcategoría</string>
 
 </resources>
