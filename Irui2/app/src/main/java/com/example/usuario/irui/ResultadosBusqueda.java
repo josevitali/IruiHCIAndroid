@@ -159,7 +159,7 @@ public class ResultadosBusqueda extends Base{
         if(resp != "error")
             apiCall(resp);
         else{
-            Toast.makeText(getApplicationContext(),resp
+            Toast.makeText(getApplicationContext(), getString(R.string.connectionError)
                     ,
                     Toast.LENGTH_LONG).show();
         }

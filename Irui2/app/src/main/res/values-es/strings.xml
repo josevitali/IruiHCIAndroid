@@ -119,5 +119,6 @@
     <string name="invalidData">Datos Invalidos</string>
     <string name="signIn">Iniciar Sesión</string>
     <string name="subcatSelect">Seleccione una subcategoría</string>
+    <string name="connectionError">Error de conexión</string>
 
 </resources>

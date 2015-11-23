@@ -205,6 +205,17 @@ public abstract class Base extends AppCompatActivity
 
 
     public void afterRequestSignOut(String s){
+
+        if(s == "error"){
+
+            Toast.makeText(getApplicationContext(), getString(R.string.connectionError)
+                    ,
+                    Toast.LENGTH_LONG).show();
+
+            return;
+        }
+
+
         if( s != "error" && signOut){
 
 

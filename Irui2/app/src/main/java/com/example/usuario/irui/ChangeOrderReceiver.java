@@ -9,8 +9,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Build;
-import android.service.notification.StatusBarNotification;
-import android.widget.Toast;
 
 import com.example.usuario.irui.requestModels.User;
 import com.google.gson.Gson;
@@ -97,8 +95,6 @@ public class ChangeOrderReceiver extends BroadcastReceiver {
             }
         } catch (JSONException e) {
             e.printStackTrace();
-            Toast.makeText(context, "Datos Invalidos",
-                    Toast.LENGTH_LONG).show();
         }
 
 

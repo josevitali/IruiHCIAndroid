@@ -81,7 +81,7 @@ public class Login extends Base {
 
     public void afterRequest(String resp){
         if(resp == "error"){
-            Toast.makeText(getApplicationContext(), getString(R.string.connectivityError),
+            Toast.makeText(getApplicationContext(), getString(R.string.connectionError),
                     Toast.LENGTH_LONG).show();
         }
 
@@ -124,8 +124,7 @@ public class Login extends Base {
                     INTERVAL,
                     alarmNotificationReceiverPendingIntent);
 
-            Toast.makeText(this, "Reapeating alarm set", Toast.LENGTH_LONG)
-                    .show();
+
 
 
 
@@ -146,8 +145,6 @@ public class Login extends Base {
 
         } catch (JSONException e) {
             e.printStackTrace();
-            Toast.makeText(getApplicationContext(), "Datos Invalidos",
-                    Toast.LENGTH_LONG).show();
         }
 
 
@@ -156,8 +153,7 @@ public class Login extends Base {
     public void afterOrders(String resp){
 
         if(resp == "error"){
-            Toast.makeText(getApplicationContext(), "Error de Servidor",
-                    Toast.LENGTH_LONG).show();
+            return;
         }
 
         JSONObject  jsonRootObject = null;
@@ -177,8 +173,6 @@ public class Login extends Base {
 
         } catch (JSONException e) {
             e.printStackTrace();
-            Toast.makeText(getApplicationContext(), getString(R.string.invalidData),
-                    Toast.LENGTH_LONG).show();
         }
 
     }

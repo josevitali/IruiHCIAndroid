@@ -66,7 +66,7 @@ public class Orders extends Base {
 
 
         }else{
-            Toast.makeText(getApplicationContext(), getString(R.string.connectivityError),
+            Toast.makeText(getApplicationContext(), getString(R.string.connectionError),
                     Toast.LENGTH_LONG).show();
         }
 
@@ -92,8 +92,6 @@ public class Orders extends Base {
 
         } catch (JSONException e) {
             e.printStackTrace();
-            Toast.makeText(getApplicationContext(),"exception",
-                    Toast.LENGTH_LONG).show();
         }
     }
 

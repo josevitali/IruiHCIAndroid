@@ -136,5 +136,6 @@
     <string name="invalidData">Invalid Data</string>
     <string name="signIn">Sign In</string>
     <string name="subcatSelect">Select subcategory</string>
+    <string name="connectionError">Connection Error</string>
 
 </resources>
