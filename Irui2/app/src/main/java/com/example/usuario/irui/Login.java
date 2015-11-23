@@ -81,7 +81,7 @@ public class Login extends Base {
 
     public void afterRequest(String resp){
         if(resp == "error"){
-            Toast.makeText(getApplicationContext(), "Error de Servidor",
+            Toast.makeText(getApplicationContext(), getString(R.string.connectivityError),
                     Toast.LENGTH_LONG).show();
         }
 
@@ -175,7 +175,7 @@ public class Login extends Base {
 
         } catch (JSONException e) {
             e.printStackTrace();
-            Toast.makeText(getApplicationContext(), "Datos Invalidos",
+            Toast.makeText(getApplicationContext(), getString(R.string.invalidData),
                     Toast.LENGTH_LONG).show();
         }
 

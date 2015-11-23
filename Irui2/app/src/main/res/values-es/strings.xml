@@ -12,6 +12,8 @@
     <string name="cancel">Cancelar</string>
 
     <!-- Strings related to login -->
+    <string name="prompt_user">Nombre de usuario</string>
+    <string name="prompt_pass">Contraseña</string>
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Contraseña (opcional)</string>
     <string name="action_sign_in">Registrarse o iniciar sesión</string>
@@ -111,5 +113,10 @@
 
     <!--Loading-->
     <string name="loading">Cargando...</string>
+
+    <!--Miscelaneous-->
+    <string name="connectivityError">Hubo un error al intentar conectarse con el servidor</string>
+    <string name="invalidData">Datos Invalidos</string>
+    <string name="signIn">Iniciar Sesión</string>
 
 </resources>

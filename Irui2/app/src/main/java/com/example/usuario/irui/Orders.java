@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.GridView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -65,7 +66,7 @@ public class Orders extends Base {
 
 
         }else{
-            Toast.makeText(getApplicationContext(), "Hubo un error al intentar conectarse con el servidor",
+            Toast.makeText(getApplicationContext(), getString(R.string.connectivityError),
                     Toast.LENGTH_LONG).show();
         }
 
@@ -86,7 +87,7 @@ public class Orders extends Base {
 
             OrderArrayAdapter adapter = new OrderArrayAdapter(this, ords);
 
-            ListView listView = (ListView)this.findViewById(R.id.orderList);
+            GridView listView= (GridView)this.findViewById(R.id.orderList);
             listView.setAdapter(adapter);
 
         } catch (JSONException e) {
