@@ -8,7 +8,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingTop="120dp">
+        android:paddingTop="70dp">
 
         <RelativeLayout
             android:layout_width="300dp"
@@ -23,10 +23,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="300dp"
                 android:id="@+id/imageView2"
-                android:src="@drawable/hombres2"
+                android:src="@drawable/boys"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true" />
+                android:layout_alignParentEnd="true"
+                android:paddingLeft="30dp"
+                android:paddingRight="10dp" />
 
 
 
@@ -37,51 +39,51 @@
         <RelativeLayout
             android:layout_width="300dp"
             android:layout_height="match_parent"
+            android:id="@+id/relativeLayout3"
+            android:paddingRight="70dp"
             android:layout_alignParentTop="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
-            android:id="@+id/relativeLayout3"
-            android:paddingRight="70dp">
+            android:paddingLeft="30dp">
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/seeAll"
-                android:id="@+id/ver_todo_hombres"
-                android:onClick="showAllMen"
-                android:layout_gravity="center_horizontal" />
+                android:id="@+id/ver_todo_ninos"
+                android:layout_gravity="center_horizontal"
+                android:onClick="showAllBoys"/>
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/sale"
-                android:id="@+id/sale_hombres"
-                android:layout_below="@+id/ver_todo_hombres"
+                android:id="@+id/sale_ninos"
+                android:layout_below="@+id/ver_todo_ninos"
                 android:onClick="showOnSale" />
 
             <Button
                 android:layout_width="match_parent"
-                android:layout_height
-                    ="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="@string/newArr"
-                android:id="@+id/arrivos_hombres"
-                android:layout_below="@id/sale_hombres"
+                android:id="@+id/arrivos_ninos"
+                android:layout_below="@+id/sale_ninos"
                 android:onClick="showNewArrivals" />
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/clothes"
-                android:id="@+id/ropa_hombres"
-                android:layout_below="@+id/arrivos_hombres"
+                android:id="@+id/ropa_ninos"
+                android:layout_below="@+id/arrivos_ninos"
                 android:onClick="showClothes" />
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/shoes"
-                android:id="@+id/zapatos_hombres"
-                android:layout_below="@+id/ropa_hombres"
+                android:id="@+id/zapatos_ninos"
+                android:layout_below="@+id/ropa_ninos"
                 android:onClick="showShoes" />
 
             <Button
@@ -89,10 +91,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/accesories"
-                android:id="@+id/novedades_hombres"
-                android:layout_below="@+id/zapatos_hombres"
+                android:id="@+id/novedades_ninos"
+                android:layout_below="@+id/zapatos_ninos"
                 android:onClick="showAccesories" />
-
         </RelativeLayout>
 
 

@@ -8,7 +8,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingTop="120dp">
+        android:paddingTop="70dp">
 
         <RelativeLayout
             android:layout_width="300dp"
@@ -26,7 +26,10 @@
                 android:src="@drawable/hombres2"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true" />
+                android:layout_alignParentEnd="true"
+                android:paddingLeft="30dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="50dp" />
 
 
 
@@ -41,7 +44,8 @@
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
             android:id="@+id/relativeLayout3"
-            android:paddingRight="70dp">
+            android:paddingRight="70dp"
+            android:paddingLeft="30dp">
 
             <Button
                 android:layout_width="match_parent"

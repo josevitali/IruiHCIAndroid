@@ -15,7 +15,7 @@
             android:layout_width="800dp"
             android:layout_height="400dp"
             android:id="@+id/imageView2"
-            android:src="@drawable/hombres"
+            android:src="@drawable/hombres2"
             android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" />
