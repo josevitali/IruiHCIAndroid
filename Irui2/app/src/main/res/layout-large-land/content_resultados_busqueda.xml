@@ -62,7 +62,8 @@
         <GridView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/prodList" />
+            android:id="@+id/prodList"
+            android:numColumns="2" />
     </LinearLayout>
 
 </RelativeLayout>

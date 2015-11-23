@@ -7,6 +7,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.GridView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -260,13 +261,13 @@ public class ResultadosBusqueda extends Base{
 
             if(prods.length != 0) {
                 ProductArrayAdapter adapter = new ProductArrayAdapter(this, prods);
-                ListView listView = (ListView) this.findViewById(R.id.prodList);
+                GridView listView = (GridView) this.findViewById(R.id.prodList);
                 listView.setAdapter(adapter);
                 listView.setVisibility(View.VISIBLE);
             }else{
                 TextView noResults = (TextView)findViewById(R.id.noResults);
                 noResults.setVisibility(View.VISIBLE);
-                ListView listView = (ListView) this.findViewById(R.id.prodList);
+                GridView listView = (GridView) this.findViewById(R.id.prodList);
                 listView.setVisibility(View.GONE);
             }
 
