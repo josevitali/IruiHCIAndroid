@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="70dp"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:showIn="@layout/activity_order_page" tools:context="com.example.usuario.irui.OrderPage">
+
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginTop="30dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:gravity="center_vertical"
+        android:id="@+id/realFirstRow">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/orderNumber"
+                android:id="@+id/orderNumberText"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="186dp"
+                android:layout_marginStart="186dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="orderNr"
+                android:id="@+id/orderNumber"
+                android:layout_alignParentBottom="true"
+                android:layout_alignLeft="@+id/orderNumberText"
+                android:layout_alignStart="@+id/orderNumberText" />
+        </RelativeLayout>
+
+    </TableRow>
+
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginTop="30dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:gravity="center_vertical"
+        android:layout_below="@id/realFirstRow"
+        android:id="@+id/firstRow">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/locationIcon"
+            android:src="@drawable/location"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="AddressName"
+                android:id="@+id/addrName"
+                android:paddingTop="5dp"
+                android:layout_marginLeft="100dp"
+                android:layout_marginStart="100dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Address"
+                android:id="@+id/realAddress"
+                android:layout_alignParentBottom="true"
+                android:layout_alignLeft="@+id/addrName"
+                android:layout_alignStart="@+id/addrName"
+                android:visibility="invisible"/>
+        </RelativeLayout>
+
+    </TableRow>
+
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginTop="30dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/firstRow"
+        android:id="@+id/secondRow"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/shipStatusIcon"
+            android:src="@drawable/truck"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/created"
+                android:id="@+id/orderStateCreated"
+                android:layout_marginLeft="107dp"
+                android:visibility="gone"
+                android:layout_marginStart="107dp"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/orderStateShipped"
+                android:layout_toEndOf="@+id/orderStateShipped" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/shipped"
+                android:id="@+id/orderStateShipped"
+                android:layout_marginLeft="116dp"
+                android:layout_marginStart="116dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:visibility="gone"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/delivered"
+                android:id="@+id/orderStateDelivered"
+                android:visibility="gone"
+                android:layout_marginLeft="104dp"
+                android:layout_marginStart="104dp"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/orderStateCreated"
+                android:layout_toEndOf="@+id/orderStateCreated" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/confirmed"
+                android:id="@+id/orderStateConfirmed"
+                android:visibility="gone"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/orderStateCreated"
+                android:layout_toEndOf="@+id/orderStateCreated"
+                android:layout_marginLeft="93dp"
+                android:layout_marginStart="93dp" />
+
+
+        </RelativeLayout>
+
+
+        </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginTop="30dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/secondRow"
+        android:id="@+id/thirdRow"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/orderDateIcon"
+            android:src="@drawable/calendar"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/orderDate"
+                android:id="@+id/orderDateConstant"
+                android:layout_marginLeft="107dp"
+                android:layout_marginStart="107dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="date"
+                android:id="@+id/orderDate"
+                android:layout_alignParentBottom="true"
+                android:layout_alignLeft="@+id/orderDateConstant"
+                android:layout_alignStart="@+id/orderDateConstant" />
+
+
+        </RelativeLayout>
+
+
+    </TableRow>
+
+
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginTop="30dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/thirdRow"
+        android:id="@+id/fourthRow"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/deliverDateIcon"
+            android:src="@drawable/calendar"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/shippedDate"
+                android:id="@+id/shipDateConstant"
+                android:layout_marginLeft="104dp"
+                android:layout_marginStart="104dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="date"
+                android:id="@+id/deliverDate"
+                android:layout_alignParentBottom="true"
+                android:layout_alignLeft="@+id/shipDateConstant"
+                android:layout_alignStart="@+id/shipDateConstant" />
+
+
+        </RelativeLayout>
+
+
+    </TableRow>
+
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginTop="30dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/fourthRow"
+        android:id="@+id/fifthRow"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/coinsIcon"
+            android:src="@drawable/pago"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Payment Information"
+                android:id="@+id/paymentInfo"
+                android:layout_marginLeft="111dp"
+                android:layout_marginStart="111dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+
+        </RelativeLayout>
+
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginTop="30dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/fifthRow"
+        android:id="@+id/sixthRow"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/productsIcon"
+            android:src="@drawable/shopping_bag"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/totalPrice"
+                android:id="@+id/totalPriceConstant"
+                android:layout_marginLeft="116dp"
+                android:layout_marginStart="116dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="price"
+                android:id="@+id/totalPrice"
+                android:layout_alignParentBottom="true"
+                android:layout_alignLeft="@+id/totalPriceConstant"
+                android:layout_alignStart="@+id/totalPriceConstant" />
+
+
+        </RelativeLayout>
+
+
+    </TableRow>
+
+</RelativeLayout>
+
+    </ScrollView>

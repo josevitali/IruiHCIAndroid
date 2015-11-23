@@ -211,6 +211,7 @@ public class PaginaProducto extends Base {
                 .load(url1)
                 .into(imageView);
 
+
         ImageView imageView1 = (ImageView)findViewById(R.id.secondImage);
         Picasso.with(this)
                 .load(url2)
