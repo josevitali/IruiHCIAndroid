@@ -134,6 +134,7 @@ public class ResultadosBusqueda extends Base{
             }
 
         } else if(myIntent.hasExtra("searchText")) {
+            hideSub = true;
             String s = myIntent.getStringExtra("searchText");
             request = "http://eiffel.itba.edu.ar/hci/service3/Catalog.groovy?method=GetProductsByName&name=" + s;
         }

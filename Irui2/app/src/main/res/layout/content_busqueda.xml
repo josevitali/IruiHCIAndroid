@@ -4,29 +4,28 @@
     xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent"
     android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingTop="70dp"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    app:actionViewClass="android.support.v7.widget.SearchView"
-    tools:showIn="@layout/activity_busqueda" tools:context="com.example.usuario.irui.Busqueda">
+    app:actionViewClass="android.support.v7.widget.SearchView">
+
 
     <EditText
-        android:layout_width="310dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/search_text"
         android:layout_alignParentTop="true"
-        android:singleLine="true"
-        android:layout_marginRight="30dp" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toLeftOf="@+id/search_action"
+        android:layout_toStartOf="@+id/search_action" />
 
     <ImageButton
-        android:id="@+id/search_action"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/search_action"
         android:src="@drawable/search"
         android:onClick="realizarBusqueda"
-        android:layout_marginLeft="320dp" />
-
-
-
-
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 </RelativeLayout>
