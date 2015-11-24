@@ -77,7 +77,7 @@
 
     <!--Ordenar Por-->
     <string name="title_activity_ordenar_por">Subcategorías</string>
-    <string name="title_activity_orders">Orders</string>
+    <string name="title_activity_orders">Ordenes</string>
     <string name="applyFilters">Aplicar Filtros</string>
     <string name="color">Color</string>
     <string name="brand">Marca</string>
